@@ -64,15 +64,16 @@ body {
 }
 
 #year-nav {
-  font-size : 3em;
+  font-size     : 3em;
+  margin-bottom : 10px;
 }
 
-#year-nav .editable-controls{
+#year-nav .editable-controls {
   line-height : 1em;
 }
 
 .year-nav {
-  font-size : smaller;
+  font-size : 1.0em;
 }
 
 .year-select {
@@ -89,11 +90,17 @@ body {
 
 .month-nav {
   list-style : none;
+  font-size  : 1.5em;
 }
 
 .month-nav li {
   display : inline-block;
   padding : 2px 3px;
+}
+
+.month-nav-sep {
+  margin : 0 10px;
+  color  : #ccc
 }
 
 .calendar td, .calendar th {

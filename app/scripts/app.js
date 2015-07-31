@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'xeditable'
+    'xeditable',
+    'cgBusy'
   ]).config(function ($locationProvider, $routeProvider) {
     //$locationProvider.hashPrefix('!');
 
