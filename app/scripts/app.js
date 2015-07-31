@@ -16,20 +16,18 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ])
-  .config(function ($routeProvider) {
+  ]).config(function ($locationProvider, $routeProvider) {
+    //$locationProvider.hashPrefix('!');
+
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        templateUrl  : 'views/main.html',
+        controller   : 'MainCtrl',
+        controllerAs : 'main'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo : '/'
       });
+  }).run(function ($anchorScroll) {
+    $anchorScroll.yOffset = 60;
   });

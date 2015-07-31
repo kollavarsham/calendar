@@ -1,23 +1,26 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div class="root" ng-controller="MainCtrl">
+  <h1 id="year-nav">
+    <span class="left"> <a ng-click="previous()"> &lt; </a> </span>
+    {{calendar.year}}
+    <span class="right"> <a ng-click="next()"> &gt; </a> </span>
+  </h1>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+  <div>
+    <ul class="month-nav">
+      <li ng-repeat="month in calendar.months"><a ng-click="scrollTo('month-{{month.name}}')">{{month.name | limitTo: 3}}</a></li>
+    </ul>
+  </div>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+  <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
+    <h2 class="clearfix">
+      <span class="month-name">{{month.name}}</span>
+      <small ng-show="!$first"><a ng-click="scrollTo('year-nav')">Back to Top</a></small>
+      <div class="malayalam-month-year">
+        <div class="malayalam-year">{{malayalamYears}}</div>
+        <div class="malayalam-month">{{malayalamMonthNames}}</div>
+      </div>
+    </h2>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+    <month ng-model="month"></month>
+  </div>
 </div>

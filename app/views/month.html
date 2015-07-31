@@ -1,0 +1,29 @@
+<table class="calendar">
+  <colgroup span="7"></colgroup>
+  <tbody>
+    <tr class="head">
+      <th scope="col" title="Sunday" class="sunday">S</th>
+      <th scope="col" title="Monday">M</th>
+      <th scope="col" title="Tuesday">T</th>
+      <th scope="col" title="Wednesday">W</th>
+      <th scope="col" title="Thursday">T</th>
+      <th scope="col" title="Friday">F</th>
+      <th scope="col" title="Saturday">S</th>
+    </tr>
+
+    <tr ng-repeat="week in weeks">
+
+      <td ng-repeat="day in week">
+        <div class="day" ng-class="$first ? 'sunday' : ''">
+          <div class="gregorian">{{day.date}}</div>
+          <div class="malayalam-day-row">
+            <span class="malayalam-day">{{day.malayalamDay}} </span>
+            <span class="naksatra">&#160; {{day.naksatra}}</span>
+          </div>
+        </div>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

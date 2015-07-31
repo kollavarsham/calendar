@@ -1,83 +1,149 @@
+* {
+  font-family : 'Roboto', sans-serif;
+}
+
 .browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+  margin     : 0.2em 0;
+  background : #ccc;
+  color      : #000;
+  padding    : 0.2em 0;
 }
 
 body {
-  padding: 0;
+  padding : 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left  : 15px;
+  padding-right : 15px;
 }
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+  margin-bottom : 50px !important;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+  margin-top     : 0;
+  margin-bottom  : 0;
+  line-height    : 40px;
+  padding-bottom : 19px;
 }
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  padding-top : 19px;
+  color       : #777;
+  border-top  : 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {
-  margin: 30px 0;
+  margin : 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.root {
+  text-align : center;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+.calendar-month {
+  text-align     : start;
+  display        : inline-block;
+  margin         : 15px 0;
+  padding        : 15px;
+  border         : solid 1px #ddd;
+  vertical-align : top;
 }
-.marketing p + h4 {
-  margin-top: 28px;
+
+* {
+  font-family : 'Roboto', sans-serif;
+}
+
+.left {
+  float : left;
+}
+
+.right {
+  float : right;
+}
+
+.month-nav {
+  list-style : none;
+}
+
+.month-nav li {
+  display : inline-block;
+  padding : 2px 3px;
+}
+
+.calendar td, .calendar th {
+  border : 1px solid #aaa;
+}
+
+.day {
+  margin    : 5px;
+  min-width : 120px;
+  color     : #444;
+}
+
+.head th {
+  text-align : center;
+  color      : #222;
+  height     : 99px;
+}
+
+.sunday {
+  color : #f44 !important;
+}
+
+h1, .day > .gregorian, .head {
+  font-size  : 3em;
+  text-align : center;
+}
+
+.malayalam-month-year {
+  float      : right;
+  text-align : center;
+}
+
+.month-name {
+  font-size : larger;
+}
+
+.malayalam-day-row {
+  text-align  : center;
+  color       : #000;
+  white-space : nowrap;
+}
+
+.malayalam-day {
+  font-size : 1.4em;
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width : 768px) {
   .container {
-    max-width: 730px;
+    max-width : 1024px;
   }
 
   /* Remove the padding we set earlier */
   .header,
   .marketing,
   .footer {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left  : 0;
+    padding-right : 0;
   }
+
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom : 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
-    border-bottom: 0;
+    border-bottom : 0;
   }
 }
