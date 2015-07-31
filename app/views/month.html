@@ -16,10 +16,8 @@
       <td ng-repeat="day in week">
         <div class="day" ng-class="$first ? 'sunday' : ''">
           <div class="gregorian">{{day.date}}</div>
-          <div class="malayalam-day-row">
-            <span class="malayalam-day">{{day.malayalamDay}} </span>
-            <span class="naksatra">&#160; {{day.naksatra}}</span>
-          </div>
+          <div class="malayalam-day">{{day.malayalamDay}}</div>
+          <div class="naksatra">&#160; {{day.naksatra}}</div>
         </div>
       </td>
 

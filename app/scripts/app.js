@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'xeditable'
   ]).config(function ($locationProvider, $routeProvider) {
     //$locationProvider.hashPrefix('!');
 
@@ -28,6 +29,8 @@ angular
       .otherwise({
         redirectTo : '/'
       });
-  }).run(function ($anchorScroll) {
+  }).run(function ($anchorScroll, editableOptions) {
     $anchorScroll.yOffset = 60;
+
+    editableOptions.theme = 'bs3';
   });

@@ -42,6 +42,7 @@ angular.module('calendarApp')
           if (weeks.length === 0 || weeks[weeks.length - 1].length === 7) {
             weeks.push([]);
           }
+          // add the empty cells for when 1st of month is not a Sunday
           if (month.days[i].date === 1) {
             var weekdaysIndices = Object.keys(weekdaysLookup);
             var dummyLoop = 0;
@@ -56,7 +57,16 @@ angular.module('calendarApp')
               weeks[weeks.length - 1].push({});
             }
           }
+
+          // add the day into the right position within the week array
           weeks[weeks.length - 1].push(month.days[i]);
+
+          // add the empty cells for when the last day of the month is not a Saturday
+          if (i === month.days.length - 1) {
+            for (var l = 0, len = 7 - weeks[weeks.length - 1].length; l < len; l++) {
+              weeks[weeks.length - 1].push({});
+            }
+          }
         }
       }
     };

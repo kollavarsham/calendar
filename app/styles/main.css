@@ -47,6 +47,7 @@ body {
 
 .root {
   text-align : center;
+  min-height : 800px;
 }
 
 .calendar-month {
@@ -60,6 +61,22 @@ body {
 
 * {
   font-family : 'Roboto', sans-serif;
+}
+
+#year-nav {
+  font-size : 3em;
+}
+
+#year-nav .editable-controls{
+  line-height : 1em;
+}
+
+.year-nav {
+  font-size : smaller;
+}
+
+.year-select {
+  height : 63px;
 }
 
 .left {
@@ -92,7 +109,7 @@ body {
 .head th {
   text-align : center;
   color      : #222;
-  height     : 99px;
+  height     : 95px;
 }
 
 .sunday {
@@ -113,14 +130,22 @@ h1, .day > .gregorian, .head {
   font-size : larger;
 }
 
-.malayalam-day-row {
-  text-align  : center;
-  color       : #000;
-  white-space : nowrap;
+.naksatra, .malayalam-day {
+  text-align     : center;
+  color          : #000;
+  white-space    : nowrap;
+  vertical-align : middle;
 }
 
 .malayalam-day {
   font-size : 1.4em;
+  min-width : 25px;
+  float     : left;
+}
+
+.naksatra {
+  float         : right;
+  padding-right : 5px;
 }
 
 /* Responsive: Portrait tablets and up */

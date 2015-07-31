@@ -1,9 +1,12 @@
 <div class="root" ng-controller="MainCtrl">
-  <h1 id="year-nav">
-    <span class="left"> <a ng-click="previous()"> &lt; </a> </span>
-    {{calendar.year}}
-    <span class="right"> <a ng-click="next()"> &gt; </a> </span>
-  </h1>
+  <div id="year-nav">
+    <span class="left year-nav"> <a ng-click="previous()"> &lt; {{previousYear}} </a> </span>
+    <a href="#" editable-select="year" data-e-ng-options="s.value as s.text for s in years"
+       title="Click to change the year" buttons="no" class="year-select">
+        {{ showYear() }}
+      </a>
+    <span class="right year-nav"> <a ng-click="next()"> {{nextYear}} &gt; </a> </span>
+  </div>
 
   <div>
     <ul class="month-nav">
