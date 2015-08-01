@@ -1,11 +1,11 @@
 <div class="root" ng-controller="MainCtrl">
   <div id="year-nav">
-    <span class="left year-nav"> <a ng-click="previous()"> &lt; {{previousYear}} </a> </span>
+    <span class="pull-left year-nav"> <a ng-click="previous()"> &lt; {{previousYear}} </a> </span>
     <a href="#" editable-select="year" data-e-ng-options="s.value as s.text for s in years"
        title="Click to change the year" buttons="no" class="year-select">
       {{ showYear() }}
     </a>
-    <span class="right year-nav"> <a ng-click="next()"> {{nextYear}} &gt; </a> </span>
+    <span class="pull-right year-nav"> <a ng-click="next()"> {{nextYear}} &gt; </a> </span>
   </div>
 
   <div>
@@ -22,9 +22,11 @@
 
   <div class="calendar-container">
     <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
+      <span ng-show="backToTopVisibility" class="pull-right">
+        <a class="scroll-up" ng-click="scrollToTop()" title="Back to the top">Top</a>
+      </span>
       <h2 class="clearfix">
         <span class="month-name">{{month.name}}</span>
-        <small ng-show="!$first"><a ng-click="scrollTo('year-nav')">Back to Top</a></small>
         <div class="malayalam-month-year">
           <div class="malayalam-year">{{malayalamYears}}</div>
           <div class="malayalam-month">{{malayalamMonthNames}}</div>

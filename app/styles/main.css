@@ -80,14 +80,6 @@ body {
   height : 63px;
 }
 
-.left {
-  float : left;
-}
-
-.right {
-  float : right;
-}
-
 .month-nav {
   list-style : none;
   font-size  : 1.5em;
@@ -156,11 +148,12 @@ h1, .day > .gregorian, .head {
 }
 
 #scrollUp {
+  background-image : url("../images/top.png");
   bottom           : 20px;
   right            : 20px;
-  padding          : 10px 20px;
-  background-color : #555;
-  color            : #fff;
+  width            : 38px; /* Width of image */
+  height           : 38px; /* Height of image */
+  display          : inline-block;
 }
 
 /* Responsive: Portrait tablets and up */
