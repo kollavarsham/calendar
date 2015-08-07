@@ -3,24 +3,24 @@
 // Generated on 2015-07-31 using
 // generator-karma 1.0.0
 
-module.exports = function(config) {
+module.exports = function (config) {
   'use strict';
 
   config.set({
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch : true,
 
     // base path, that will be used to resolve files and exclude
-    basePath: '../',
+    basePath : '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
     // as well as any additional frameworks (requirejs/chai/sinon/...)
-    frameworks: [
+    frameworks : [
       "jasmine"
     ],
 
     // list of files / patterns to load in the browser
-    files: [
+    files : [
       // bower:js
       'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
@@ -42,11 +42,10 @@ module.exports = function(config) {
     ],
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
+    exclude : [],
 
     // web server port
-    port: 8080,
+    port : 8080,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -56,25 +55,26 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: [
+    browsers : [
       "PhantomJS"
     ],
 
     // Which plugins to enable
-    plugins: [
+    plugins : [
       "karma-phantomjs-launcher",
-      "karma-jasmine"
+      "karma-jasmine",
+      "karma-coverage"
     ],
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false,
+    singleRun : false,
 
-    colors: true,
+    colors : true,
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel : config.LOG_INFO,
 
     // Uncomment the following lines if you are using grunt's server to run the tests
     // proxies: {
@@ -82,5 +82,32 @@ module.exports = function(config) {
     // },
     // URL root prevent conflicts with the site root
     // urlRoot: '_karma_'
+
+    // coverage reporter generates the coverage
+    reporters : ['progress', 'coverage'],
+
+    preprocessors : {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      'app/scripts/**/*.js' : ['coverage']
+    },
+
+    // optionally, configure the reporter
+    coverageReporter : {
+      dir       : 'coverage/',
+      reporters : [
+        // reporters not supporting the `file` property
+        {type : 'html', subdir : 'report-html'},
+        {type : 'lcov', subdir : 'report-lcov'},
+        // reporters supporting the `file` property, use `subdir` to directly
+        // output them in the `dir` directory
+        {type : 'cobertura', subdir : '.', file : 'cobertura.txt'},
+        {type : 'lcovonly', subdir : '.', file : 'report-lcovonly.txt'},
+        {type : 'teamcity', subdir : '.', file : 'teamcity.txt'},
+        {type : 'text', subdir : '.', file : 'text.txt'},
+        {type : 'text-summary', subdir : '.', file : 'text-summary.txt'},
+      ]
+    }
   });
 };
