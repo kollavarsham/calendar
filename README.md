@@ -1,4 +1,4 @@
-# kollavarsham-calendar
+# kollavarsham-calendar [![Travis](https://img.shields.io/travis/kollavarsham/calendar.svg)](https://travis-ci.org/kollavarsham/calendar)
 
 The AngularJS single-page application that displays the [Malayalam Era](https://en.wikipedia.org/wiki/Kollam_era) calendar using the [calendar-api](https://github.com/kollavarsham/calendar-api) backend.
 

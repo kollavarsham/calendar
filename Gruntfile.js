@@ -402,9 +402,13 @@ module.exports = function (grunt) {
 
     // Test settings
     karma        : {
-      unit : {
+      unit       : {
         configFile : 'test/karma.conf.js',
         singleRun  : true
+      },
+      continuous : {
+        configFile : 'test/karma.conf.js',
+        singleRun  : false
       }
     },
     buildcontrol : {
@@ -450,7 +454,16 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma:unit'
+  ]);
+
+  grunt.registerTask('keep-testing', [
+    'clean:server',
+    'wiredep',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:test',
+    'karma:continuous'
   ]);
 
   grunt.registerTask('build', [
