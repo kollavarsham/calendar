@@ -11,8 +11,16 @@ describe('Service: utils', function () {
     utils = _utils_;
   }));
 
-  it('should do something', function () {
-    expect(!!utils).toBe(true);
+  var arrayWithDuplicates = [1, 1, 2, 3, 3, 4, 4, 4, 4, 4, 5, 6, 7, 9];
+  var uniqueItems = [1, 2, 3, 4, 5, 6, 7, 9];
+
+  it('should be defined', function () {
+    expect(utils).toBeDefined();
+    expect(utils.unique).toBeDefined();
+  });
+
+  it('should filter the array down into unique items', function () {
+    expect(utils.unique(arrayWithDuplicates)).toEqual(uniqueItems);
   });
 
 });

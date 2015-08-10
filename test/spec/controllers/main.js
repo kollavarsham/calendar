@@ -47,49 +47,67 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should have a current, previous and next year properties on the scope', function () {
-    expect(scope.year).toBe(currentYear);
-    scope.$digest();
-    expect(scope.previousYear).toBe(currentYear - 1);
-    expect(scope.nextYear).toBe(currentYear + 1);
+  describe('year models', function () {
+
+    it('should have a current, previous and next year properties on the scope', function () {
+      expect(scope.year).toBe(currentYear);
+      scope.$digest();
+      expect(scope.previousYear).toBe(currentYear - 1);
+      expect(scope.nextYear).toBe(currentYear + 1);
+    });
+
+    it('should add one to the year when next is called', function () {
+      var initialYear = scope.year;
+      scope.next();
+      expect(scope.year).toBe(initialYear + 1);
+    });
+
+    it('should subtract one to the year when previous is called', function () {
+      var initialYear = scope.year;
+      scope.previous();
+      expect(scope.year).toBe(initialYear - 1);
+    });
+
+    it('should return current year from showYear', function () {
+      scope.$digest();
+      var years = [];
+      for (var i = -5; i < 5; i++) {
+        years.push({value : currentYear + i, text : currentYear + i});
+      }
+      scope.years = years;
+      expect(scope.showYear()).toBe(currentYear);
+    });
+
   });
 
-  it('should add one to the year when next is called on scope', function () {
-    var initialYear = scope.year;
-    scope.next();
-    expect(scope.year).toBe(initialYear + 1);
-  });
+  describe('calendar model', function () {
 
-  it('should subtract one to the year when previous is called on scope', function () {
-    var initialYear = scope.year;
-    scope.previous();
-    expect(scope.year).toBe(initialYear - 1);
-  });
+    it('should have calendar as undefined', function () {
+      expect(scope.calendar).toBe(undefined);
+    });
 
-  it('should have calendar on scope as undefined', function () {
-    expect(scope.calendar).toBe(undefined);
-  });
+    it('should have a non-null calendar after the digest cycle', function () {
+      scope.$digest();
+      expect(scope.calendar).not.toBe(undefined);
+    });
 
-  it('should have a non-null calendar on scope after the digest cycle', function () {
-    scope.$digest();
-    expect(scope.calendar).not.toBe(undefined);
-  });
+    it('should have current year\'s calendar as default', function () {
+      scope.$digest();
+      expect(scope.calendar.year).toBe(currentYear);
+    });
 
-  it('should have a calendar corresponding to current year to start with', function () {
-    scope.$digest();
-    expect(scope.calendar.year).toBe(currentYear);
-  });
+    it('should have previous year\'s calendar after calling previous', function () {
+      scope.previous();
+      scope.$digest();
+      expect(scope.calendar.year).toBe(currentYear - 1);
+    });
 
-  it('should have a calendar corresponding to previous year after calling next on scope', function () {
-    scope.previous();
-    scope.$digest();
-    expect(scope.calendar.year).toBe(currentYear - 1);
-  });
+    it('should have next year\'s calendar after calling next', function () {
+      scope.next();
+      scope.$digest();
+      expect(scope.calendar.year).toBe(currentYear + 1);
+    });
 
-  it('should have a calendar corresponding to next year after calling next on scope', function () {
-    scope.next();
-    scope.$digest();
-    expect(scope.calendar.year).toBe(currentYear + 1);
   });
 
 });
