@@ -21,8 +21,11 @@ angular.module('calendarApp')
 
       $scope.year = (new Date()).getFullYear();
 
-      var years = Array.apply(null, [{length : 2051}]).map(Number.call, Number).splice(1900, 151);
-      $scope.years = years.map(function (y) { return {value : y, text : y};});
+      var years = [];
+      for (var y = 1900; y < 2051; y++) {
+        years.push({value : y, text : y});
+      }
+      $scope.years = years;
     };
 
     $scope.showYear = function () {

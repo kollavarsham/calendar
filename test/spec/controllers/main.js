@@ -68,13 +68,15 @@ describe('Controller: MainCtrl', function () {
       expect(scope.year).toBe(initialYear - 1);
     });
 
-    it('should return current year from showYear', function () {
-      scope.$digest();
-      var years = [];
-      for (var i = -5; i < 5; i++) {
-        years.push({value : currentYear + i, text : currentYear + i});
-      }
-      scope.years = years;
+    it('should have years defined on scope', function () {
+      expect(scope.years).toBeDefined();
+    });
+
+    it('should have 151 items on years', function () {
+      expect(scope.years.length).toBe(151);
+    });
+
+    it('should have current year return from showYear', function () {
       expect(scope.showYear()).toBe(currentYear);
     });
 
@@ -88,7 +90,7 @@ describe('Controller: MainCtrl', function () {
 
     it('should have a non-null calendar after the digest cycle', function () {
       scope.$digest();
-      expect(scope.calendar).not.toBe(undefined);
+      expect(scope.calendar).toBeDefined();
     });
 
     it('should have current year\'s calendar as default', function () {

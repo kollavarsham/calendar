@@ -5,11 +5,11 @@ describe('Directive: month', function () {
   // load the directive's module
   beforeEach(module('calendarApp'));
 
-  var element,
-    scope;
+  var element, scope, $compile;
 
-  beforeEach(inject(function ($rootScope) {
+  beforeEach(inject(function ($rootScope, _$compile_) {
     scope = $rootScope.$new();
+    $compile = _$compile_;
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
