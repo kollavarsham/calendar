@@ -12,7 +12,7 @@ describe('Service: Calendar', function () {
   }));
 
   it('should do something', function () {
-    expect(!!Calendar).toBe(true);
+    expect(Calendar).toBeDefined();
   });
 
 });
