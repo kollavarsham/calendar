@@ -8,6 +8,23 @@
  */
 angular.module('calendarApp')
   .directive('month', function (utils) {
+
+    var getMalayalamMonthNames = function (month) {
+      var malayalamMonthNames = month.days.map(function (day) {
+        return day.malayalamMonth;
+      });
+      var uniqueMonths = utils.unique(malayalamMonthNames);
+      return uniqueMonths.join(' - ');
+    };
+
+    var getMalayalamYears = function (month) {
+      var malayalamYears = month.days.map(function (day) {
+        return day.malayalamYear;
+      });
+      var uniqueYears = utils.unique(malayalamYears);
+      return uniqueYears.join(' - ');
+    };
+
     return {
       restrict    : 'E',
       replace     : true,
@@ -19,17 +36,9 @@ angular.module('calendarApp')
         scope.weeks = [];
         var weeks = scope.weeks;
 
-        var malayalamMonthNames = month.days.map(function (day) {
-          return day.malayalamMonth;
-        });
-        var uniqueMonths = utils.unique(malayalamMonthNames);
-        scope.malayalamMonthNames = uniqueMonths.join(' - ');
+        scope.malayalamMonthNames = getMalayalamMonthNames(month);
 
-        var malayalamYears = month.days.map(function (day) {
-          return day.malayalamYear;
-        });
-        var uniqueYears = utils.unique(malayalamYears);
-        scope.malayalamYears = uniqueYears.join(' - ');
+        scope.malayalamYears = getMalayalamYears(month);
 
         for (var i = 0; i < month.days.length; i++) {
           // add a new week at the start and when 7 days have been added to previous one

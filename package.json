@@ -29,6 +29,7 @@
     "jshint-stylish": "^1.0.0",
     "karma-coverage": "^0.5.0",
     "karma-jasmine": "*",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
     "karma-phantomjs-launcher": "*",
     "time-grunt": "^1.0.0"
   },

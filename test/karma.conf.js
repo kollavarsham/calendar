@@ -35,10 +35,16 @@ module.exports = function (config) {
       'bower_components/angular-busy/dist/angular-busy.js',
       'bower_components/scrollup/dist/jquery.scrollUp.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/jasmine/lib/jasmine-core/jasmine.js',
+      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
-      "test/spec/**/*.js"
+      "test/spec/**/*.js",
+      // fixtures
+      {pattern : 'test/mock/*.json', watched : true, served : true, included : false},
+      // view templates
+      "app/views/**/*.html"
     ],
 
     // list of files / patterns to exclude
@@ -63,7 +69,8 @@ module.exports = function (config) {
     plugins : [
       "karma-phantomjs-launcher",
       "karma-jasmine",
-      "karma-coverage"
+      "karma-coverage",
+      "karma-ng-html2js-preprocessor"
     ],
 
     // Continuous Integration mode
@@ -87,13 +94,37 @@ module.exports = function (config) {
     reporters : ['progress', 'coverage'],
 
     preprocessors : {
+      // pre-process HTML files into AngularJS templates.
+      'app/views/**/*.html' : ['ng-html2js'],
       // source files, that you wanna generate coverage for
       // do not include tests or libraries
       // (these files will be instrumented by Istanbul)
       'app/scripts/**/*.js' : ['coverage']
     },
 
-    // optionally, configure the reporter
+    // configure the html2js preprocessor
+    ngHtml2JsPreprocessor : {
+      //// strip this from the file path
+      //stripPrefix   : 'public/',
+      //stripSuffix   : '.ext',
+      //// prepend this to the
+      //prependPrefix : 'served/',
+
+      // or define a custom transform function
+      //cacheIdFromPath : function (filepath) {
+      //  return cacheId;
+      //},
+
+      // - setting this option will create only a single module that contains templates
+      //   from all the files, so you can load them all with module('foo')
+      // - you may provide a function(htmlPath, originalPath) instead of a string
+      //   if you'd like to generate modules dynamically
+      //   htmlPath is a originalPath stripped and/or prepended
+      //   with all provided suffixes and prefixes
+      // moduleName : 'calendarViews'
+    },
+
+    // configure the reporter
     coverageReporter : {
       dir       : 'coverage/',
       reporters : [
