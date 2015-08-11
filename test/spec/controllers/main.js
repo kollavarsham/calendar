@@ -5,7 +5,7 @@ describe('Controller: MainCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp'));
 
-  var MainCtrl, $q, queryDeferred, $rootScope, scope, location, anchorScroll, filter, window, calendarMock;
+  var MainCtrl, $q, queryDeferred, $rootScope, scope, location, anchorScroll, filter, window, utils, calendarMock;
 
   var currentYear = new Date().getFullYear();
 
@@ -14,11 +14,12 @@ describe('Controller: MainCtrl', function () {
   calendars[currentYear - 1] = {year : currentYear - 1, months : []};
   calendars[currentYear + 1] = {year : currentYear + 1, months : []};
 
-  beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_) {
+  beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_, _utils_) {
     $q = _$q_;
     $rootScope = _$rootScope_;
     filter = _$filter_;
     window = _$window_;
+    utils = _utils_;
   }));
 
   // Initialize the controller and a mock scope
@@ -43,6 +44,7 @@ describe('Controller: MainCtrl', function () {
       $anchorScroll : anchorScroll,
       $filter       : filter,
       $window       : window,
+      utils         : utils,
       Calendar      : calendarMock
     });
   }));
@@ -78,6 +80,18 @@ describe('Controller: MainCtrl', function () {
 
     it('should have current year return from showYear', function () {
       expect(scope.showYear()).toBe(currentYear);
+    });
+
+  });
+
+  describe('weekdays model', function () {
+
+    it('should be defined', function () {
+      expect(scope.weekdaysLookup).toBeDefined();
+    });
+
+    it('should have valid data', function () {
+      expect(scope.weekdaysLookup).toBe(utils.weekdaysLookup);
     });
 
   });

@@ -8,7 +8,7 @@
  * Controller of the calendarApp
  */
 angular.module('calendarApp')
-  .controller('MainCtrl', function ($scope, $location, $anchorScroll, $filter, $window, Calendar) {
+  .controller('MainCtrl', function ($scope, $location, $anchorScroll, $filter, $window, utils, Calendar) {
 
     $scope.init = function () {
       $scope.$watch('year', function (newYearValue) {
@@ -26,6 +26,8 @@ angular.module('calendarApp')
         years.push({value : y, text : y});
       }
       $scope.years = years;
+
+      $scope.weekdaysLookup = utils.weekdaysLookup;
     };
 
     $scope.showYear = function () {

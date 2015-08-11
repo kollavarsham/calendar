@@ -57,6 +57,7 @@ body {
   padding        : 15px;
   border         : solid 1px #ddd;
   vertical-align : top;
+  position       : relative;
 }
 
 * {
@@ -73,7 +74,7 @@ body {
 }
 
 .year-nav {
-  font-size : 1.0em;
+  font-size : 0.8em;
 }
 
 .year-select {
@@ -111,22 +112,40 @@ body {
   height     : 95px;
 }
 
+.month-masthead {
+  font-size  : 2em;
+  text-align : center;
+}
+
+.back-to-top {
+  position : absolute;
+  right    : 10px;
+  top      : 5px;
+  z-index  : 1;
+  cursor   : pointer;
+}
+
+.month-year {
+  position : absolute;
+  top      : 0;
+  width    : 97%;
+}
+
+.month-name, .month-year {
+  font-size : larger;
+}
+
+.malayalam-weekday {
+  font-size : 0.5em;
+}
+
 .sunday {
-  color : #f44 !important;
+  color : #f55 !important;
 }
 
 h1, .day > .gregorian, .head {
   font-size  : 3em;
   text-align : center;
-}
-
-.malayalam-month-year {
-  float      : right;
-  text-align : center;
-}
-
-.month-name {
-  font-size : larger;
 }
 
 .naksatra, .malayalam-day {

@@ -22,17 +22,17 @@
 
   <div class="calendar-container">
     <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
-      <span ng-show="backToTopVisibility" class="pull-right">
+      <span ng-show="backToTopVisibility" class="back-to-top">
         <a class="scroll-up" ng-click="scrollToTop()" title="Back to the top">Top</a>
       </span>
-      <h2 class="clearfix">
-        <span class="month-name">{{month.name}}</span>
-        <div class="malayalam-month-year">
+      <div class="clearfix month-masthead">
+        <div class="pull-left"><span class="month-name">{{month.name}} | {{month.days[0].mlMonth}}</span></div>
+        <div class="pull-right">
           <div class="malayalam-year">{{malayalamYears}}</div>
           <div class="malayalam-month">{{malayalamMonthNames}}</div>
         </div>
-      </h2>
-
+      </div>
+      <div class="month-year text-center"><h1>{{year}}</h1></div>
       <month></month>
     </div>
   </div>

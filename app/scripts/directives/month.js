@@ -13,18 +13,11 @@ angular.module('calendarApp')
       replace     : true,
       templateUrl : 'views/month.html',
       link        : function (scope) {
-        var weekdaysLookup = {
-          0 : 'ഞായർ     ',
-          1 : 'തിങ്കൾ   ',
-          2 : 'ചൊവ്വ    ',
-          3 : 'ബുധൻ     ',
-          4 : 'വ്യാഴം   ',
-          5 : 'വെള്ളി   ',
-          6 : 'ശനി      '
-        };
+        var weekdaysLookup = utils.weekdaysLookup;
 
         var month = scope.month;
-        var weeks = scope.weeks = [];
+        scope.weeks = [];
+        var weeks = scope.weeks;
 
         var malayalamMonthNames = month.days.map(function (day) {
           return day.malayalamMonth;
@@ -39,16 +32,18 @@ angular.module('calendarApp')
         scope.malayalamYears = uniqueYears.join(' - ');
 
         for (var i = 0; i < month.days.length; i++) {
+          // add a new week at the start and when 7 days have been added to previous one
           if (weeks.length === 0 || weeks[weeks.length - 1].length === 7) {
             weeks.push([]);
           }
+
           // add the empty cells for when 1st of month is not a Sunday
           if (month.days[i].date === 1) {
             var weekdaysIndices = Object.keys(weekdaysLookup);
             var dummyLoop = 0;
             for (var j = 0; j < weekdaysIndices.length; j++) {
               var index = weekdaysIndices[j];
-              if (month.days[i].weekdayName === weekdaysLookup[index]) {
+              if (month.days[i].weekdayName === weekdaysLookup[index].ml) {
                 dummyLoop = index;
                 break;
               }
