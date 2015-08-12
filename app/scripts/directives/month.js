@@ -29,12 +29,18 @@ angular.module('calendarApp')
       restrict    : 'E',
       replace     : true,
       templateUrl : 'views/month.html',
+      scope       : {
+        month : '=month'
+      },
       link        : function (scope) {
         var weekdaysLookup = utils.weekdaysLookup;
 
         var month = scope.month;
-        scope.weeks = [];
-        var weeks = scope.weeks;
+        var weeks = scope.weeks = [];
+
+        scope.year = scope.month.days[0].year;
+
+        scope.weekdaysLookup = utils.weekdaysLookup;
 
         scope.malayalamMonthNames = getMalayalamMonthNames(month);
 

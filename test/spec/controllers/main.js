@@ -84,18 +84,6 @@ describe('Controller: MainCtrl', function () {
 
   });
 
-  describe('weekdays model', function () {
-
-    it('should be defined', function () {
-      expect(scope.weekdaysLookup).toBeDefined();
-    });
-
-    it('should have valid data', function () {
-      expect(scope.weekdaysLookup).toBe(utils.weekdaysLookup);
-    });
-
-  });
-
   describe('calendar model', function () {
 
     it('should have calendar as undefined', function () {

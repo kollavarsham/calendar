@@ -25,15 +25,7 @@
       <span ng-show="backToTopVisibility" class="back-to-top">
         <a class="scroll-up" ng-click="scrollToTop()" title="Back to the top">Top</a>
       </span>
-      <div class="clearfix month-masthead">
-        <div class="pull-left"><span class="month-name">{{month.name}} | {{month.days[0].mlMonth}}</span></div>
-        <div class="pull-right">
-          <div class="malayalam-year">{{malayalamYears}}</div>
-          <div class="malayalam-month">{{malayalamMonthNames}}</div>
-        </div>
-      </div>
-      <div class="month-year text-center"><h1>{{year}}</h1></div>
-      <month></month>
+      <month month="month"></month>
     </div>
   </div>
 
