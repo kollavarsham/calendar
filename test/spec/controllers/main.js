@@ -5,7 +5,7 @@ describe('Controller: MainCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp'));
 
-  var MainCtrl, $q, queryDeferred, $rootScope, scope, location, anchorScroll, filter, window, utils, calendarMock;
+  var MainCtrl, $q, $rootScope, scope, location, anchorScroll, filter, window, utils, calendarMock;
 
   var currentYear = new Date().getFullYear();
 
