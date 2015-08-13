@@ -14,8 +14,13 @@
 }
 
 .year-nav {
-  font-size      : 0.8em;
+  font-size      : 0.5em;
   vertical-align : middle;
+}
+
+.year-nav button[disabled] {
+  cursor : not-allowed;
+  color  : #ccc;
 }
 
 .year-select {
