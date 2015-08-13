@@ -6,10 +6,13 @@
       <div class="malayalam-month">{{malayalamMonthNames}}</div>
     </div>
   </div>
+
   <div class="month-year text-center"><h1>{{year}}</h1></div>
-  <table class="calendar">
+
+  <table class="calendar-table">
     <colgroup span="7"></colgroup>
     <tbody>
+
       <tr class="head">
         <th scope="col" ng-repeat="weekday in weekdaysLookup" title="{{weekday.en}}" ng-class="weekday.en == 'Sunday' ? 'sunday' : '' ">
           <div>{{weekday.en | limitTo: 1}}</div>

@@ -1,4 +1,5 @@
 <div class="root" ng-controller="MainCtrl">
+
   <div id="year-nav">
     <span class="pull-left year-nav"> <a ng-click="previous()"> &lt; {{previousYear}} </a> </span>
     <a href="#" editable-select="year" data-e-ng-options="s.value as s.text for s in years"
@@ -21,12 +22,17 @@
   <div cg-busy="calendar"></div>
 
   <div class="calendar-container">
+
     <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
+
       <span ng-show="backToTopVisibility" class="back-to-top">
         <a class="scroll-up" ng-click="scrollToTop()" title="Back to the top">Top</a>
       </span>
+
       <month month="month"></month>
+
     </div>
+
   </div>
 
 </div>

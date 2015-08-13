@@ -1,58 +1,7 @@
-* {
-  font-family : 'Roboto', sans-serif;
-}
-
-.browsehappy {
-  margin     : 0.2em 0;
-  background : #ccc;
-  color      : #000;
-  padding    : 0.2em 0;
-}
-
-body {
-  padding : 0;
-}
-
-.main-container {
-  margin-top : 50px !important;
-}
-
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top     : 0;
-  margin-bottom  : 0;
-  line-height    : 40px;
-  padding-bottom : 19px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top : 19px;
-  color       : #777;
-  border-top  : 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin : 30px 0;
-}
-
 .root {
-  text-align : center;
-  min-height : 800px;
-}
-
-.calendar-month {
-  text-align     : start;
-  display        : inline-block;
-  margin         : 15px 0;
-  padding        : 15px;
-  border         : solid 1px #ddd;
-  vertical-align : top;
-  position       : relative;
-}
-
-* {
-  font-family : 'Roboto', sans-serif;
+  text-align     : center;
+  min-height     : 800px;
+  padding-bottom : 30px;
 }
 
 #year-nav {
@@ -65,7 +14,8 @@ body {
 }
 
 .year-nav {
-  font-size : 0.8em;
+  font-size      : 0.8em;
+  vertical-align : middle;
 }
 
 .year-select {
@@ -87,106 +37,12 @@ body {
   color  : #ccc
 }
 
-.calendar td, .calendar th {
-  border : 1px solid #aaa;
-}
-
-.day {
-  margin    : 5px;
-  min-width : 120px;
-  color     : #444;
-}
-
-.head th {
-  text-align : center;
-  color      : #222;
-  height     : 95px;
-}
-
-.month-masthead {
-  font-size  : 2em;
-  text-align : center;
-}
-
-.back-to-top {
-  position : absolute;
-  right    : 10px;
-  top      : 5px;
-  z-index  : 1;
-  cursor   : pointer;
-}
-
-.month-year {
-  position : absolute;
-  top      : 0;
-  width    : 97%;
-}
-
-.month-name, .month-year {
-  font-size : larger;
-}
-
-.malayalam-weekday {
-  font-size : 0.5em;
-}
-
-.sunday {
-  color : #f55 !important;
-}
-
-h1, .day > .gregorian, .head {
-  font-size  : 3em;
-  text-align : center;
-}
-
-.naksatra, .malayalam-day {
-  text-align     : center;
-  color          : #000;
-  white-space    : nowrap;
-  vertical-align : middle;
-}
-
-.malayalam-day {
-  font-size : 1.4em;
-  min-width : 25px;
-  float     : left;
-}
-
-.naksatra {
-  float         : right;
-  padding-right : 5px;
-}
-
-#scrollUp {
-  background-image : url("../images/top.png");
-  bottom           : 20px;
-  right            : 20px;
-  width            : 38px; /* Width of image */
-  height           : 38px; /* Height of image */
-  display          : inline-block;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width : 768px) {
-  .container {
-    max-width : 1024px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left  : 0;
-    padding-right : 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom : 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom : 0;
-  }
+.calendar-month {
+  text-align     : start;
+  display        : inline-block;
+  margin         : 15px 0;
+  padding        : 15px;
+  border         : solid 1px #ddd;
+  vertical-align : top;
+  position       : relative;
 }

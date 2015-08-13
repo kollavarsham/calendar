@@ -15,14 +15,12 @@
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/non-responsive.css">
+  <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/month.css">
   <!-- endbuild -->
 </head>
 <body ng-app="calendarApp">
-  <!--[if lte IE 8]>
-  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your
-    experience.</p>
-  <![endif]-->
 
   <!-- Add your site or application content here -->
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -56,7 +54,7 @@
     <div ng-view=""></div>
   </div>
 
-  <div class="footer">
+  <div id="footer">
     <div class="container">
       <p class="pull-left" ng-controller="VersionCtrl"><version></version></p>
       <p class="pull-right"><small><a href="/LICENSE.txt">&copy; 2015 The Kollavarsham Team</a></small></p>

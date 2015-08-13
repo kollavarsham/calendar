@@ -1,0 +1,69 @@
+.calendar-table td, .calendar-table th {
+  border : 1px solid #aaa;
+}
+
+.month-masthead {
+  font-size  : 2em;
+  text-align : center;
+}
+
+.back-to-top {
+  position : absolute;
+  right    : 10px;
+  top      : 5px;
+  z-index  : 1;
+  cursor   : pointer;
+}
+
+.month-year {
+  position : absolute;
+  top      : 0;
+  width    : 97%;
+}
+
+.month-name, .month-year {
+  font-size : larger;
+}
+
+.head th {
+  text-align : center;
+  color      : #222;
+  height     : 95px;
+}
+
+.sunday {
+  color : #f55 !important;
+}
+
+.malayalam-weekday {
+  font-size : 0.5em;
+}
+
+h1, .day > .gregorian, .head {
+  font-size  : 3em;
+  text-align : center;
+}
+
+.day {
+  margin    : 5px;
+  min-width : 120px;
+  color     : #444;
+}
+
+.naksatra, .malayalam-day {
+  text-align     : center;
+  color          : #000;
+  white-space    : nowrap;
+  vertical-align : middle;
+}
+
+.malayalam-day {
+  font-size : 1.4em;
+  min-width : 25px;
+  float     : left;
+}
+
+.naksatra {
+  float         : right;
+  padding-right : 5px;
+}
