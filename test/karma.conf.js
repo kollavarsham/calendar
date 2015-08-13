@@ -69,6 +69,7 @@ module.exports = function (config) {
     plugins : [
       "karma-phantomjs-launcher",
       "karma-jasmine",
+      "karma-spec-reporter",
       "karma-coverage",
       "karma-ng-html2js-preprocessor"
     ],
@@ -91,7 +92,9 @@ module.exports = function (config) {
     // urlRoot: '_karma_'
 
     // coverage reporter generates the coverage
-    reporters : ['progress', 'coverage'],
+    reporters : ['spec', 'coverage'],
+
+    specReporter: {maxLogLines: 10},
 
     preprocessors : {
       // pre-process HTML files into AngularJS templates.

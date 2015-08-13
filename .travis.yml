@@ -9,3 +9,4 @@ before_script:
   - 'bower install'
 after_script:
   - 'codeclimate-test-reporter < ./coverage/report-lcov/lcov.info'
+  - if [ "$TRAVIS_NODE_VERSION" = "0.12" ]; then grunt deploy; fi
