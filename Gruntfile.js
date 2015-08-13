@@ -442,8 +442,8 @@ module.exports = function (grunt) {
     grunt.event.once('git-describe', function (rev) {
       grunt.file.write('dist/version.json', JSON.stringify({
         version  : grunt.config('pkg.version'),
-        revision : rev.tag + '-' + rev.since + '-' + rev.object + rev.dirty,
-        date     : grunt.template.today('yyyy-mm-dd-HH-MM-ss-l o')
+        revision : rev.tag + '-' + rev.since + '-' + rev.object,
+        date     : grunt.template.today('yyyy-mm-dd HH:MM:ss:l o')
       }));
     });
     grunt.task.run('git-describe');
