@@ -13,22 +13,22 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
     'ngTouch',
     'xeditable',
     'cgBusy'
-  ]).config(function ($locationProvider, $routeProvider) {
-    //$locationProvider.hashPrefix('!');
+  ]).config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
+    $locationProvider.hashPrefix('!');
 
-    $routeProvider
-      .when('/', {
-        templateUrl  : 'views/main.html',
-        controller   : 'MainCtrl',
-        controllerAs : 'main'
-      })
-      .otherwise({
-        redirectTo : '/'
+    // Redirect to home view when route not found
+    $urlRouterProvider.otherwise('/');
+
+    // Home state routing
+    $stateProvider.
+      state('home', {
+        url         : '/',
+        templateUrl : 'views/main.html'
       });
   }).run(function ($anchorScroll, editableOptions) {
     $anchorScroll.yOffset = 60;
