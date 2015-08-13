@@ -58,7 +58,12 @@
 
   <div class="footer">
     <div class="container">
-      <p><span class="copyright"><a href="/LICENSE.txt">&copy; 2015 The Kollavarsham Team</a></span></p>
+      <p class="pull-left">
+        <small><a href="/LICENSE.txt">&copy; 2015 The Kollavarsham Team</a></small>
+      </p>
+      <p class="pull-right" ng-controller="VersionCtrl">
+        <small class="text-muted"><strong class="text-danger">{{versionString.revision}}</strong> {{' ( ' + versionString.date + ' )'}}</small>
+      </p>
     </div>
   </div>
 
@@ -96,6 +101,8 @@
   <script src="scripts/services/calendar.js"></script>
   <script src="scripts/services/serviceconfigconstant.js"></script>
   <script src="scripts/services/utils.js"></script>
+  <script src="scripts/services/version.js"></script>
+  <script src="scripts/controllers/version.js"></script>
   <!-- endbuild -->
 </body>
 </html>

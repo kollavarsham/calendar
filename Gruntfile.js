@@ -29,6 +29,8 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
+    pkg : grunt.file.readJSON('package.json'),
+
     // Project settings
     yeoman : appConfig,
 
@@ -401,7 +403,7 @@ module.exports = function (grunt) {
     },
 
     // Test settings
-    karma        : {
+    karma : {
       unit       : {
         configFile : 'test/karma.conf.js',
         singleRun  : true
@@ -411,6 +413,14 @@ module.exports = function (grunt) {
         singleRun  : false
       }
     },
+
+    // git describe to get the version number
+    'git-describe' : {
+      'options'  : {},
+      'calendar' : {}
+    },
+
+    // Push the built website into GH pages
     buildcontrol : {
       options : {
         dir     : 'dist',
@@ -427,6 +437,17 @@ module.exports = function (grunt) {
     }
   });
 
+  // save version information
+  grunt.registerTask('saverevision', function () {
+    grunt.event.once('git-describe', function (rev) {
+      grunt.file.write('dist/version.json', JSON.stringify({
+        version  : grunt.config('pkg.version'),
+        revision : rev.tag + '-' + rev.since + '-' + rev.object + rev.dirty,
+        date     : grunt.template.today('yyyy-mm-dd-HH-MM-ss-l o')
+      }));
+    });
+    grunt.task.run('git-describe');
+  });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -481,7 +502,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'saverevision'
   ]);
 
   grunt.registerTask('deploy', ['build', 'buildcontrol:pages']);
