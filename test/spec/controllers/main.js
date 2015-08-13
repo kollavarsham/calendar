@@ -27,11 +27,7 @@ describe('Controller: MainCtrl', function () {
     scope = $rootScope.$new();
 
     calendarMock = {
-      query : function () {
-        console.log(JSON.stringify(arguments));
-        queryDeferred = $q.defer();
-        return {$promise : queryDeferred.promise};
-      }
+      query : function () { }
     };
 
     spyOn(calendarMock, 'query').and.callFake(function (params) {

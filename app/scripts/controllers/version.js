@@ -9,5 +9,5 @@
  */
 angular.module('calendarApp')
   .controller('VersionCtrl', function ($scope, Version) {
-    $scope.versionString = Version.query();
+    $scope.version = Version.query();
   });
