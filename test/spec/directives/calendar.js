@@ -36,7 +36,6 @@ describe('Directive: calendar', function () {
     });
 
     it('should be a div element', function () {
-      console.log(element);
       expect(element[0].tagName).toBe('DIV');
     });
 
