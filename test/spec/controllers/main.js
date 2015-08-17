@@ -5,21 +5,21 @@ describe('Controller: MainCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp'));
 
-  var MainCtrl, $q, $rootScope, scope, location, anchorScroll, filter, window, utils, calendarMock;
+  var MainCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, calendarMock;
 
   var currentYear = new Date().getFullYear();
 
   var calendars = {};
   calendars[currentYear] = {year : currentYear, months : []};
-  calendars[currentYear - 1] = {year : currentYear - 1, months : []};
-  calendars[currentYear + 1] = {year : currentYear + 1, months : []};
 
-  beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_, _utils_) {
+  beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_) {
     $q = _$q_;
     $rootScope = _$rootScope_;
+    stateParams = {
+      year : (new Date()).getFullYear()
+    };
     filter = _$filter_;
     window = _$window_;
-    utils = _utils_;
   }));
 
   // Initialize the controller and a mock scope
@@ -36,11 +36,12 @@ describe('Controller: MainCtrl', function () {
 
     MainCtrl = $controller('MainCtrl', {
       $scope        : scope,
+      $state        : state,
+      $stateParams  : stateParams,
       $location     : location,
       $anchorScroll : anchorScroll,
       $filter       : filter,
       $window       : window,
-      utils         : utils,
       Calendar      : calendarMock
     });
   }));
@@ -82,30 +83,12 @@ describe('Controller: MainCtrl', function () {
 
   describe('calendar model', function () {
 
-    it('should have calendar as undefined', function () {
-      expect(scope.calendar).toBe(undefined);
-    });
-
-    it('should have a non-null calendar after the digest cycle', function () {
-      scope.$digest();
+    it('should be defined', function () {
       expect(scope.calendar).toBeDefined();
     });
 
     it('should have current year\'s calendar as default', function () {
-      scope.$digest();
       expect(scope.calendar.year).toBe(currentYear);
-    });
-
-    it('should have previous year\'s calendar after calling previous', function () {
-      scope.previous();
-      scope.$digest();
-      expect(scope.calendar.year).toBe(currentYear - 1);
-    });
-
-    it('should have next year\'s calendar after calling next', function () {
-      scope.next();
-      scope.$digest();
-      expect(scope.calendar.year).toBe(currentYear + 1);
     });
 
   });

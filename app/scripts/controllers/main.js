@@ -8,24 +8,27 @@
  * Controller of the calendarApp
  */
 angular.module('calendarApp')
-  .controller('MainCtrl', function ($scope, $location, $anchorScroll, $filter, $window, Calendar) {
+  .controller('MainCtrl', function ($scope, $state, $stateParams, $location, $anchorScroll, $filter, $window, Calendar) {
 
     $scope.init = function () {
       $scope.$watch('year', function (newYearValue) {
-        $scope.previousYear = newYearValue - 1;
-        $scope.nextYear = newYearValue + 1;
-        $scope.calendar = Calendar.query({
-          year : newYearValue
-        });
+        $state.go('year', {year : newYearValue});
       });
 
-      $scope.year = (new Date()).getFullYear();
+      $scope.year = $stateParams.year;
 
       var years = [];
       for (var y = 1900; y < 2051; y++) {
         years.push({value : y, text : y});
       }
       $scope.years = years;
+
+      $scope.previousYear = $scope.year - 1;
+      $scope.nextYear = $scope.year + 1;
+      $scope.calendar = Calendar.query({
+        year : $scope.year
+      });
+
     };
 
     $scope.showYear = function () {

@@ -26,8 +26,11 @@ angular
 
     // Home state routing
     $stateProvider.
-      state('home', {
-        url         : '/',
+      state('year', {
+        url         : '/{year:int}',
+        params      : {
+          year : (new Date()).getFullYear()
+        },
         templateUrl : 'views/main.html'
       });
   }).run(function ($anchorScroll, editableOptions) {
