@@ -1,11 +1,11 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: YearCtrl', function () {
 
   // load the controller's module
   beforeEach(module('calendarApp'));
 
-  var MainCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, calendarMock;
+  var YearCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, calendarMock;
 
   var currentYear = new Date().getFullYear();
 
@@ -35,7 +35,7 @@ describe('Controller: MainCtrl', function () {
       return calendars[params.year];
     });
 
-    MainCtrl = $controller('MainCtrl', {
+    YearCtrl = $controller('YearCtrl', {
       $scope        : scope,
       $state        : state,
       $stateParams  : stateParams,

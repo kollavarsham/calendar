@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name calendarApp.controller:MainCtrl
+ * @name calendarApp.controller:YearCtrl
  * @description
- * # MainCtrl
+ * # YearCtrl
  * Controller of the calendarApp
  */
 angular.module('calendarApp')
-  .controller('MainCtrl', function ($scope, $state, $stateParams, $location, $anchorScroll, $filter, $window, Calendar) {
+  .controller('YearCtrl', function ($scope, $state, $stateParams, $location, $anchorScroll, $filter, $window, Calendar) {
 
     $scope.init = function () {
       $scope.$watch('year', function (newYearValue) {

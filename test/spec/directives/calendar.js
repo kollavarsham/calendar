@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Directive: month', function () {
+describe('Directive: calendar', function () {
 
   // load the directive's module and views
-  beforeEach(module('calendarApp', 'app/views/month.html'));
+  beforeEach(module('calendarApp', 'app/views/calendar.html'));
 
   var element, scope, $compile, template, year, utils;
 
@@ -15,8 +15,8 @@ describe('Directive: month', function () {
 
     // Load the template from the test relative path and store it into the directive-relative path
     // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
-    template = $templateCache.get('app/views/month.html');
-    $templateCache.put('views/month.html', template);
+    template = $templateCache.get('app/views/calendar.html');
+    $templateCache.put('views/calendar.html', template);
 
     utils = _utils_;
 
@@ -30,12 +30,13 @@ describe('Directive: month', function () {
     beforeEach(function () {
       scope.month = year.months[1]; // let us test with the month of February
 
-      element = angular.element('<month month="month"></month>');
+      element = angular.element('<calendar month="month"></calendar>');
       element = $compile(element)(scope);
       scope.$digest();
     });
 
     it('should be a div element', function () {
+      console.log(element);
       expect(element[0].tagName).toBe('DIV');
     });
 
@@ -153,7 +154,7 @@ describe('Directive: month', function () {
     beforeEach(function () {
       scope.month = year.months[4]; // let us test with the month of May
 
-      element = angular.element('<month month="month"></month>');
+      element = angular.element('<calendar month="month"></calendar>');
       element = $compile(element)(scope);
       scope.$digest();
     });

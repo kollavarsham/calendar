@@ -19,24 +19,26 @@ angular
     'xeditable',
     'cgBusy'
   ]).config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
+
     $locationProvider.hashPrefix('!');
 
-    // Redirect to home view when route not found
     $urlRouterProvider.otherwise('/');
 
-    // Home state routing
     $stateProvider.
       state('year', {
         url         : '/{year:int}',
         params      : {
           year : (new Date()).getFullYear()
         },
-        templateUrl : 'views/main.html'
+        templateUrl : 'views/year.html'
       });
+
   }).run(function ($anchorScroll, editableOptions) {
+
     $anchorScroll.yOffset = 60;
 
     editableOptions.theme = 'bs3';
+
   });
 
 // jQuery plugin for scrollup

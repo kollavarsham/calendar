@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc directive
- * @name calendarApp.directive:month
+ * @name calendarApp.directive:calendar
  * @description
- * # month
+ * # calendar
  */
 angular.module('calendarApp')
-  .directive('month', function (utils) {
+  .directive('calendar', function (utils) {
 
     var getMalayalamMonthNames = function (month) {
       var malayalamMonthNames = month.days.map(function (day) {
@@ -28,7 +28,7 @@ angular.module('calendarApp')
     return {
       restrict    : 'E',
       replace     : true,
-      templateUrl : 'views/month.html',
+      templateUrl : 'views/calendar.html',
       scope       : {
         month : '=month'
       },

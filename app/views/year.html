@@ -1,4 +1,4 @@
-<div class="root" ng-controller="MainCtrl">
+<div class="root" ng-controller="YearCtrl">
 
   <div id="year-nav">
     <span class="pull-left year-nav"> <button ng-click="previous()" ng-disabled="previousYear < 1900"> &lt; {{previousYear}}</button> </span>
@@ -29,7 +29,7 @@
         <a class="scroll-up" ng-click="scrollToTop()" title="Back to the top">Top</a>
       </span>
 
-      <month month="month"></month>
+      <calendar month="month"></calendar>
 
     </div>
 
