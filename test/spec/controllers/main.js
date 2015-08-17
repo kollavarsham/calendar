@@ -15,6 +15,7 @@ describe('Controller: MainCtrl', function () {
   beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_) {
     $q = _$q_;
     $rootScope = _$rootScope_;
+    state = {go : function () { }};
     stateParams = {
       year : (new Date()).getFullYear()
     };
