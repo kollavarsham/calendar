@@ -15,10 +15,6 @@ describe('Controller: YearCtrl', function () {
   beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_) {
     $q = _$q_;
     $rootScope = _$rootScope_;
-    state = {go : function () { }};
-    stateParams = {
-      year : (new Date()).getFullYear()
-    };
     filter = _$filter_;
     window = _$window_;
   }));
@@ -27,6 +23,10 @@ describe('Controller: YearCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
 
+    state = {go : function () { }};
+    stateParams = {
+      year : currentYear
+    };
     yearMock = {
       query : function () { }
     };
@@ -51,7 +51,6 @@ describe('Controller: YearCtrl', function () {
 
     it('should have a current, previous and next year properties on the scope', function () {
       expect(scope.year).toBe(currentYear);
-      scope.$digest();
       expect(scope.previousYear).toBe(currentYear - 1);
       expect(scope.nextYear).toBe(currentYear + 1);
     });

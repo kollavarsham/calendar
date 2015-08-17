@@ -3,23 +3,41 @@
   padding-bottom : 30px;
 }
 
-#year-nav {
+.nav-container {
+  position : relative;
+  width    : 96%;
+  margin   : auto;
+  border   : solid 1px #eee;
+  padding  : 8px 2px 0;
+}
+
+#calendar-nav {
   font-size     : 3em;
   margin-bottom : 10px;
 }
 
-#year-nav .editable-controls {
+#calendar-nav .editable-controls {
   line-height : 1em;
 }
 
-.year-nav {
+.calendar-nav {
+  position       : absolute;
+  top            : 20px;
   font-size      : 0.5em;
   vertical-align : middle;
 }
 
-.year-nav button[disabled] {
+.calendar-nav button[disabled] {
   cursor : not-allowed;
   color  : #ccc;
+}
+
+.calendar-nav.left {
+  left : 10px;
+}
+
+.calendar-nav.right {
+  right : 10px;
 }
 
 .year-select {
@@ -28,7 +46,11 @@
 
 .month-nav {
   list-style : none;
-  font-size  : 1.5em;
+  font-size  : 1.2em;
+}
+
+.month-nav-label {
+  font-size : smaller;
 }
 
 .month-nav li {

@@ -1,16 +1,17 @@
 <div class="root" ng-controller="YearCtrl">
 
-  <div id="year-nav">
-    <span class="pull-left year-nav"> <button ng-click="previous()" ng-disabled="previousYear < 1900"> &lt; {{previousYear}}</button> </span>
+  <div id="calendar-nav" class="nav-container">
+    <span class="calendar-nav left"> <button ng-click="previous()" ng-disabled="previousYear < 1900"> &lt; {{previousYear}}</button> </span>
     <a href="#" editable-select="year" data-e-ng-options="s.value as s.text for s in years"
        title="Click to change the year" buttons="no" class="year-select">
       {{ showYear() }}
     </a>
-    <span class="pull-right year-nav"> <button ng-click="next()" ng-disabled="nextYear > 2050"> {{nextYear}} &gt; </button> </span>
+    <span class="calendar-nav right"> <button ng-click="next()" ng-disabled="nextYear > 2050"> {{nextYear}} &gt; </button> </span>
   </div>
 
-  <div>
+  <div ng-show="calendar.months" class="nav-container container">
     <ul class="month-nav">
+      <li><span class="month-nav-label">Jump to:</span></li>
       <li ng-repeat="month in calendar.months">
         <span class="month-nav-sep" ng-show="$first"> | </span>
         <a ng-click="scrollTo('month-{{month.name}}')" title="{{month.name}}">{{month.name | limitTo: 3}}</a>
@@ -25,7 +26,7 @@
 
     <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
 
-      <div class="month-detail"><a ui-sref="month({ year: year, month: $index + 1 })">View Month</a></div>
+      <div class="month-detail"><a ui-sref="month({ year: year, month: $index + 1 })">View {{month.name}} {{year}} Calendar</a></div>
 
       <span ng-show="backToTopVisibility" class="back-to-top">
         <a class="scroll-up" ng-click="scrollToTop()" title="Back to the top">Top</a>

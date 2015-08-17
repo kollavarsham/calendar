@@ -62,4 +62,47 @@ describe('Service: utils', function () {
 
   });
 
+  describe('monthsLookup', function () {
+
+    it('should be defined', function () {
+      expect(utils.monthsLookup).toBeDefined();
+    });
+
+    it('should have valid english data', function () {
+      var monthsLookup = utils.monthsLookup;
+      expect(Object.keys(monthsLookup).length).toBe(12);
+      expect(monthsLookup[1].en).toBe('January');
+      expect(monthsLookup[2].en).toBe('February');
+      expect(monthsLookup[3].en).toBe('March');
+      expect(monthsLookup[4].en).toBe('April');
+      expect(monthsLookup[5].en).toBe('May');
+      expect(monthsLookup[6].en).toBe('June');
+      expect(monthsLookup[7].en).toBe('July');
+      expect(monthsLookup[8].en).toBe('August');
+      expect(monthsLookup[9].en).toBe('September');
+      expect(monthsLookup[10].en).toBe('October');
+      expect(monthsLookup[11].en).toBe('November');
+      expect(monthsLookup[12].en).toBe('December');
+    });
+
+    it('should have valid malayalam data', function () {
+      /* jshint -W100 */
+      var monthsLookup = utils.monthsLookup;
+      expect(Object.keys(monthsLookup).length).toBe(12);
+      expect(monthsLookup[1].ml).toBe('ജനുവരി');
+      expect(monthsLookup[2].ml).toBe('ഫെബ്രുവരി');
+      expect(monthsLookup[3].ml).toBe('മാർച്ച്‌');
+      expect(monthsLookup[4].ml).toBe('ഏപ്രിൽ ');
+      expect(monthsLookup[5].ml).toBe('മെയ്‌');
+      expect(monthsLookup[6].ml).toBe('ജൂണ്‍');
+      expect(monthsLookup[7].ml).toBe('ജൂലൈ');
+      expect(monthsLookup[8].ml).toBe('ഓഗസ്റ്റ്‌');
+      expect(monthsLookup[9].ml).toBe('സെപ്റ്റംബർ');
+      expect(monthsLookup[10].ml).toBe('ഒക്ടോബർ');
+      expect(monthsLookup[11].ml).toBe('നവംബർ');
+      expect(monthsLookup[12].ml).toBe('ഡിസംബർ');
+    });
+
+  });
+
 });

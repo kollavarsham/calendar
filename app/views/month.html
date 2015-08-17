@@ -1,16 +1,32 @@
 <div class="root" ng-controller="MonthCtrl">
 
+  <div id="calendar-nav" class="nav-container">
+    <span class="calendar-nav left"> <button ng-click="previous()" ng-disabled="previousYear < 1900"> &lt; {{previousMonthName}}</button> </span>
+    <small>
+      <a href="#" editable-select="month" data-e-ng-options="s.value as s.text for s in months"
+         title="Click to change the month" buttons="no" class="month-select">
+        {{ showMonth() }}
+      </a>
+      <a href="#" editable-select="year" data-e-ng-options="s.value as s.text for s in years"
+         title="Click to change the year" buttons="no" class="year-select">
+        {{ showYear() }}
+      </a>
+    </small>
+    <span class="calendar-nav right"> <button ng-click="next()" ng-disabled="nextYear > 2050"> {{nextMonthName}} &gt; </button> </span>
+  </div>
+
   <div cg-busy="calendar"></div>
 
   <div class="calendar-container">
 
     <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
 
-      <div class="year-detail"><a ui-sref="year({year: year})">Back to {{year}}</a></div>
+      <div class="year-detail"><a ui-sref="year({year: year})">Back to {{year}} Calendar</a></div>
 
       <calendar month="month"></calendar>
 
     </div>
 
   </div>
+
 </div>
