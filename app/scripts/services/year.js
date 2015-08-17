@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name calendarApp.Calendar
+ * @name calendarApp.Year
  * @description
- * # Calendar
+ * # Year
  * Factory in the calendarApp.
  */
 angular.module('calendarApp')
-  .factory('Calendar', function ($resource, serviceConfigConstant) {
+  .factory('Year', function ($resource, serviceConfigConstant) {
     return $resource(serviceConfigConstant.baseUrl + 'years/:year?lang=ml', {}, serviceConfigConstant.config);
   });

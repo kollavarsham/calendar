@@ -31,6 +31,10 @@ angular
           year : (new Date()).getFullYear()
         },
         templateUrl : 'views/year.html'
+      }).
+      state('month', {
+        url         : '/{year:int}/{month:int}',
+        templateUrl : 'views/month.html'
       });
 
   }).run(function ($anchorScroll, editableOptions) {

@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: Calendar', function () {
+describe('Service: Year', function () {
 
   // load the service's module
   beforeEach(module('calendarApp'));
 
   // instantiate service
-  var Calendar;
-  beforeEach(inject(function (_Calendar_) {
-    Calendar = _Calendar_;
+  var Year;
+  beforeEach(inject(function (_Year_) {
+    Year = _Year_;
   }));
 
   it('should be defined', function () {
-    expect(Calendar).toBeDefined();
+    expect(Year).toBeDefined();
   });
 
 });

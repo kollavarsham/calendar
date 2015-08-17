@@ -5,7 +5,7 @@ describe('Controller: YearCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp'));
 
-  var YearCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, calendarMock;
+  var YearCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, yearMock;
 
   var currentYear = new Date().getFullYear();
 
@@ -27,11 +27,11 @@ describe('Controller: YearCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
 
-    calendarMock = {
+    yearMock = {
       query : function () { }
     };
 
-    spyOn(calendarMock, 'query').and.callFake(function (params) {
+    spyOn(yearMock, 'query').and.callFake(function (params) {
       return calendars[params.year];
     });
 
@@ -43,7 +43,7 @@ describe('Controller: YearCtrl', function () {
       $anchorScroll : anchorScroll,
       $filter       : filter,
       $window       : window,
-      Calendar      : calendarMock
+      Year      : yearMock
     });
   }));
 

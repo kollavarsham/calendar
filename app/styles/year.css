@@ -41,6 +41,22 @@
   color  : #ccc
 }
 
+.year-detail, .month-detail, .back-to-top {
+  position : absolute;
+  z-index  : 1;
+  cursor   : pointer;
+}
+
+.year-detail, .month-detail {
+  left : 18px;
+  top  : 60px
+}
+
+.back-to-top {
+  top   : 5px;
+  right : 10px;
+}
+
 .calendar-month {
   text-align     : start;
   display        : inline-block;

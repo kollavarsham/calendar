@@ -7,14 +7,6 @@
   text-align : center;
 }
 
-.back-to-top {
-  position : absolute;
-  right    : 10px;
-  top      : 5px;
-  z-index  : 1;
-  cursor   : pointer;
-}
-
 .month-year {
   position : absolute;
   top      : 0;
