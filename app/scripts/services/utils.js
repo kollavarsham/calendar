@@ -32,6 +32,7 @@ angular.module('calendarApp')
       return years;
     };
 
+    /* jshint -W100 */
     this.weekdaysLookup = {
       0 : {en : 'Sunday', ml : 'ഞായർ'},
       1 : {en : 'Monday', ml : 'തിങ്കൾ'},
@@ -42,7 +43,6 @@ angular.module('calendarApp')
       6 : {en : 'Saturday', ml : 'ശനി'}
     };
 
-    /* jshint -W100 */
     this.monthsLookup = {
       1  : {en : 'January', ml : 'ജനുവരി'},
       2  : {en : 'February', ml : 'ഫെബ്രുവരി'},
