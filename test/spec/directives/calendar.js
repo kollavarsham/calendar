@@ -192,7 +192,7 @@ describe('Directive: calendar', function () {
       it('should have the correct month name', function () {
         /* jshint -W100 */
         var monthMasthead = element.find('.month-masthead');
-        expect(monthMasthead.find('.month-name').html()).toBe('May | മെയ്‌' );
+        expect(monthMasthead.find('.month-name').html()).toBe('May | മെയ്‌');
       });
 
       it('should have malayalam year as 1190', function () {
@@ -268,6 +268,31 @@ describe('Directive: calendar', function () {
         expect(lastRow.find('div.naksatra')[0].innerHTML).toBe('&nbsp; ചോതി');
       });
 
+    });
+
+  });
+
+  describe('calendar for 2015 May with mocked today\'s date', function () {
+
+    beforeEach(function () {
+      var baseTime = new Date(2015, 4, 22);
+      jasmine.clock().mockDate(baseTime); // set today to be 2015-05-22
+
+      scope.month = year.months[4]; // let us test with the month of May
+
+      element = angular.element('<calendar month="month"></calendar>');
+      element = $compile(element)(scope);
+      scope.$digest();
+    });
+
+    it('should not have the today css class on 2015-02-21', function () {
+      var fourthRow = element.find('tr:nth-of-type(5)');
+      expect(fourthRow.find('td:nth-child(7)').hasClass('today')).toBeFalsy();
+    });
+
+    it('should have the today css class on 2015-05-22', function () {
+      var fourthRow = element.find('tr:nth-of-type(5)');
+      expect(fourthRow.find('td:nth-child(6)').hasClass('today')).toBeTruthy();
     });
 
   });

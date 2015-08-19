@@ -6,10 +6,13 @@
       <div class="malayalam-month ng-binding">മകരം - കുംഭം</div>
     </div>
   </div>
+
   <div class="month-year text-center"><h1 class="ng-binding">2015</h1></div>
-  <table class="calendar">
+
+  <table class="calendar-table">
     <colgroup span="7"></colgroup>
     <tbody>
+
       <tr class="head">
         <!-- ngRepeat: weekday in weekdaysLookup --><th scope="col" ng-repeat="weekday in weekdaysLookup" title="Sunday" ng-class="weekday.en == 'Sunday' ? 'sunday' : '' " class="ng-scope sunday">
           <div class="ng-binding">S</div>
@@ -37,44 +40,44 @@
 
       <!-- ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="ng-scope">
 
-        <!-- ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day sunday" ng-class="$first ? 'sunday' : ''">
+        <!-- ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day sunday" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">1</div>
             <div class="malayalam-day ng-binding">19</div>
             <div class="naksatra ng-binding">&nbsp; തിരുവാതിര</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">2</div>
             <div class="malayalam-day ng-binding">20</div>
             <div class="naksatra ng-binding">&nbsp; പുണർതം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">3</div>
             <div class="malayalam-day ng-binding">21</div>
             <div class="naksatra ng-binding">&nbsp; പൂയം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">4</div>
             <div class="malayalam-day ng-binding">22</div>
             <div class="naksatra ng-binding">&nbsp; ആയില്യം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">5</div>
             <div class="malayalam-day ng-binding">23</div>
             <div class="naksatra ng-binding">&nbsp; മകം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">6</div>
             <div class="malayalam-day ng-binding">24</div>
             <div class="naksatra ng-binding">&nbsp; പൂരം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">7</div>
             <div class="malayalam-day ng-binding">25</div>
             <div class="naksatra ng-binding">&nbsp; ഉത്രം</div>
@@ -83,44 +86,44 @@
 
       </tr><!-- end ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="ng-scope">
 
-        <!-- ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day sunday" ng-class="$first ? 'sunday' : ''">
+        <!-- ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day sunday" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">8</div>
             <div class="malayalam-day ng-binding">26</div>
             <div class="naksatra ng-binding">&nbsp; അത്തം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">9</div>
             <div class="malayalam-day ng-binding">27</div>
             <div class="naksatra ng-binding">&nbsp; ചിത്ര</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">10</div>
             <div class="malayalam-day ng-binding">28</div>
             <div class="naksatra ng-binding">&nbsp; ചിത്ര</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">11</div>
             <div class="malayalam-day ng-binding">29</div>
             <div class="naksatra ng-binding">&nbsp; ചോതി</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">12</div>
             <div class="malayalam-day ng-binding">30</div>
             <div class="naksatra ng-binding">&nbsp; വിശാഖം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">13</div>
             <div class="malayalam-day ng-binding">1</div>
             <div class="naksatra ng-binding">&nbsp; അനിഴം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">14</div>
             <div class="malayalam-day ng-binding">2</div>
             <div class="naksatra ng-binding">&nbsp; തൃക്കേട്ട</div>
@@ -129,44 +132,44 @@
 
       </tr><!-- end ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="ng-scope">
 
-        <!-- ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day sunday" ng-class="$first ? 'sunday' : ''">
+        <!-- ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day sunday" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">15</div>
             <div class="malayalam-day ng-binding">3</div>
             <div class="naksatra ng-binding">&nbsp; മൂലം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">16</div>
             <div class="malayalam-day ng-binding">4</div>
             <div class="naksatra ng-binding">&nbsp; പൂരാടം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">17</div>
             <div class="malayalam-day ng-binding">5</div>
             <div class="naksatra ng-binding">&nbsp; ഉത്രാടം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">18</div>
             <div class="malayalam-day ng-binding">6</div>
             <div class="naksatra ng-binding">&nbsp; തിരുവോണം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">19</div>
             <div class="malayalam-day ng-binding">7</div>
             <div class="naksatra ng-binding">&nbsp; അവിട്ടം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">20</div>
             <div class="malayalam-day ng-binding">8</div>
             <div class="naksatra ng-binding">&nbsp; പൂരുരുട്ടാതി</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">21</div>
             <div class="malayalam-day ng-binding">9</div>
             <div class="naksatra ng-binding">&nbsp; ഉത്രട്ടാതി</div>
@@ -175,44 +178,44 @@
 
       </tr><!-- end ngRepeat: week in weeks --><tr ng-repeat="week in weeks" class="ng-scope">
 
-        <!-- ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day sunday" ng-class="$first ? 'sunday' : ''">
+        <!-- ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day sunday" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">22</div>
             <div class="malayalam-day ng-binding">10</div>
             <div class="naksatra ng-binding">&nbsp; രേവതി</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">23</div>
             <div class="malayalam-day ng-binding">11</div>
             <div class="naksatra ng-binding">&nbsp; അശ്വതി</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">24</div>
             <div class="malayalam-day ng-binding">12</div>
             <div class="naksatra ng-binding">&nbsp; ഭരണി</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">25</div>
             <div class="malayalam-day ng-binding">13</div>
             <div class="naksatra ng-binding">&nbsp; കാർത്തിക</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">26</div>
             <div class="malayalam-day ng-binding">14</div>
             <div class="naksatra ng-binding">&nbsp; രോഹിണി</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">27</div>
             <div class="malayalam-day ng-binding">15</div>
             <div class="naksatra ng-binding">&nbsp; മകയിരം</div>
           </div>
-        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" class="ng-scope">
-          <div class="day" ng-class="$first ? 'sunday' : ''">
+        </td><!-- end ngRepeat: day in week --><td ng-repeat="day in week" ng-class="{ 'today' : day.isToday }" class="ng-scope">
+          <div class="day" ng-class="{ 'sunday' : $first }">
             <div class="gregorian ng-binding">28</div>
             <div class="malayalam-day ng-binding">16</div>
             <div class="naksatra ng-binding">&nbsp; തിരുവാതിര</div>

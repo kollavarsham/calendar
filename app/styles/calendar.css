@@ -42,6 +42,10 @@ h1, .day > .gregorian, .head {
   color     : #444;
 }
 
+.today {
+  background-color : #f6f031;
+}
+
 .naksatra, .malayalam-day {
   text-align     : center;
   color          : #000;
