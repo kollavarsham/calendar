@@ -52,9 +52,5 @@ angular.module('calendarApp')
       $location.hash(old);
     };
 
-    $scope.scrollToTop = function () {
-      angular.element('#scrollUp').click();
-    };
-
     $scope.init();
   });
