@@ -26,13 +26,13 @@
 
     <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
 
-      <div class="month-detail"><a ui-sref="month({ year: year, month: $index + 1 })">View {{month.name}} {{year}} Calendar</a></div>
+      <div class="month-detail"><a ui-sref="month({ year: year, month: $index + 1, lang: lang })">View {{month.name}} {{year}} Calendar</a></div>
 
       <span ng-show="backToTopVisibility" class="back-to-top">
         <scroll-to-top></scroll-to-top>
       </span>
 
-      <calendar month="month"></calendar>
+      <calendar month="month" lang="lang"></calendar>
 
     </div>
 

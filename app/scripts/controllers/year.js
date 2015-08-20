@@ -16,13 +16,15 @@ angular.module('calendarApp')
       });
 
       $scope.year = $stateParams.year;
+      $scope.lang = $stateParams.lang === 'en' ? 'en' : 'ml';
 
       $scope.years = utils.getYears();
 
       $scope.previousYear = $scope.year - 1;
       $scope.nextYear = $scope.year + 1;
       $scope.calendar = Year.query({
-        year : $scope.year
+        year : $scope.year,
+        lang : $scope.lang
       });
 
     };

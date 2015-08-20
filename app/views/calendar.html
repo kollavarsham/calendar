@@ -14,9 +14,9 @@
     <tbody>
 
       <tr class="head">
-        <th scope="col" ng-repeat="weekday in weekdaysLookup" title="{{weekday.en}}" ng-class="weekday.en == 'Sunday' ? 'sunday' : '' ">
+        <th scope="col" ng-repeat="weekday in weekdaysLookup" ng-class="weekday.en == 'Sunday' ? 'sunday' : '' ">
           <div>{{weekday.en | limitTo: 1}}</div>
-          <div class="malayalam-weekday">{{weekday.ml}}</div>
+          <div class="malayalam-weekday">{{weekday[lang]}}</div>
         </th>
       </tr>
 

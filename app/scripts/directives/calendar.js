@@ -30,11 +30,10 @@ angular.module('calendarApp')
       replace     : true,
       templateUrl : 'views/calendar.html',
       scope       : {
-        month : '=month'
+        month : '=month',
+        lang  : '=lang'
       },
       link        : function (scope, element) {
-        var weekdaysLookup = utils.weekdaysLookup;
-
         var month = scope.month;
         var weeks = scope.weeks = [];
 
@@ -57,11 +56,11 @@ angular.module('calendarApp')
 
           // add the empty cells for when 1st of month is not a Sunday
           if (day.date === 1) {
-            var weekdaysIndices = Object.keys(weekdaysLookup);
+            var weekdaysIndices = Object.keys(scope.weekdaysLookup);
             var emptyCellsCount = 0;
             for (var j = 0; j < weekdaysIndices.length; j++) {
               var index = weekdaysIndices[j];
-              if (day.weekdayName === weekdaysLookup[index].ml) {
+              if (day.weekdayName === scope.weekdaysLookup[index][scope.lang]) {
                 emptyCellsCount = index;
                 break;
               }

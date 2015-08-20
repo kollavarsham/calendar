@@ -26,15 +26,19 @@ angular
 
     $stateProvider.
       state('year', {
-        url         : '/{year:int}',
+        url         : '/{year:int}?lang&sel',
         params      : {
-          year : (new Date()).getFullYear()
+          year : (new Date()).getFullYear(),
+          lang : 'ml'
         },
         templateUrl : 'views/year.html'
       }).
       state('month', {
-        url         : '/{year:int}/{month:int}',
-        templateUrl : 'views/month.html'
+        url         : '/{year:int}/{month:int}?lang&sel',
+        templateUrl : 'views/month.html',
+        params      : {
+          lang : 'ml'
+        }
       });
 
   }).run(function ($anchorScroll, editableOptions) {

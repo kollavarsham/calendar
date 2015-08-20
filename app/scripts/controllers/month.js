@@ -36,6 +36,7 @@ angular.module('calendarApp')
 
       $scope.year = $stateParams.year;
       $scope.month = $stateParams.month;
+      $scope.lang = $stateParams.lang === 'en' ? 'en' : 'ml';
 
       $scope.$watchGroup(['year', 'month'], function (newValues) {
         $state.go('month', {year : newValues[0], month : newValues[1]});
@@ -58,7 +59,8 @@ angular.module('calendarApp')
 
       $scope.calendar = Month.query({
         year  : $scope.year,
-        month : $scope.month
+        month : $scope.month,
+        lang  : $scope.lang
       });
     };
 

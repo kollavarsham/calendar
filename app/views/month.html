@@ -21,9 +21,9 @@
 
     <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
 
-      <div class="year-detail"><a ui-sref="year({year: year})">Back to {{year}} Calendar</a></div>
+      <div class="year-detail"><a ui-sref="year({year: year, lang: lang})">Back to {{year}} Calendar</a></div>
 
-      <calendar month="month"></calendar>
+      <calendar month="month" lang="lang"></calendar>
 
     </div>
 
