@@ -37,6 +37,9 @@ describe('Controller: MonthCtrl', function () {
       utils        : utils,
       Month        : monthMockup
     });
+
+    state.expectTransitionTo('month', {year : 2015, month : 8});
+    scope.$digest();
   }));
 
   describe('model variables', function () {
@@ -116,30 +119,26 @@ describe('Controller: MonthCtrl', function () {
   describe('state', function () {
 
     it('should transition correctly on invoking previous', function () {
-      state.expectTransitionTo('month', {year: 2015, month: 7});
+      state.expectTransitionTo('month', {year : 2015, month : 7});
       scope.previous();
       state.ensureAllTransitionsHappened();
     });
 
     it('should transition correctly on invoking next', function () {
-      state.expectTransitionTo('month', {year: 2015, month: 9});
+      state.expectTransitionTo('month', {year : 2015, month : 9});
       scope.next();
       state.ensureAllTransitionsHappened();
     });
 
     it('should transition correctly on month change', function () {
-      state.expectTransitionTo('month', {year: 2015, month: 8});
-      state.expectTransitionTo('month', {year: 2015, month: 1});
-      scope.$digest();
+      state.expectTransitionTo('month', {year : 2015, month : 1});
       scope.month = 1;
       scope.$digest();
       state.ensureAllTransitionsHappened();
     });
 
     it('should transition correctly on year change', function () {
-      state.expectTransitionTo('month', {year: 2015, month: 8});
-      state.expectTransitionTo('month', {year: 1979, month: 8});
-      scope.$digest();
+      state.expectTransitionTo('month', {year : 1979, month : 8});
       scope.year = 1979;
       scope.$digest();
       state.ensureAllTransitionsHappened();
