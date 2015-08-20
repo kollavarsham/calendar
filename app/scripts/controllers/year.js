@@ -17,6 +17,10 @@ angular.module('calendarApp')
 
       $scope.year = $stateParams.year;
       $scope.lang = $stateParams.lang === 'en' ? 'en' : 'ml';
+      var selectedDate = Date.parse($stateParams.sel);
+      if (!isNaN(selectedDate)) {
+        $scope.sel = new Date(selectedDate);
+      }
 
       $scope.years = utils.getYears();
 

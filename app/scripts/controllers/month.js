@@ -37,6 +37,10 @@ angular.module('calendarApp')
       $scope.year = $stateParams.year;
       $scope.month = $stateParams.month;
       $scope.lang = $stateParams.lang === 'en' ? 'en' : 'ml';
+      var selectedDate = Date.parse($stateParams.sel);
+      if (!isNaN(selectedDate)) {
+        $scope.sel = new Date(selectedDate);
+      }
 
       $scope.$watchGroup(['year', 'month'], function (newValues) {
         $state.go('month', {year : newValues[0], month : newValues[1]});

@@ -31,7 +31,8 @@ angular.module('calendarApp')
       templateUrl : 'views/calendar.html',
       scope       : {
         month : '=month',
-        lang  : '=lang'
+        lang  : '=lang',
+        sel   : '=sel'
       },
       link        : function (scope, element) {
         var month = scope.month;
@@ -76,6 +77,13 @@ angular.module('calendarApp')
             day.month === utils.monthsLookup[today.getMonth() + 1].en &&
             day.date === today.getDate();
 
+          // add a new boolean property 'isSelected' which will be true only for the selected date
+          if (scope.sel) {
+            day.isSelected = day.year === scope.sel.getFullYear() &&
+              day.month === utils.monthsLookup[scope.sel.getMonth() + 1].en &&
+              day.date === scope.sel.getDate();
+          }
+
           // add the day into the right position within the week array
           weeks[weeks.length - 1].push(day);
 
@@ -87,9 +95,17 @@ angular.module('calendarApp')
           }
         }
 
-        // set up auto-scrolling to today
+        // set up auto-scrolling to selected date or today
         $timeout(function () {
-          if (element.find('.today').length) {
+          if (element.find('.selected').length) {
+            var selectedMonthNamePrefix = element.find('.month-name').text().substr(0, 3);
+            var selectedMonthLink = angular.element('.month-nav').find('a').filter(function () {
+              return $(this).text().match(new RegExp('^' + selectedMonthNamePrefix));
+            });
+            $timeout(function () {
+              selectedMonthLink.click();
+            }, 10);
+          } else if (element.find('.today').length) {
             var currentMonthNamePrefix = element.find('.month-name').text().substr(0, 3);
             var currentMonthLink = angular.element('.month-nav').find('a').filter(function () {
               return $(this).text().match(new RegExp('^' + currentMonthNamePrefix));
