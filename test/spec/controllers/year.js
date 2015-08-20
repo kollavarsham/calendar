@@ -3,7 +3,7 @@
 describe('Controller: YearCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('calendarApp'));
+  beforeEach(module('calendarApp', 'stateMock'));
 
   var YearCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, timeout, utils, yearMock;
 
@@ -12,9 +12,10 @@ describe('Controller: YearCtrl', function () {
   var calendars = {};
   calendars[currentYear] = {year : currentYear, months : []};
 
-  beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_, _$timeout_, _utils_) {
+  beforeEach(inject(function (_$q_, _$rootScope_, stateMock, _$filter_, _$window_, _$timeout_, _utils_) {
     $q = _$q_;
     $rootScope = _$rootScope_;
+    state = stateMock;
     filter = _$filter_;
     window = _$window_;
     timeout = _$timeout_;
@@ -25,10 +26,10 @@ describe('Controller: YearCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
 
-    state = {go : function () { }};
     stateParams = {
       year : currentYear
     };
+
     yearMock = {
       query : function () { }
     };
@@ -93,6 +94,17 @@ describe('Controller: YearCtrl', function () {
 
     it('should have current year\'s calendar as default', function () {
       expect(scope.calendar.year).toBe(currentYear);
+    });
+
+  });
+
+  describe('state', function () {
+
+    it('should transition to the updated year', function () {
+      state.expectTransitionTo('year', {year: currentYear - 1});
+      scope.previous();
+      scope.$digest();
+      state.ensureAllTransitionsHappened();
     });
 
   });

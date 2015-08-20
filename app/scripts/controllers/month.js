@@ -32,18 +32,20 @@ angular.module('calendarApp')
 
     $scope.init = function () {
 
-      $scope.$watch('month', function(newMonth){
-        $state.go('month', {year : $scope.year, month : newMonth});
-      });
-
-      $scope.$watch('year', function(newYear){
-        $state.go('month', {year : newYear, month : $scope.month});
-      });
-
       var monthLookup = utils.monthsLookup;
 
       $scope.year = $stateParams.year;
       $scope.month = $stateParams.month;
+
+      $scope.$watch('month', function (newMonth) {
+        console.log('1');
+        $state.go('month', {year : $scope.year, month : newMonth});
+      });
+
+      $scope.$watch('year', function (newYear) {
+        console.log('2');
+        $state.go('month', {year : newYear, month : $scope.month});
+      });
 
       $scope.monthName = monthLookup[$scope.month].en;
 
@@ -78,11 +80,13 @@ angular.module('calendarApp')
 
     $scope.previous = function () {
       var previous = $scope.getPreviousMonthAndYear();
+      console.log('3');
       $state.go('month', {year : previous.year, month : previous.month});
     };
 
     $scope.next = function () {
       var next = $scope.getNextMonthAndYear();
+      console.log('4');
       $state.go('month', {year : next.year, month : next.month});
     };
 

@@ -3,15 +3,15 @@
 describe('Controller: MonthCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('calendarApp'));
+  beforeEach(module('calendarApp', 'stateMock'));
 
   var MonthCtrl, scope, state, stateParams, monthMockup, utils, currentYear, currentMonth;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, _utils_) {
+  beforeEach(inject(function ($controller, $rootScope, _utils_, stateMock) {
     scope = $rootScope.$new();
 
-    state = {go : function () {}};
+    state = stateMock;
 
     monthMockup = {
       query : function () {}
@@ -21,25 +21,25 @@ describe('Controller: MonthCtrl', function () {
 
   }));
 
+  beforeEach(inject(function ($controller) {
+    currentYear = 2015;
+    currentMonth = 8;
+
+    stateParams = {
+      year  : currentYear,
+      month : currentMonth
+    };
+
+    MonthCtrl = $controller('MonthCtrl', {
+      $scope       : scope,
+      $state       : state,
+      $stateParams : stateParams,
+      utils        : utils,
+      Month        : monthMockup
+    });
+  }));
+
   describe('model variables', function () {
-
-    beforeEach(inject(function ($controller) {
-      currentYear = 2015;
-      currentMonth = 8;
-
-      stateParams = {
-        year  : currentYear,
-        month : currentMonth
-      };
-
-      MonthCtrl = $controller('MonthCtrl', {
-        $scope       : scope,
-        $state       : state,
-        $stateParams : stateParams,
-        utils        : utils,
-        Month        : monthMockup
-      });
-    }));
 
     it('should be defined', function () {
       expect(MonthCtrl).toBeDefined();
@@ -113,4 +113,37 @@ describe('Controller: MonthCtrl', function () {
 
   });
 
+  describe('state', function () {
+
+    it('should transition correctly on invoking previous', function () {
+      state.expectTransitionTo('month', {year: 2015, month: 7});
+      scope.previous();
+      state.ensureAllTransitionsHappened();
+    });
+
+    it('should transition correctly on invoking next', function () {
+      state.expectTransitionTo('month', {year: 2015, month: 9});
+      scope.next();
+      state.ensureAllTransitionsHappened();
+    });
+
+    it('should transition correctly on month change', function () {
+      state.expectTransitionTo('month', {year: 2015, month: 8});
+      state.expectTransitionTo('month', {year: 2015, month: 1});
+      scope.$digest();
+      scope.month = 1;
+      scope.$digest();
+      state.ensureAllTransitionsHappened();
+    });
+
+    it('should transition correctly on year change', function () {
+      state.expectTransitionTo('month', {year: 2015, month: 8});
+      state.expectTransitionTo('month', {year: 1979, month: 8});
+      scope.$digest();
+      scope.year = 1979;
+      scope.$digest();
+      state.ensureAllTransitionsHappened();
+    });
+
+  });
 });

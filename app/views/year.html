@@ -6,6 +6,7 @@
        title="Click to change the year" buttons="no" class="year-select">
       {{ showYear() }}
     </a>
+    <span ng-show="goToTodayVisibility"><button ng-click="goToToday()">Go To Today</button></span>
     <span class="calendar-nav right"> <button ng-click="next()" ng-disabled="nextYear > 2050"> {{nextYear}} &gt; </button> </span>
   </div>
 
