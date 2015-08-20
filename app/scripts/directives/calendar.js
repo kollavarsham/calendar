@@ -7,7 +7,7 @@
  * # calendar
  */
 angular.module('calendarApp')
-  .directive('calendar', function (utils) {
+  .directive('calendar', function ($timeout, utils) {
 
     var getMalayalamMonthNames = function (month) {
       var malayalamMonthNames = month.days.map(function (day) {
@@ -32,7 +32,7 @@ angular.module('calendarApp')
       scope       : {
         month : '=month'
       },
-      link        : function (scope) {
+      link        : function (scope, element) {
         var weekdaysLookup = utils.weekdaysLookup;
 
         var month = scope.month;
@@ -87,6 +87,20 @@ angular.module('calendarApp')
             }
           }
         }
+
+        // set up auto-scrolling to today
+        $timeout(function () {
+          if (element.find('.today').length) {
+            var currentMonthNamePrefix = element.find('.month-name').text().substr(0, 3);
+            var currentMonthLink = angular.element('.month-nav').find('a').filter(function () {
+              return $(this).text().match(new RegExp('^' + currentMonthNamePrefix));
+            });
+            $timeout(function () {
+              currentMonthLink.click();
+            }, 10);
+          }
+        }, 0);
+
       }
     };
   });

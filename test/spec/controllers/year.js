@@ -5,18 +5,20 @@ describe('Controller: YearCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp'));
 
-  var YearCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, yearMock;
+  var YearCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, timeout, utils, yearMock;
 
   var currentYear = new Date().getFullYear();
 
   var calendars = {};
   calendars[currentYear] = {year : currentYear, months : []};
 
-  beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_) {
+  beforeEach(inject(function (_$q_, _$rootScope_, _$filter_, _$window_, _$timeout_, _utils_) {
     $q = _$q_;
     $rootScope = _$rootScope_;
     filter = _$filter_;
     window = _$window_;
+    timeout = _$timeout_;
+    utils = _utils_;
   }));
 
   // Initialize the controller and a mock scope
@@ -43,7 +45,9 @@ describe('Controller: YearCtrl', function () {
       $anchorScroll : anchorScroll,
       $filter       : filter,
       $window       : window,
-      Year      : yearMock
+      $timeout      : timeout,
+      utils         : utils,
+      Year          : yearMock
     });
   }));
 
