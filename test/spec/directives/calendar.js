@@ -424,4 +424,35 @@ describe('Directive: calendar', function () {
 
   });
 
+  describe('calendar for 2015 May with selected date', function () {
+
+    beforeEach(function () {
+      var baseTime = new Date(2016, 4, 22);
+      jasmine.clock().mockDate(baseTime); // set today to be 2016-05-22
+
+      scope.month = year.months[4]; // let us test with the month of May
+      scope.sel = new Date(2015, 4, 22);
+
+      element = angular.element('<calendar month="month" lang="lang" sel="sel"></calendar>');
+      element = $compile(element)(scope);
+      scope.$digest();
+    });
+
+    it('should not have the selected css class on 2015-02-21', function () {
+      var fourthRow = element.find('tr:nth-of-type(5)');
+      expect(fourthRow.find('td:nth-child(7)').hasClass('selected')).toBeFalsy();
+    });
+
+    it('should not have the today css class on 2015-05-22', function () {
+      var fourthRow = element.find('tr:nth-of-type(5)');
+      expect(fourthRow.find('td:nth-child(6)').hasClass('today')).toBeFalsy();
+    });
+
+    it('should have the selected css class on 2015-05-22', function () {
+      var fourthRow = element.find('tr:nth-of-type(5)');
+      expect(fourthRow.find('td:nth-child(6)').hasClass('selected')).toBeTruthy();
+    });
+
+  });
+
 });
