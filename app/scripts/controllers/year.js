@@ -11,43 +11,43 @@ angular.module('calendarApp')
   .controller('YearCtrl', function ($scope, $state, $stateParams, $location, $anchorScroll, $filter, $window, utils, Year) {
 
     $scope.init = function () {
-      $scope.$watch('year', function (newYearValue) {
+      $scope.$watch('calendar.year', function (newYearValue) {
         $state.go('year', {year : newYearValue});
       });
 
-      $scope.year = $stateParams.year;
-      $scope.lang = $stateParams.lang === 'en' ? 'en' : 'ml';
       var selectedDate = Date.parse($stateParams.sel);
-      if (!isNaN(selectedDate)) {
-        $scope.sel = new Date(selectedDate);
-      }
 
-      $scope.years = utils.getYears();
+      $scope.calendar = {
+        year         : $stateParams.year,
+        lang         : $stateParams.lang === 'en' ? 'en' : 'ml',
+        sel          : !isNaN(selectedDate) ? new Date(selectedDate) : undefined,
+        years        : utils.getYears(),
+        previousYear : $stateParams.year - 1,
+        nextYear     : $stateParams.year + 1
+      };
 
-      $scope.previousYear = $scope.year - 1;
-      $scope.nextYear = $scope.year + 1;
-      $scope.calendar = Year.query({
-        year : $scope.year,
-        lang : $scope.lang
+      $scope.calendar.data = Year.query({
+        year : $scope.calendar.year,
+        lang : $scope.calendar.lang
       });
 
     };
 
     $scope.showYear = function () {
-      var selectedYear = $filter('filter')($scope.years, {value : $scope.year});
-      return ($scope.year && selectedYear.length) ? selectedYear[0].text : 'Not set';
+      var selectedYear = $filter('filter')($scope.calendar.years, {value : $scope.calendar.year});
+      return ($scope.calendar.year && selectedYear.length) ? selectedYear[0].text : 'Not set';
     };
 
     $scope.previous = function () {
-      $scope.year = $scope.year - 1;
+      $scope.calendar.year = $scope.calendar.year - 1;
     };
 
     $scope.next = function () {
-      $scope.year = $scope.year + 1;
+      $scope.calendar.year = $scope.calendar.year + 1;
     };
 
     $window.onscroll = function () {
-      $scope.backToTopVisibility = angular.element(document).scrollTop() > 105;
+      $scope.calendar.backToTopVisibility = angular.element(document).scrollTop() > 105;
       $scope.$apply(); //or simply $scope.$digest();
     };
 

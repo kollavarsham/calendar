@@ -1,29 +1,41 @@
 <div class="root" ng-controller="MonthCtrl">
 
   <div id="calendar-nav" class="nav-container">
-    <span class="calendar-nav left"> <button ng-click="previous()" ng-disabled="previousYear < 1900"> &lt; {{previousMonthName}}</button> </span>
+    <span class="calendar-nav left">
+      <button ng-click="previous()" ng-disabled="calendar.previousYear < 1900">
+        &lt; {{calendar.previousMonthName}}
+      </button>
+    </span>
     <small>
-      <a href="#" editable-select="month" data-e-ng-options="s.value as s.text for s in months"
+      <a href="#" editable-select="calendar.month" data-e-ng-options="s.value as s.text for s in calendar.months"
          title="Click to change the month" buttons="no" class="month-select">
         {{ showMonth() }}
       </a>
-      <a href="#" editable-select="year" data-e-ng-options="s.value as s.text for s in years"
+      <a href="#" editable-select="calendar.year" data-e-ng-options="s.value as s.text for s in calendar.years"
          title="Click to change the year" buttons="no" class="year-select">
         {{ showYear() }}
       </a>
     </small>
-    <span class="calendar-nav right"> <button ng-click="next()" ng-disabled="nextYear > 2050"> {{nextMonthName}} &gt; </button> </span>
+    <span class="calendar-nav right">
+      <button ng-click="next()" ng-disabled="calendar.nextYear > 2050">
+        {{calendar.nextMonthName}} &gt;
+      </button>
+    </span>
   </div>
 
-  <div cg-busy="calendar"></div>
+  <div cg-busy="calendar.data"></div>
 
   <div class="calendar-container">
 
-    <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
+    <div ng-repeat="month in calendar.data.months" id="{{ 'month-' + month.name }}" class="calendar-month">
 
-      <div class="year-detail"><a ui-sref="year({year: year, lang: lang, sel: sel})">Back to {{year}} Calendar</a></div>
+      <div class="year-detail">
+        <a ui-sref="year({year: calendar.year, lang: calendar.lang, sel: calendar.sel})">
+          Back to {{calendar.year}} Calendar
+        </a>
+      </div>
 
-      <calendar month="month" lang="lang" sel="sel"></calendar>
+      <calendar month="month" lang="calendar.lang" sel="calendar.sel"></calendar>
 
     </div>
 

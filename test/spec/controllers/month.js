@@ -5,11 +5,11 @@ describe('Controller: MonthCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp', 'stateMock'));
 
-  var MonthCtrl, scope, state, stateParams, monthMockup, utils, currentYear, currentMonth;
+  var MonthCtrl, $scope, calendar, state, stateParams, monthMockup, utils, currentYear, currentMonth;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, _utils_, stateMock) {
-    scope = $rootScope.$new();
+    $scope = $rootScope.$new();
 
     state = stateMock;
 
@@ -31,15 +31,17 @@ describe('Controller: MonthCtrl', function () {
     };
 
     MonthCtrl = $controller('MonthCtrl', {
-      $scope       : scope,
+      $scope       : $scope,
       $state       : state,
       $stateParams : stateParams,
       utils        : utils,
       Month        : monthMockup
     });
 
+    calendar = $scope.calendar;
+
     state.expectTransitionTo('month', {year : 2015, month : 8});
-    scope.$digest();
+    $scope.$digest();
   }));
 
   describe('model variables', function () {
@@ -49,13 +51,13 @@ describe('Controller: MonthCtrl', function () {
     });
 
     it('should be defined and valid', function () {
-      expect(scope.month).toBe(currentMonth);
-      expect(scope.monthName).toBe('August');
-      expect(scope.nextMonthName).toBe('September');
-      expect(scope.previousMonthName).toBe('July');
-      expect(scope.year).toBe(currentYear);
-      expect(scope.previousYear).toBe(currentYear);
-      expect(scope.nextYear).toBe(currentYear);
+      expect(calendar.month).toBe(currentMonth);
+      expect(calendar.monthName).toBe('August');
+      expect(calendar.nextMonthName).toBe('September');
+      expect(calendar.previousMonthName).toBe('July');
+      expect(calendar.year).toBe(currentYear);
+      expect(calendar.previousYear).toBe(currentYear);
+      expect(calendar.nextYear).toBe(currentYear);
     });
 
   });
@@ -72,7 +74,7 @@ describe('Controller: MonthCtrl', function () {
       };
 
       MonthCtrl = $controller('MonthCtrl', {
-        $scope       : scope,
+        $scope       : $scope,
         $state       : state,
         $stateParams : stateParams,
         utils        : utils,
@@ -81,7 +83,7 @@ describe('Controller: MonthCtrl', function () {
     }));
 
     it('should be defined and valid after getPrevious', function () {
-      var previous = scope.getPreviousMonthAndYear();
+      var previous = $scope.getPreviousMonthAndYear();
       expect(previous.month).toBe(12);
       expect(previous.year).toBe(2014);
     });
@@ -100,7 +102,7 @@ describe('Controller: MonthCtrl', function () {
       };
 
       MonthCtrl = $controller('MonthCtrl', {
-        $scope       : scope,
+        $scope       : $scope,
         $state       : state,
         $stateParams : stateParams,
         utils        : utils,
@@ -109,7 +111,7 @@ describe('Controller: MonthCtrl', function () {
     }));
 
     it('should be defined and valid after getNext', function () {
-      var next = scope.getNextMonthAndYear();
+      var next = $scope.getNextMonthAndYear();
       expect(next.month).toBe(1);
       expect(next.year).toBe(2016);
     });
@@ -120,27 +122,27 @@ describe('Controller: MonthCtrl', function () {
 
     it('should transition correctly on invoking previous', function () {
       state.expectTransitionTo('month', {year : 2015, month : 7});
-      scope.previous();
+      $scope.previous();
       state.ensureAllTransitionsHappened();
     });
 
     it('should transition correctly on invoking next', function () {
       state.expectTransitionTo('month', {year : 2015, month : 9});
-      scope.next();
+      $scope.next();
       state.ensureAllTransitionsHappened();
     });
 
     it('should transition correctly on month change', function () {
       state.expectTransitionTo('month', {year : 2015, month : 1});
-      scope.month = 1;
-      scope.$digest();
+      calendar.month = 1;
+      $scope.$digest();
       state.ensureAllTransitionsHappened();
     });
 
     it('should transition correctly on year change', function () {
       state.expectTransitionTo('month', {year : 1979, month : 8});
-      scope.year = 1979;
-      scope.$digest();
+      calendar.year = 1979;
+      $scope.$digest();
       state.ensureAllTransitionsHappened();
     });
 

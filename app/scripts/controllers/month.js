@@ -11,7 +11,7 @@ angular.module('calendarApp')
   .controller('MonthCtrl', function ($scope, $state, $stateParams, $filter, utils, Month) {
 
     $scope.getPreviousMonthAndYear = function () {
-      var month = $scope.month, year = $scope.year;
+      var month = $scope.calendar.month, year = $scope.calendar.year;
       month = month - 1;
       if (month === 0) {
         month = 12;
@@ -21,7 +21,7 @@ angular.module('calendarApp')
     };
 
     $scope.getNextMonthAndYear = function () {
-      var month = $scope.month, year = $scope.year;
+      var month = $scope.calendar.month, year = $scope.calendar.year;
       month = month + 1;
       if (month > 12) {
         month = 1;
@@ -32,50 +32,52 @@ angular.module('calendarApp')
 
     $scope.init = function () {
 
-      var monthLookup = utils.monthsLookup;
-
-      $scope.year = $stateParams.year;
-      $scope.month = $stateParams.month;
-      $scope.lang = $stateParams.lang === 'en' ? 'en' : 'ml';
-      var selectedDate = Date.parse($stateParams.sel);
-      if (!isNaN(selectedDate)) {
-        $scope.sel = new Date(selectedDate);
-      }
-
-      $scope.$watchGroup(['year', 'month'], function (newValues) {
+      $scope.$watchGroup(['calendar.year', 'calendar.month'], function (newValues) {
         $state.go('month', {year : newValues[0], month : newValues[1]});
       });
 
-      $scope.monthName = monthLookup[$scope.month].en;
+      var monthLookup = utils.monthsLookup;
+
+      var selectedDate = Date.parse($stateParams.sel);
+
+      $scope.calendar = {
+        year   : $stateParams.year,
+        month  : $stateParams.month,
+        lang   : $stateParams.lang === 'en' ? 'en' : 'ml',
+        sel    : !isNaN(selectedDate) ? new Date(selectedDate) : undefined,
+        months : utils.getMonths(),
+        years  : utils.getYears()
+      };
 
       var previous = $scope.getPreviousMonthAndYear();
-      var yearPrefix = $scope.year !== previous.year ? previous.year + ' ' : '';
-      $scope.previousMonthName = yearPrefix + monthLookup[previous.month].en;
-      $scope.previousYear = previous.year;
+      var yearPrefix = $stateParams.year !== previous.year ? previous.year + ' ' : '';
 
       var next = $scope.getNextMonthAndYear();
-      var yearSuffix = $scope.year !== next.year ? ' ' + next.year : '';
-      $scope.nextMonthName = monthLookup[next.month].en + yearSuffix;
-      $scope.nextYear = next.year;
+      var yearSuffix = $stateParams.year !== next.year ? ' ' + next.year : '';
 
-      $scope.months = utils.getMonths();
-      $scope.years = utils.getYears();
+      angular.merge($scope.calendar, {
+        monthName         : monthLookup[$scope.calendar.month].en,
+        previousMonthName : yearPrefix + monthLookup[previous.month].en,
+        previousYear      : previous.year,
+        nextMonthName     : monthLookup[next.month].en + yearSuffix,
+        nextYear          : next.year
+      });
 
-      $scope.calendar = Month.query({
-        year  : $scope.year,
-        month : $scope.month,
-        lang  : $scope.lang
+      $scope.calendar.data = Month.query({
+        year  : $scope.calendar.year,
+        month : $scope.calendar.month,
+        lang  : $scope.calendar.lang
       });
     };
 
     $scope.showMonth = function () {
-      var selectedMonth = $filter('filter')($scope.months, {value : $scope.month});
-      return ($scope.month && selectedMonth.length) ? selectedMonth[0].text : 'Not set';
+      var selectedMonth = $filter('filter')($scope.calendar.months, {value : $scope.calendar.month});
+      return ($scope.calendar.month && selectedMonth.length) ? selectedMonth[0].text : 'Not set';
     };
 
     $scope.showYear = function () {
-      var selectedYear = $filter('filter')($scope.years, {value : $scope.year});
-      return ($scope.year && selectedYear.length) ? selectedYear[0].text : 'Not set';
+      var selectedYear = $filter('filter')($scope.calendar.years, {value : $scope.calendar.year});
+      return ($scope.calendar.year && selectedYear.length) ? selectedYear[0].text : 'Not set';
     };
 
     $scope.previous = function () {

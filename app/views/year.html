@@ -1,18 +1,26 @@
 <div class="root" ng-controller="YearCtrl">
 
   <div id="calendar-nav" class="nav-container">
-    <span class="calendar-nav left"> <button ng-click="previous()" ng-disabled="previousYear < 1900"> &lt; {{previousYear}}</button> </span>
-    <a href="#" editable-select="year" data-e-ng-options="s.value as s.text for s in years"
+    <span class="calendar-nav left">
+      <button ng-click="previous()" ng-disabled="calendar.previousYear < 1900">
+        &lt; {{calendar.previousYear}}
+      </button>
+    </span>
+    <a href="#" editable-select="calendar.year" data-e-ng-options="s.value as s.text for s in calendar.years"
        title="Click to change the year" buttons="no" class="year-select">
       {{ showYear() }}
     </a>
-    <span class="calendar-nav right"> <button ng-click="next()" ng-disabled="nextYear > 2050"> {{nextYear}} &gt; </button> </span>
+    <span class="calendar-nav right">
+      <button ng-click="next()" ng-disabled="calendar.nextYear > 2050">
+        {{calendar.nextYear}} &gt;
+      </button>
+    </span>
   </div>
 
-  <div ng-show="calendar.months" class="nav-container container">
+  <div ng-show="calendar.data.months" class="nav-container container">
     <ul class="month-nav">
       <li><span class="month-nav-label">Jump to:</span></li>
-      <li ng-repeat="month in calendar.months">
+      <li ng-repeat="month in calendar.data.months">
         <span class="month-nav-sep" ng-show="$first"> | </span>
         <a ng-click="scrollTo('month-{{month.name}}')" title="{{month.name}}">{{month.name | limitTo: 3}}</a>
         <span class="month-nav-sep"> | </span>
@@ -20,19 +28,23 @@
     </ul>
   </div>
 
-  <div cg-busy="calendar"></div>
+  <div cg-busy="calendar.data"></div>
 
   <div class="calendar-container">
 
-    <div ng-repeat="month in calendar.months" id="{{ 'month-' + month.name }}" class="calendar-month">
+    <div ng-repeat="month in calendar.data.months" id="{{ 'month-' + month.name }}" class="calendar-month">
 
-      <div class="month-detail"><a ui-sref="month({ year: year, month: $index + 1, lang: lang, sel: sel })">View {{month.name}} {{year}} Calendar</a></div>
+      <div class="month-detail">
+        <a ui-sref="month({ year: calendar.year, month: $index + 1, lang: calendar.lang, sel: calendar.sel })">
+          View {{month.name}} {{calendar.year}} Calendar
+        </a>
+      </div>
 
-      <span ng-show="backToTopVisibility" class="back-to-top">
+      <span ng-show="calendar.backToTopVisibility" class="back-to-top">
         <scroll-to-top></scroll-to-top>
       </span>
 
-      <calendar month="month" lang="lang" sel="sel"></calendar>
+      <calendar month="month" lang="calendar.lang" sel="calendar.sel"></calendar>
 
     </div>
 

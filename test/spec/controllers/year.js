@@ -5,7 +5,7 @@ describe('Controller: YearCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp', 'stateMock'));
 
-  var YearCtrl, $q, $rootScope, scope, state, stateParams, location, anchorScroll, filter, window, timeout, utils, yearMock;
+  var YearCtrl, $q, $rootScope, $scope, calendar, state, stateParams, location, anchorScroll, filter, window, timeout, utils, yearMock;
 
   var currentYear = new Date().getFullYear();
 
@@ -24,7 +24,7 @@ describe('Controller: YearCtrl', function () {
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
+    $scope = $rootScope.$new();
 
     stateParams = {
       year : currentYear
@@ -39,7 +39,7 @@ describe('Controller: YearCtrl', function () {
     });
 
     YearCtrl = $controller('YearCtrl', {
-      $scope        : scope,
+      $scope        : $scope,
       $state        : state,
       $stateParams  : stateParams,
       $location     : location,
@@ -50,38 +50,41 @@ describe('Controller: YearCtrl', function () {
       utils         : utils,
       Year          : yearMock
     });
+
+    calendar = $scope.calendar;
+
   }));
 
   describe('year models', function () {
 
     it('should have a current, previous and next year properties on the scope', function () {
-      expect(scope.year).toBe(currentYear);
-      expect(scope.previousYear).toBe(currentYear - 1);
-      expect(scope.nextYear).toBe(currentYear + 1);
+      expect(calendar.year).toBe(currentYear);
+      expect(calendar.previousYear).toBe(currentYear - 1);
+      expect(calendar.nextYear).toBe(currentYear + 1);
     });
 
     it('should add one to the year when next is called', function () {
-      var initialYear = scope.year;
-      scope.next();
-      expect(scope.year).toBe(initialYear + 1);
+      var initialYear = calendar.year;
+      $scope.next();
+      expect(calendar.year).toBe(initialYear + 1);
     });
 
     it('should subtract one to the year when previous is called', function () {
-      var initialYear = scope.year;
-      scope.previous();
-      expect(scope.year).toBe(initialYear - 1);
+      var initialYear = calendar.year;
+      $scope.previous();
+      expect(calendar.year).toBe(initialYear - 1);
     });
 
     it('should have years defined on scope', function () {
-      expect(scope.years).toBeDefined();
+      expect(calendar.years).toBeDefined();
     });
 
     it('should have 151 items on years', function () {
-      expect(scope.years.length).toBe(151);
+      expect(calendar.years.length).toBe(151);
     });
 
     it('should have current year return from showYear', function () {
-      expect(scope.showYear()).toBe(currentYear);
+      expect($scope.showYear()).toBe(currentYear);
     });
 
   });
@@ -89,11 +92,11 @@ describe('Controller: YearCtrl', function () {
   describe('calendar model', function () {
 
     it('should be defined', function () {
-      expect(scope.calendar).toBeDefined();
+      expect(calendar.data).toBeDefined();
     });
 
     it('should have current year\'s calendar as default', function () {
-      expect(scope.calendar.year).toBe(currentYear);
+      expect(calendar.data.year).toBe(currentYear);
     });
 
   });
@@ -101,9 +104,9 @@ describe('Controller: YearCtrl', function () {
   describe('state', function () {
 
     it('should transition to the updated year', function () {
-      state.expectTransitionTo('year', {year: currentYear - 1});
-      scope.previous();
-      scope.$digest();
+      state.expectTransitionTo('year', {year : currentYear - 1});
+      $scope.previous();
+      $scope.$digest();
       state.ensureAllTransitionsHappened();
     });
 
