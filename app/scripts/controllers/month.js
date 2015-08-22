@@ -70,15 +70,9 @@ angular.module('calendarApp')
       });
     };
 
-    $scope.showMonth = function () {
-      var selectedMonth = $filter('filter')($scope.calendar.months, {value : $scope.calendar.month});
-      return ($scope.calendar.month && selectedMonth.length) ? selectedMonth[0].text : 'Not set';
-    };
+    $scope.showMonth = utils.showMonth($scope);
 
-    $scope.showYear = function () {
-      var selectedYear = $filter('filter')($scope.calendar.years, {value : $scope.calendar.year});
-      return ($scope.calendar.year && selectedYear.length) ? selectedYear[0].text : 'Not set';
-    };
+    $scope.showYear = utils.showYear($scope);
 
     $scope.previous = function () {
       var previous = $scope.getPreviousMonthAndYear();

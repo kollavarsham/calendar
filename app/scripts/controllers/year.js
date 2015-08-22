@@ -33,10 +33,7 @@ angular.module('calendarApp')
 
     };
 
-    $scope.showYear = function () {
-      var selectedYear = $filter('filter')($scope.calendar.years, {value : $scope.calendar.year});
-      return ($scope.calendar.year && selectedYear.length) ? selectedYear[0].text : 'Not set';
-    };
+    $scope.showYear = utils.showYear($scope);
 
     $scope.previous = function () {
       $scope.calendar.year = $scope.calendar.year - 1;

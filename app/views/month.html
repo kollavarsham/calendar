@@ -7,14 +7,8 @@
       </button>
     </span>
     <small>
-      <a href="#" editable-select="calendar.month" data-e-ng-options="s.value as s.text for s in calendar.months"
-         title="Click to change the month" buttons="no" class="month-select">
-        {{ showMonth() }}
-      </a>
-      <a href="#" editable-select="calendar.year" data-e-ng-options="s.value as s.text for s in calendar.years"
-         title="Click to change the year" buttons="no" class="year-select">
-        {{ showYear() }}
-      </a>
+      <month-picker></month-picker>
+      <year-picker></year-picker>
     </small>
     <span class="calendar-nav right">
       <button ng-click="next()" ng-disabled="calendar.nextYear > 2050">

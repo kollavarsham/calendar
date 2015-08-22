@@ -8,7 +8,7 @@
  * Service in the calendarApp.
  */
 angular.module('calendarApp')
-  .service('utils', function () {
+  .service('utils', function ($filter) {
 
     this.unique = function (xs) {
       return xs.filter(function (x, i) {
@@ -58,5 +58,19 @@ angular.module('calendarApp')
       12 : {en : 'December', ml : 'ഡിസംബർ'}
     };
     /* jshint +W100 */
+
+    this.showMonth = function (scope) {
+      return function () {
+        var selectedMonth = $filter('filter')(scope.calendar.months, {value : scope.calendar.month});
+        return (scope.calendar.month && selectedMonth.length) ? selectedMonth[0].text : 'Not set';
+      };
+    };
+
+    this.showYear = function (scope) {
+      return function () {
+        var selectedYear = $filter('filter')(scope.calendar.years, {value : scope.calendar.year});
+        return (scope.calendar.year && selectedYear.length) ? selectedYear[0].text : 'Not set';
+      };
+    };
 
   });
