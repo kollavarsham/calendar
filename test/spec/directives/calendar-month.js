@@ -1,11 +1,11 @@
 'use strict';
 
-describe('Directive: calendar', function () {
+describe('Directive: calendarMonth', function () {
 
   // load the directive's module and views
-  beforeEach(module('calendarApp', 'app/views/calendar.html'));
+  beforeEach(module('calendarApp', 'app/views/calendar-month.html', 'app/views/calendar-day.html'));
 
-  var element, scope, $compile, template, year, utils;
+  var element, scope, $compile, template, dayTemplate, year, utils;
 
   beforeEach(inject(function ($rootScope, _$compile_, $templateCache, _utils_) {
     jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
@@ -15,8 +15,10 @@ describe('Directive: calendar', function () {
 
     // Load the template from the test relative path and store it into the directive-relative path
     // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
-    template = $templateCache.get('app/views/calendar.html');
-    $templateCache.put('views/calendar.html', template);
+    template = $templateCache.get('app/views/calendar-month.html');
+    $templateCache.put('views/calendar-month.html', template);
+    dayTemplate = $templateCache.get('app/views/calendar-day.html');
+    $templateCache.put('views/calendar-day.html', dayTemplate);
 
     utils = _utils_;
 
@@ -26,12 +28,12 @@ describe('Directive: calendar', function () {
     year = getJSONFixture('2015-ml.json'); // load the data for 2015 from the test/mock/2015.json fixture
   }));
 
-  describe('calendar for 2015 February', function () {
+  describe('calendarMonth for 2015 February', function () {
 
     beforeEach(function () {
       scope.month = year.months[1]; // let us test with the month of February
 
-      element = angular.element('<calendar month="month" lang="lang"></calendar>');
+      element = angular.element('<calendar-month month="month" lang="lang"></calendar-month>');
       element = $compile(element)(scope);
       scope.$digest();
     });
@@ -149,12 +151,12 @@ describe('Directive: calendar', function () {
 
   });
 
-  describe('calendar for 2015 May', function () {
+  describe('calendarMonth for 2015 May', function () {
 
     beforeEach(function () {
       scope.month = year.months[4]; // let us test with the month of May
 
-      element = angular.element('<calendar month="month" lang="lang"></calendar>');
+      element = angular.element('<calendar-month month="month" lang="lang"></calendar-month>');
       element = $compile(element)(scope);
       scope.$digest();
     });
@@ -273,14 +275,14 @@ describe('Directive: calendar', function () {
 
   });
 
-  describe('calendar for 2015 May with lang as en', function () {
+  describe('calendarMonth for 2015 May with lang as en', function () {
 
     beforeEach(function () {
       year = getJSONFixture('2015-en.json'); // load the data for 2015 from the test/mock/2015.json fixture
       scope.lang = 'en';
       scope.month = year.months[4]; // let us test with the month of May
 
-      element = angular.element('<calendar month="month" lang="lang"></calendar>');
+      element = angular.element('<calendar-month month="month" lang="lang"></calendar-month>');
       element = $compile(element)(scope);
       scope.$digest();
     });
@@ -399,7 +401,7 @@ describe('Directive: calendar', function () {
 
   });
 
-  describe('calendar for 2015 May with mocked today\'s date', function () {
+  describe('calendarMonth for 2015 May with mocked today\'s date', function () {
 
     beforeEach(function () {
       var baseTime = new Date(2015, 4, 22);
@@ -407,7 +409,7 @@ describe('Directive: calendar', function () {
 
       scope.month = year.months[4]; // let us test with the month of May
 
-      element = angular.element('<calendar month="month" lang="lang"></calendar>');
+      element = angular.element('<calendar-month month="month" lang="lang"></calendar-month>');
       element = $compile(element)(scope);
       scope.$digest();
     });
@@ -424,7 +426,7 @@ describe('Directive: calendar', function () {
 
   });
 
-  describe('calendar for 2015 May with selected date', function () {
+  describe('calendarMonth for 2015 May with selected date', function () {
 
     beforeEach(function () {
       var baseTime = new Date(2016, 4, 22);
@@ -433,7 +435,7 @@ describe('Directive: calendar', function () {
       scope.month = year.months[4]; // let us test with the month of May
       scope.sel = new Date(2015, 4, 22);
 
-      element = angular.element('<calendar month="month" lang="lang" sel="sel"></calendar>');
+      element = angular.element('<calendar-month month="month" lang="lang" sel="sel"></calendar-month>');
       element = $compile(element)(scope);
       scope.$digest();
     });

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc directive
- * @name calendarApp.directive:calendar
+ * @name calendarApp.directive:calendarMonth
  * @description
- * # calendar
+ * # calendarMonth
  */
 angular.module('calendarApp')
-  .directive('calendar', function ($timeout, utils) {
+  .directive('calendarMonth', function ($timeout, utils) {
 
     var getMalayalamMonthNames = function (month) {
       var malayalamMonthNames = month.days.map(function (day) {
@@ -28,7 +28,7 @@ angular.module('calendarApp')
     return {
       restrict    : 'E',
       replace     : true,
-      templateUrl : 'views/calendar.html',
+      templateUrl : 'views/calendar-month.html',
       scope       : {
         month : '=month',
         lang  : '=lang',
@@ -84,6 +84,9 @@ angular.module('calendarApp')
               day.date === scope.sel.getDate();
           }
 
+          // add a fullDate property to show the full date
+          day.fullDate = day.date + ' ' + day.month + ' ' + day.year;
+
           // add the day into the right position within the week array
           weeks[weeks.length - 1].push(day);
 
@@ -114,6 +117,7 @@ angular.module('calendarApp')
               currentMonthLink.click();
             }, 10);
           }
+          angular.element('.day-popover').popover();
         }, 0);
 
       }
