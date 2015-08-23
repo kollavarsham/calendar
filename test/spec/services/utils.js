@@ -6,9 +6,10 @@ describe('Service: utils', function () {
   beforeEach(module('calendarApp'));
 
   // instantiate service
-  var utils;
-  beforeEach(inject(function (_utils_) {
+  var utils, $rootScope, scope;
+  beforeEach(inject(function (_utils_, _$rootScope_) {
     utils = _utils_;
+    $rootScope = _$rootScope_;
   }));
 
   it('should be defined', function () {
@@ -292,6 +293,58 @@ describe('Service: utils', function () {
       expect(monthsLookup[10].ml).toBe('ഒക്ടോബർ');
       expect(monthsLookup[11].ml).toBe('നവംബർ');
       expect(monthsLookup[12].ml).toBe('ഡിസംബർ');
+    });
+
+  });
+
+  describe('showYear', function () {
+
+    var currentYear = (new Date()).getFullYear();
+
+    beforeEach(function () {
+      scope = $rootScope.$new();
+      scope.calendar = {
+        years : utils.getYears(),
+        year  : currentYear
+      };
+    });
+
+    it('should be defined', function () {
+      expect(utils.showYear).toBeDefined();
+    });
+
+    it('should return \'Not set\' when scope does not have year', function () {
+      scope.calendar.year = undefined;
+      expect(utils.showYear(scope)()).toBe('Not set');
+    });
+
+    it('should return the year defined on scope', function () {
+      expect(utils.showYear(scope)()).toBe(currentYear);
+    });
+
+  });
+
+  describe('showMonth', function () {
+
+    beforeEach(function () {
+      scope = $rootScope.$new();
+      scope.calendar = {
+        months : utils.getMonths(),
+        month  : 5
+      };
+    });
+
+    it('should be defined', function () {
+      expect(utils.showMonth).toBeDefined();
+    });
+
+    it('should return \'Not set\' when scope does not have month', function () {
+      scope.calendar.month = undefined;
+      expect(utils.showMonth(scope)()).toBe('Not set');
+    });
+
+    it('should return the month defined on scope', function () {
+      expect(utils.showMonth(scope)()).toBe('May');
     });
 
   });
