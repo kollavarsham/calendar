@@ -5,7 +5,7 @@ describe('Controller: YearCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp', 'stateMock'));
 
-  var YearCtrl, $q, $rootScope, $scope, calendar, state, stateParams, location, anchorScroll, filter, window, timeout, utils, yearMock, fakeScrollTopWithValue;
+  var YearCtrl, $q, $rootScope, $scope, calendar, state, stateParams, filter, window, timeout, utils, yearMock, fakeScrollTopWithValue;
 
   var currentYear = new Date().getFullYear();
 
@@ -48,8 +48,6 @@ describe('Controller: YearCtrl', function () {
       $scope        : $scope,
       $state        : state,
       $stateParams  : stateParams,
-      $location     : location,
-      $anchorScroll : anchorScroll,
       $filter       : filter,
       $window       : window,
       $timeout      : timeout,

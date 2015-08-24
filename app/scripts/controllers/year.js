@@ -8,7 +8,7 @@
  * Controller of the calendarApp
  */
 angular.module('calendarApp')
-  .controller('YearCtrl', function ($scope, $state, $stateParams, $location, $anchorScroll, $filter, $window, utils, Year) {
+  .controller('YearCtrl', function ($scope, $state, $stateParams, $filter, $window, utils, Year) {
 
     $scope.init = function () {
       $scope.$watch('calendar.year', function (newYearValue) {
@@ -46,13 +46,6 @@ angular.module('calendarApp')
     $window.onscroll = function () {
       $scope.calendar.backToTopVisibility = angular.element(document).scrollTop() > 105;
       $scope.$digest();
-    };
-
-    $scope.scrollTo = function (loc) {
-      var old = $location.hash();
-      $location.hash(loc);
-      $anchorScroll();
-      $location.hash(old);
     };
 
     $scope.init();
