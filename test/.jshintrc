@@ -1,6 +1,7 @@
 {
   "bitwise": true,
   "browser": true,
+  "jquery": true,
   "curly"  : true,
   "eqeqeq" : true,
   "esnext" : true,

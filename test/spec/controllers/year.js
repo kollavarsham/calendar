@@ -5,7 +5,7 @@ describe('Controller: YearCtrl', function () {
   // load the controller's module
   beforeEach(module('calendarApp', 'stateMock'));
 
-  var YearCtrl, $q, $rootScope, $scope, calendar, state, stateParams, location, anchorScroll, filter, window, timeout, utils, yearMock;
+  var YearCtrl, $q, $rootScope, $scope, calendar, state, stateParams, location, anchorScroll, filter, window, timeout, utils, yearMock, fakeScrollTopWithValue;
 
   var currentYear = new Date().getFullYear();
 
@@ -32,6 +32,12 @@ describe('Controller: YearCtrl', function () {
 
     yearMock = {
       query : function () { }
+    };
+
+    fakeScrollTopWithValue = function (scrollValue) {
+      return function () {
+        return scrollValue;
+      };
     };
 
     spyOn(yearMock, 'query').and.callFake(function (params) {
@@ -108,6 +114,47 @@ describe('Controller: YearCtrl', function () {
       $scope.previous();
       $scope.$digest();
       state.ensureAllTransitionsHappened();
+    });
+
+  });
+
+  describe('backToTopVisibility', function () {
+
+    it('should default to false', function () {
+      expect(calendar.backToTopVisibility).toBeFalsy();
+    });
+
+    it('should remain false after the window scrolls less than 105 px', function () {
+
+      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(100));
+      state.expectTransitionTo('year', {year : currentYear});
+
+      angular.element(window).triggerHandler('scroll');
+
+      expect(calendar.backToTopVisibility).toBeFalsy();
+
+    });
+
+    it('should remain false after the window scrolls up to 105 px', function () {
+
+      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(105));
+      state.expectTransitionTo('year', {year : currentYear});
+
+      angular.element(window).triggerHandler('scroll');
+
+      expect(calendar.backToTopVisibility).toBeFalsy();
+
+    });
+
+    it('should change to true after the window scrolls more than 105 px', function () {
+
+      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(106));
+      state.expectTransitionTo('year', {year : currentYear});
+
+      angular.element(window).triggerHandler('scroll');
+
+      expect(calendar.backToTopVisibility).toBeTruthy();
+
     });
 
   });
