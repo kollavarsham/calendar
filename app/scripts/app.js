@@ -28,17 +28,13 @@ angular
       state('year', {
         url         : '/{year:int}?lang&sel',
         params      : {
-          year : (new Date()).getFullYear(),
-          lang : 'ml'
+          year : (new Date()).getFullYear()
         },
         templateUrl : 'views/year.html'
       }).
       state('month', {
         url         : '/{year:int}/{month:int}?lang&sel',
-        templateUrl : 'views/month.html',
-        params      : {
-          lang : 'ml'
-        }
+        templateUrl : 'views/month.html'
       });
 
   }).run(function ($anchorScroll, editableOptions) {
