@@ -22,7 +22,6 @@ describe('Directive: calendarMonth', function () {
 
     utils = _utils_;
 
-    scope.lang = 'ml';
     scope.weekdaysLookup = utils.weekdaysLookup;
 
     year = getJSONFixture('2015-ml.json'); // load the data for 2015 from the test/mock/2015.json fixture

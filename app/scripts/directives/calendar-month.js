@@ -61,7 +61,7 @@ angular.module('calendarApp')
             var emptyCellsCount = 0;
             for (var j = 0; j < weekdaysIndices.length; j++) {
               var index = weekdaysIndices[j];
-              if (day.weekdayName === scope.weekdaysLookup[index][scope.lang]) {
+              if (day.weekdayName === scope.weekdaysLookup[index][scope.lang || 'ml']) {
                 emptyCellsCount = index;
                 break;
               }
