@@ -43,7 +43,7 @@ angular.module('calendarApp')
       $scope.calendar = {
         year   : $stateParams.year,
         month  : $stateParams.month,
-        lang   : $stateParams.lang === 'en' ? 'en' : 'ml',
+        lang   : $stateParams.lang,
         sel    : !isNaN(selectedDate) ? new Date(selectedDate) : undefined,
         months : utils.getMonths(),
         years  : utils.getYears()
@@ -66,7 +66,7 @@ angular.module('calendarApp')
       $scope.calendar.data = Month.query({
         year  : $scope.calendar.year,
         month : $scope.calendar.month,
-        lang  : $scope.calendar.lang
+        lang  : $scope.calendar.lang === 'en' ? 'en' : 'ml'
       });
     };
 
