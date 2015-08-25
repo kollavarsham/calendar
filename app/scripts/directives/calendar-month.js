@@ -117,7 +117,9 @@ angular.module('calendarApp')
               currentMonthLink.click();
             }, 10);
           }
-          angular.element('.day-popover').popover();
+
+          // attach the day detail on-focus popover
+          angular.element('.day-popover').popover({html: true});
         }, 0);
 
       }

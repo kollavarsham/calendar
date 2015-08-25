@@ -59,6 +59,15 @@ h1, .day > .gregorian, .head {
   border  : none;
 }
 
+.day-popover-table {
+  min-width : 160px;
+}
+
+.day-popover-table span {
+  font-size   : larger;
+  white-space : nowrap;
+}
+
 .naksatra, .malayalam-day {
   text-align     : center;
   color          : #000;

@@ -34,6 +34,7 @@ describe('Directive: calendarDay', function () {
   it('should render the directive properly', function () {
     expect(element[0].tagName).toBe('CALENDAR-DAY');
     expect(element.find('a').length).toBe(1);
+    expect(element.find('a').data('content')).toBe('<div class=\'day-popover-table\'><div><span>1190 ഇടവം 8</span></div><div><span>പുണർതം</span></div></div>');
     expect(element.find('.day').length).toBe(1);
     expect(element.find('.gregorian').length).toBe(1);
     expect(element.find('.malayalam-day').length).toBe(1);

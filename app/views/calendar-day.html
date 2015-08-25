@@ -1,5 +1,5 @@
-<a tabindex="0" class="btn day-popover" data-trigger="hover" title="{{day.fullDate}}"
-   data-content="{{day.fullDate}}" data-placement="auto">
+<a ng-show="day.date" tabindex="0" class="btn day-popover" title="{{day.fullDate}}"  data-placement="auto" data-trigger="focus"
+   data-content="<div class='day-popover-table'><div><span>{{day.malayalamYear}} {{day.malayalamMonth}} {{day.malayalamDay}}</span></div><div><span>{{day.naksatra}}</span></div></div>">
   <div class="day" ng-class="{ 'sunday' : $first }">
     <div class="gregorian">{{day.date}}</div>
     <div class="malayalam-day">{{day.malayalamDay}}</div>
