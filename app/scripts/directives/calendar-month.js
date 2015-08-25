@@ -84,9 +84,6 @@ angular.module('calendarApp')
               day.date === scope.sel.getDate();
           }
 
-          // add a fullDate property to show the full date
-          day.fullDate = day.date + ' ' + day.month + ' ' + day.year;
-
           // add the day into the right position within the week array
           weeks[weeks.length - 1].push(day);
 
@@ -119,7 +116,7 @@ angular.module('calendarApp')
           }
 
           // attach the day detail on-focus popover
-          angular.element('.day-popover').popover({html: true});
+          angular.element('.day-popover').popover({html : true});
         }, 0);
 
       }
