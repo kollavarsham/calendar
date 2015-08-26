@@ -297,6 +297,53 @@ describe('Service: utils', function () {
 
   });
 
+  describe('tithisLookup', function () {
+
+    it('should be defined', function () {
+      expect(utils.tithisLookup).toBeDefined();
+    });
+
+    it('should have valid english data', function () {
+      var tithisLookup = utils.tithisLookup;
+      expect(Object.keys(tithisLookup).length).toBe(14);
+      expect(tithisLookup[1].en).toBe('Prathama');
+      expect(tithisLookup[2].en).toBe('Dwithiya');
+      expect(tithisLookup[3].en).toBe('Thrithiya');
+      expect(tithisLookup[4].en).toBe('Chathurthi');
+      expect(tithisLookup[5].en).toBe('Panchami');
+      expect(tithisLookup[6].en).toBe('Shashti');
+      expect(tithisLookup[7].en).toBe('Sapthami');
+      expect(tithisLookup[8].en).toBe('Ashtami');
+      expect(tithisLookup[9].en).toBe('Navami');
+      expect(tithisLookup[10].en).toBe('Dasami');
+      expect(tithisLookup[11].en).toBe('Ekadasi');
+      expect(tithisLookup[12].en).toBe('Dwadasi');
+      expect(tithisLookup[13].en).toBe('Thrayodasi');
+      expect(tithisLookup[14].en).toBe('Chathurdasi');
+    });
+
+    it('should have valid malayalam data', function () {
+      /* jshint -W100 */
+      var tithisLookup = utils.tithisLookup;
+      expect(Object.keys(tithisLookup).length).toBe(14);
+      expect(tithisLookup[1].ml).toBe('പ്രഥമ');
+      expect(tithisLookup[2].ml).toBe('ദ്വിതീയ');
+      expect(tithisLookup[3].ml).toBe('തൃതിയ');
+      expect(tithisLookup[4].ml).toBe('ചതുർത്ഥി');
+      expect(tithisLookup[5].ml).toBe('പഞ്ചമി');
+      expect(tithisLookup[6].ml).toBe('ഷഷ്ഠി');
+      expect(tithisLookup[7].ml).toBe('സപ്തമി');
+      expect(tithisLookup[8].ml).toBe('അഷ്ടമി');
+      expect(tithisLookup[9].ml).toBe('നവമി');
+      expect(tithisLookup[10].ml).toBe('ദശമി');
+      expect(tithisLookup[11].ml).toBe('ഏകാദശി');
+      expect(tithisLookup[12].ml).toBe('ദ്വാദശി');
+      expect(tithisLookup[13].ml).toBe('ത്രയോദശി');
+      expect(tithisLookup[14].ml).toBe('ചതുർദശി');
+    });
+
+  });
+
   describe('showYear', function () {
 
     var currentYear = (new Date()).getFullYear();

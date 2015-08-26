@@ -57,6 +57,23 @@ angular.module('calendarApp')
       11 : {en : 'November', ml : 'നവംബർ'},
       12 : {en : 'December', ml : 'ഡിസംബർ'}
     };
+
+    this.tithisLookup = {
+      1  : {en : 'Prathama', ml : 'പ്രഥമ'},
+      2  : {en : 'Dwithiya', ml : 'ദ്വിതീയ'},
+      3  : {en : 'Thrithiya', ml : 'തൃതിയ'},
+      4  : {en : 'Chathurthi', ml : 'ചതുർത്ഥി'},
+      5  : {en : 'Panchami', ml : 'പഞ്ചമി'},
+      6  : {en : 'Shashti', ml : 'ഷഷ്ഠി'},
+      7  : {en : 'Sapthami', ml : 'സപ്തമി'},
+      8  : {en : 'Ashtami', ml : 'അഷ്ടമി'},
+      9  : {en : 'Navami', ml : 'നവമി'},
+      10 : {en : 'Dasami', ml : 'ദശമി'},
+      11 : {en : 'Ekadasi', ml : 'ഏകാദശി'},
+      12 : {en : 'Dwadasi', ml : 'ദ്വാദശി'},
+      13 : {en : 'Thrayodasi', ml : 'ത്രയോദശി'},
+      14 : {en : 'Chathurdasi', ml : 'ചതുർദശി'}
+    };
     /* jshint +W100 */
 
     this.showMonth = function (scope) {

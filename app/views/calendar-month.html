@@ -23,7 +23,7 @@
       <tr ng-repeat="week in weeks">
 
         <td ng-repeat="day in week" ng-class="{ 'today' : day.isToday, 'selected' : day.isSelected }">
-          <calendar-day day="day"></calendar-day>
+          <calendar-day day="day" lang="lang"></calendar-day>
         </td>
 
       </tr>

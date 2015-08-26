@@ -68,7 +68,7 @@ h1, .day > .gregorian, .head {
 }
 
 .day-popover-table {
-  min-width : 160px;
+  min-width : 200px;
 }
 
 .day-popover-table > div:nth-child(1) {
