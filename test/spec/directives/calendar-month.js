@@ -168,7 +168,6 @@ describe('Directive: calendarMonth', function () {
     });
 
     it('should be a div element', function () {
-      console.log(element);
       expect(element[0].tagName).toBe('DIV');
     });
 
@@ -236,6 +235,11 @@ describe('Directive: calendarMonth', function () {
         expect(firstRow.find('div.gregorian')[5].innerHTML).toBe('1');
       });
 
+      it('should have its 6th calendar-day element without the sunday css class', function () {
+        var firstRow = element.find('tr:nth-of-type(2)');
+        expect(firstRow.find('calendar-day:nth-child(6)').hasClass('sunday')).toBeFalsy();
+      });
+
       it('should have its 6th cell with the malayalam date 18', function () {
         var firstRow = element.find('tr:nth-of-type(2)');
         expect(firstRow.find('div.malayalam-day')[5].innerHTML).toBe('18');
@@ -273,6 +277,11 @@ describe('Directive: calendarMonth', function () {
       it('should have its first cell with the date 30', function () {
         var lastRow = element.find('tr:nth-of-type(7)');
         expect(lastRow.find('div.gregorian')[0].innerHTML).toBe('31');
+      });
+
+      it('should have its first calendar-day element with the sunday css class', function () {
+        var lastRow = element.find('tr:nth-of-type(7)');
+        expect(lastRow.find('calendar-day:first').hasClass('sunday')).toBeTruthy();
       });
 
       it('should have its first cell with the malayalam date 18', function () {

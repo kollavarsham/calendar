@@ -23,7 +23,7 @@
   height     : 95px;
 }
 
-.sunday {
+.sunday, .sunday .gregorian {
   color : #f55 !important;
 }
 
