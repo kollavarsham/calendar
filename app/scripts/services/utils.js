@@ -10,28 +10,6 @@
 angular.module('calendarApp')
   .service('utils', function ($filter) {
 
-    this.unique = function (xs) {
-      return xs.filter(function (x, i) {
-        return xs.indexOf(x) === i;
-      });
-    };
-
-    this.getMonths = function () {
-      var months = [];
-      for (var i = 0, keys = Object.keys(this.monthsLookup), len = keys.length; i < len; i++) {
-        months.push({value : parseInt(keys[i], 10), text : this.monthsLookup[keys[i]].en});
-      }
-      return months;
-    };
-
-    this.getYears = function () {
-      var years = [];
-      for (var y = 1900; y < 2051; y++) {
-        years.push({value : y, text : y});
-      }
-      return years;
-    };
-
     /* jshint -W100 */
     this.weekdaysLookup = {
       0 : {en : 'Sunday', ml : 'ഞായർ'},
@@ -76,6 +54,44 @@ angular.module('calendarApp')
     };
     /* jshint +W100 */
 
+    this.unique = function (xs) {
+      return xs.filter(function (x, i) {
+        return xs.indexOf(x) === i;
+      });
+    };
+
+    this.getMonths = function () {
+      var months = [];
+      for (var i = 0, keys = Object.keys(this.monthsLookup), len = keys.length; i < len; i++) {
+        months.push({value : parseInt(keys[i], 10), text : this.monthsLookup[keys[i]].en});
+      }
+      return months;
+    };
+
+    this.getYears = function () {
+      var years = [];
+      for (var y = 1900; y < 2051; y++) {
+        years.push({value : y, text : y});
+      }
+      return years;
+    };
+
+    this.getMalayalamMonthNames = function (month) {
+      var malayalamMonthNames = month.days.map(function (day) {
+        return day.malayalamMonth;
+      });
+      var uniqueMonths = this.unique(malayalamMonthNames);
+      return uniqueMonths.join(' - ');
+    };
+
+    this.getMalayalamYears = function (month) {
+      var malayalamYears = month.days.map(function (day) {
+        return day.malayalamYear;
+      });
+      var uniqueYears = this.unique(malayalamYears);
+      return uniqueYears.join(' - ');
+    };
+
     this.showMonth = function (scope) {
       return function () {
         var selectedMonth = $filter('filter')(scope.calendar.months, {value : scope.calendar.month});
@@ -88,6 +104,60 @@ angular.module('calendarApp')
         var selectedYear = $filter('filter')(scope.calendar.years, {value : scope.calendar.year});
         return (scope.calendar.year && selectedYear.length) ? selectedYear[0].text : 'Not set';
       };
+    };
+
+    // TODO: Add tests for this
+    this.calculateWeeks = function ($scope) {
+      var month = $scope.month, weeks = [];
+      for (var i = 0; i < month.days.length; i++) {
+        // cache the day we're looping with
+        var day = month.days[i];
+
+        // add a new week at the start and when 7 days have been added to previous one
+        if (weeks.length === 0 || weeks[weeks.length - 1].length === 7) {
+          weeks.push([]);
+        }
+
+        // add the empty cells for when 1st of month is not a Sunday
+        if (day.date === 1) {
+          var weekdaysIndices = Object.keys($scope.weekdaysLookup);
+          var emptyCellsCount = 0;
+          for (var j = 0; j < weekdaysIndices.length; j++) {
+            var index = weekdaysIndices[j];
+            if (day.weekdayName === $scope.weekdaysLookup[index][$scope.lang || 'ml']) {
+              emptyCellsCount = index;
+              break;
+            }
+          }
+          for (var k = 0; k < emptyCellsCount; k++) {
+            weeks[weeks.length - 1].push({});
+          }
+        }
+
+        // add a new boolean property 'isToday' which will be true only for the current date
+        var today = new Date();
+        day.isToday = day.year === today.getFullYear() &&
+          day.month === this.monthsLookup[today.getMonth() + 1].en &&
+          day.date === today.getDate();
+
+        // add a new boolean property 'isSelected' which will be true only for the selected date
+        if ($scope.sel) {
+          day.isSelected = day.year === $scope.sel.getFullYear() &&
+            day.month === this.monthsLookup[$scope.sel.getMonth() + 1].en &&
+            day.date === $scope.sel.getDate();
+        }
+
+        // add the day into the right position within the week array
+        weeks[weeks.length - 1].push(day);
+
+        // add the empty cells for when the last day of the month is not a Saturday
+        if (i === month.days.length - 1) {
+          for (var l = 0, len = 7 - weeks[weeks.length - 1].length; l < len; l++) {
+            weeks[weeks.length - 1].push({});
+          }
+        }
+      }
+      return weeks;
     };
 
   });

@@ -396,4 +396,51 @@ describe('Service: utils', function () {
 
   });
 
+  describe('getMalayalamMonthNames', function () {
+
+    var year;
+
+    beforeEach(function () {
+      jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
+      year = getJSONFixture('2015-ml.json'); // load the data for 2015 from the test/mock/2015.json fixture
+    });
+
+    it('should return the correct values for the month of February', function () {
+      var month = year.months[1]; // let us test with the month of February
+      expect(utils.getMalayalamMonthNames(month)).toBe('മകരം - കുംഭം');
+    });
+
+    it('should return the correct values for the month of May', function () {
+      var month = year.months[4]; // let us test with the month of May
+      expect(utils.getMalayalamMonthNames(month)).toBe('മേടം - ഇടവം');
+    });
+
+  });
+
+  describe('getMalayalamYears', function () {
+
+    var year;
+
+    beforeEach(function () {
+      jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
+      year = getJSONFixture('2015-ml.json'); // load the data for 2015 from the test/mock/2015.json fixture
+    });
+
+    it('should return the correct values for the month of February', function () {
+      var month = year.months[1]; // let us test with the month of February
+      expect(utils.getMalayalamYears(month)).toBe('1190');
+    });
+
+    it('should return the correct values for the month of August', function () {
+      var month = year.months[7]; // let us test with the month of August
+      expect(utils.getMalayalamYears(month)).toBe('1190 - 1191');
+    });
+
+    it('should return the correct values for the month of December', function () {
+      var month = year.months[11]; // let us test with the month of December
+      expect(utils.getMalayalamYears(month)).toBe('1191');
+    });
+
+  });
+
 });
