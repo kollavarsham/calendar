@@ -106,7 +106,6 @@ angular.module('calendarApp')
       };
     };
 
-    // TODO: Add tests for this
     this.calculateWeeks = function ($scope) {
       var month = $scope.month, weeks = [];
       for (var i = 0; i < month.days.length; i++) {

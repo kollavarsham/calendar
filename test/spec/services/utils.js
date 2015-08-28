@@ -16,6 +16,128 @@ describe('Service: utils', function () {
     expect(utils).toBeDefined();
   });
 
+  describe('weekdaysLookup', function () {
+
+    it('should be defined', function () {
+      expect(utils.weekdaysLookup).toBeDefined();
+    });
+
+    it('should have valid malayalam data', function () {
+      var weekdaysLookup = utils.weekdaysLookup;
+      expect(Object.keys(weekdaysLookup).length).toBe(7);
+      expect(weekdaysLookup[0].ml).toBe('ഞായർ');
+      expect(weekdaysLookup[1].ml).toBe('തിങ്കൾ');
+      expect(weekdaysLookup[2].ml).toBe('ചൊവ്വ');
+      expect(weekdaysLookup[3].ml).toBe('ബുധൻ');
+      expect(weekdaysLookup[4].ml).toBe('വ്യാഴം');
+      expect(weekdaysLookup[5].ml).toBe('വെള്ളി');
+      expect(weekdaysLookup[6].ml).toBe('ശനി');
+    });
+
+    it('should have valid english data', function () {
+      var weekdaysLookup = utils.weekdaysLookup;
+      expect(Object.keys(weekdaysLookup).length).toBe(7);
+      expect(weekdaysLookup[0].en).toBe('Sunday');
+      expect(weekdaysLookup[1].en).toBe('Monday');
+      expect(weekdaysLookup[2].en).toBe('Tuesday');
+      expect(weekdaysLookup[3].en).toBe('Wednesday');
+      expect(weekdaysLookup[4].en).toBe('Thursday');
+      expect(weekdaysLookup[5].en).toBe('Friday');
+      expect(weekdaysLookup[6].en).toBe('Saturday');
+    });
+
+  });
+
+  describe('monthsLookup', function () {
+
+    it('should be defined', function () {
+      expect(utils.monthsLookup).toBeDefined();
+    });
+
+    it('should have valid english data', function () {
+      var monthsLookup = utils.monthsLookup;
+      expect(Object.keys(monthsLookup).length).toBe(12);
+      expect(monthsLookup[1].en).toBe('January');
+      expect(monthsLookup[2].en).toBe('February');
+      expect(monthsLookup[3].en).toBe('March');
+      expect(monthsLookup[4].en).toBe('April');
+      expect(monthsLookup[5].en).toBe('May');
+      expect(monthsLookup[6].en).toBe('June');
+      expect(monthsLookup[7].en).toBe('July');
+      expect(monthsLookup[8].en).toBe('August');
+      expect(monthsLookup[9].en).toBe('September');
+      expect(monthsLookup[10].en).toBe('October');
+      expect(monthsLookup[11].en).toBe('November');
+      expect(monthsLookup[12].en).toBe('December');
+    });
+
+    it('should have valid malayalam data', function () {
+      /* jshint -W100 */
+      var monthsLookup = utils.monthsLookup;
+      expect(Object.keys(monthsLookup).length).toBe(12);
+      expect(monthsLookup[1].ml).toBe('ജനുവരി');
+      expect(monthsLookup[2].ml).toBe('ഫെബ്രുവരി');
+      expect(monthsLookup[3].ml).toBe('മാർച്ച്‌');
+      expect(monthsLookup[4].ml).toBe('ഏപ്രിൽ ');
+      expect(monthsLookup[5].ml).toBe('മെയ്‌');
+      expect(monthsLookup[6].ml).toBe('ജൂണ്‍');
+      expect(monthsLookup[7].ml).toBe('ജൂലൈ');
+      expect(monthsLookup[8].ml).toBe('ഓഗസ്റ്റ്‌');
+      expect(monthsLookup[9].ml).toBe('സെപ്റ്റംബർ');
+      expect(monthsLookup[10].ml).toBe('ഒക്ടോബർ');
+      expect(monthsLookup[11].ml).toBe('നവംബർ');
+      expect(monthsLookup[12].ml).toBe('ഡിസംബർ');
+    });
+
+  });
+
+  describe('tithisLookup', function () {
+
+    it('should be defined', function () {
+      expect(utils.tithisLookup).toBeDefined();
+    });
+
+    it('should have valid english data', function () {
+      var tithisLookup = utils.tithisLookup;
+      expect(Object.keys(tithisLookup).length).toBe(14);
+      expect(tithisLookup[1].en).toBe('Prathama');
+      expect(tithisLookup[2].en).toBe('Dwithiya');
+      expect(tithisLookup[3].en).toBe('Thrithiya');
+      expect(tithisLookup[4].en).toBe('Chathurthi');
+      expect(tithisLookup[5].en).toBe('Panchami');
+      expect(tithisLookup[6].en).toBe('Shashti');
+      expect(tithisLookup[7].en).toBe('Sapthami');
+      expect(tithisLookup[8].en).toBe('Ashtami');
+      expect(tithisLookup[9].en).toBe('Navami');
+      expect(tithisLookup[10].en).toBe('Dasami');
+      expect(tithisLookup[11].en).toBe('Ekadasi');
+      expect(tithisLookup[12].en).toBe('Dwadasi');
+      expect(tithisLookup[13].en).toBe('Thrayodasi');
+      expect(tithisLookup[14].en).toBe('Chathurdasi');
+    });
+
+    it('should have valid malayalam data', function () {
+      /* jshint -W100 */
+      var tithisLookup = utils.tithisLookup;
+      expect(Object.keys(tithisLookup).length).toBe(14);
+      expect(tithisLookup[1].ml).toBe('പ്രഥമ');
+      expect(tithisLookup[2].ml).toBe('ദ്വിതീയ');
+      expect(tithisLookup[3].ml).toBe('തൃതിയ');
+      expect(tithisLookup[4].ml).toBe('ചതുർത്ഥി');
+      expect(tithisLookup[5].ml).toBe('പഞ്ചമി');
+      expect(tithisLookup[6].ml).toBe('ഷഷ്ഠി');
+      expect(tithisLookup[7].ml).toBe('സപ്തമി');
+      expect(tithisLookup[8].ml).toBe('അഷ്ടമി');
+      expect(tithisLookup[9].ml).toBe('നവമി');
+      expect(tithisLookup[10].ml).toBe('ദശമി');
+      expect(tithisLookup[11].ml).toBe('ഏകാദശി');
+      expect(tithisLookup[12].ml).toBe('ദ്വാദശി');
+      expect(tithisLookup[13].ml).toBe('ത്രയോദശി');
+      expect(tithisLookup[14].ml).toBe('ചതുർദശി');
+    });
+
+  });
+
   describe('unique', function () {
 
     it('should be defined', function () {
@@ -222,180 +344,6 @@ describe('Service: utils', function () {
 
   });
 
-  describe('weekdaysLookup', function () {
-
-    it('should be defined', function () {
-      expect(utils.weekdaysLookup).toBeDefined();
-    });
-
-    it('should have valid malayalam data', function () {
-      var weekdaysLookup = utils.weekdaysLookup;
-      expect(Object.keys(weekdaysLookup).length).toBe(7);
-      expect(weekdaysLookup[0].ml).toBe('ഞായർ');
-      expect(weekdaysLookup[1].ml).toBe('തിങ്കൾ');
-      expect(weekdaysLookup[2].ml).toBe('ചൊവ്വ');
-      expect(weekdaysLookup[3].ml).toBe('ബുധൻ');
-      expect(weekdaysLookup[4].ml).toBe('വ്യാഴം');
-      expect(weekdaysLookup[5].ml).toBe('വെള്ളി');
-      expect(weekdaysLookup[6].ml).toBe('ശനി');
-    });
-
-    it('should have valid english data', function () {
-      var weekdaysLookup = utils.weekdaysLookup;
-      expect(Object.keys(weekdaysLookup).length).toBe(7);
-      expect(weekdaysLookup[0].en).toBe('Sunday');
-      expect(weekdaysLookup[1].en).toBe('Monday');
-      expect(weekdaysLookup[2].en).toBe('Tuesday');
-      expect(weekdaysLookup[3].en).toBe('Wednesday');
-      expect(weekdaysLookup[4].en).toBe('Thursday');
-      expect(weekdaysLookup[5].en).toBe('Friday');
-      expect(weekdaysLookup[6].en).toBe('Saturday');
-    });
-
-  });
-
-  describe('monthsLookup', function () {
-
-    it('should be defined', function () {
-      expect(utils.monthsLookup).toBeDefined();
-    });
-
-    it('should have valid english data', function () {
-      var monthsLookup = utils.monthsLookup;
-      expect(Object.keys(monthsLookup).length).toBe(12);
-      expect(monthsLookup[1].en).toBe('January');
-      expect(monthsLookup[2].en).toBe('February');
-      expect(monthsLookup[3].en).toBe('March');
-      expect(monthsLookup[4].en).toBe('April');
-      expect(monthsLookup[5].en).toBe('May');
-      expect(monthsLookup[6].en).toBe('June');
-      expect(monthsLookup[7].en).toBe('July');
-      expect(monthsLookup[8].en).toBe('August');
-      expect(monthsLookup[9].en).toBe('September');
-      expect(monthsLookup[10].en).toBe('October');
-      expect(monthsLookup[11].en).toBe('November');
-      expect(monthsLookup[12].en).toBe('December');
-    });
-
-    it('should have valid malayalam data', function () {
-      /* jshint -W100 */
-      var monthsLookup = utils.monthsLookup;
-      expect(Object.keys(monthsLookup).length).toBe(12);
-      expect(monthsLookup[1].ml).toBe('ജനുവരി');
-      expect(monthsLookup[2].ml).toBe('ഫെബ്രുവരി');
-      expect(monthsLookup[3].ml).toBe('മാർച്ച്‌');
-      expect(monthsLookup[4].ml).toBe('ഏപ്രിൽ ');
-      expect(monthsLookup[5].ml).toBe('മെയ്‌');
-      expect(monthsLookup[6].ml).toBe('ജൂണ്‍');
-      expect(monthsLookup[7].ml).toBe('ജൂലൈ');
-      expect(monthsLookup[8].ml).toBe('ഓഗസ്റ്റ്‌');
-      expect(monthsLookup[9].ml).toBe('സെപ്റ്റംബർ');
-      expect(monthsLookup[10].ml).toBe('ഒക്ടോബർ');
-      expect(monthsLookup[11].ml).toBe('നവംബർ');
-      expect(monthsLookup[12].ml).toBe('ഡിസംബർ');
-    });
-
-  });
-
-  describe('tithisLookup', function () {
-
-    it('should be defined', function () {
-      expect(utils.tithisLookup).toBeDefined();
-    });
-
-    it('should have valid english data', function () {
-      var tithisLookup = utils.tithisLookup;
-      expect(Object.keys(tithisLookup).length).toBe(14);
-      expect(tithisLookup[1].en).toBe('Prathama');
-      expect(tithisLookup[2].en).toBe('Dwithiya');
-      expect(tithisLookup[3].en).toBe('Thrithiya');
-      expect(tithisLookup[4].en).toBe('Chathurthi');
-      expect(tithisLookup[5].en).toBe('Panchami');
-      expect(tithisLookup[6].en).toBe('Shashti');
-      expect(tithisLookup[7].en).toBe('Sapthami');
-      expect(tithisLookup[8].en).toBe('Ashtami');
-      expect(tithisLookup[9].en).toBe('Navami');
-      expect(tithisLookup[10].en).toBe('Dasami');
-      expect(tithisLookup[11].en).toBe('Ekadasi');
-      expect(tithisLookup[12].en).toBe('Dwadasi');
-      expect(tithisLookup[13].en).toBe('Thrayodasi');
-      expect(tithisLookup[14].en).toBe('Chathurdasi');
-    });
-
-    it('should have valid malayalam data', function () {
-      /* jshint -W100 */
-      var tithisLookup = utils.tithisLookup;
-      expect(Object.keys(tithisLookup).length).toBe(14);
-      expect(tithisLookup[1].ml).toBe('പ്രഥമ');
-      expect(tithisLookup[2].ml).toBe('ദ്വിതീയ');
-      expect(tithisLookup[3].ml).toBe('തൃതിയ');
-      expect(tithisLookup[4].ml).toBe('ചതുർത്ഥി');
-      expect(tithisLookup[5].ml).toBe('പഞ്ചമി');
-      expect(tithisLookup[6].ml).toBe('ഷഷ്ഠി');
-      expect(tithisLookup[7].ml).toBe('സപ്തമി');
-      expect(tithisLookup[8].ml).toBe('അഷ്ടമി');
-      expect(tithisLookup[9].ml).toBe('നവമി');
-      expect(tithisLookup[10].ml).toBe('ദശമി');
-      expect(tithisLookup[11].ml).toBe('ഏകാദശി');
-      expect(tithisLookup[12].ml).toBe('ദ്വാദശി');
-      expect(tithisLookup[13].ml).toBe('ത്രയോദശി');
-      expect(tithisLookup[14].ml).toBe('ചതുർദശി');
-    });
-
-  });
-
-  describe('showYear', function () {
-
-    var currentYear = (new Date()).getFullYear();
-
-    beforeEach(function () {
-      scope = $rootScope.$new();
-      scope.calendar = {
-        years : utils.getYears(),
-        year  : currentYear
-      };
-    });
-
-    it('should be defined', function () {
-      expect(utils.showYear).toBeDefined();
-    });
-
-    it('should return \'Not set\' when scope does not have year', function () {
-      scope.calendar.year = undefined;
-      expect(utils.showYear(scope)()).toBe('Not set');
-    });
-
-    it('should return the year defined on scope', function () {
-      expect(utils.showYear(scope)()).toBe(currentYear);
-    });
-
-  });
-
-  describe('showMonth', function () {
-
-    beforeEach(function () {
-      scope = $rootScope.$new();
-      scope.calendar = {
-        months : utils.getMonths(),
-        month  : 5
-      };
-    });
-
-    it('should be defined', function () {
-      expect(utils.showMonth).toBeDefined();
-    });
-
-    it('should return \'Not set\' when scope does not have month', function () {
-      scope.calendar.month = undefined;
-      expect(utils.showMonth(scope)()).toBe('Not set');
-    });
-
-    it('should return the month defined on scope', function () {
-      expect(utils.showMonth(scope)()).toBe('May');
-    });
-
-  });
-
   describe('getMalayalamMonthNames', function () {
 
     var year;
@@ -439,6 +387,281 @@ describe('Service: utils', function () {
     it('should return the correct values for the month of December', function () {
       var month = year.months[11]; // let us test with the month of December
       expect(utils.getMalayalamYears(month)).toBe('1191');
+    });
+
+  });
+
+  describe('showMonth', function () {
+
+    beforeEach(function () {
+      scope = $rootScope.$new();
+      scope.calendar = {
+        months : utils.getMonths(),
+        month  : 5
+      };
+    });
+
+    it('should be defined', function () {
+      expect(utils.showMonth).toBeDefined();
+    });
+
+    it('should return \'Not set\' when scope does not have month', function () {
+      scope.calendar.month = undefined;
+      expect(utils.showMonth(scope)()).toBe('Not set');
+    });
+
+    it('should return the month defined on scope', function () {
+      expect(utils.showMonth(scope)()).toBe('May');
+    });
+
+  });
+
+  describe('showYear', function () {
+
+    var currentYear = (new Date()).getFullYear();
+
+    beforeEach(function () {
+      scope = $rootScope.$new();
+      scope.calendar = {
+        years : utils.getYears(),
+        year  : currentYear
+      };
+    });
+
+    it('should be defined', function () {
+      expect(utils.showYear).toBeDefined();
+    });
+
+    it('should return \'Not set\' when scope does not have year', function () {
+      scope.calendar.year = undefined;
+      expect(utils.showYear(scope)()).toBe('Not set');
+    });
+
+    it('should return the year defined on scope', function () {
+      expect(utils.showYear(scope)()).toBe(currentYear);
+    });
+
+  });
+
+  describe('calculateWeeks', function () {
+
+    var year;
+
+    beforeEach(function () {
+      jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
+      year = getJSONFixture('2015-ml.json'); // load the data for 2015 from the test/mock/2015.json fixture
+
+    });
+
+    it('should return the correct value for the month of February', function () {
+      var month = year.months[1]; // let us test with the month of February
+      scope = $rootScope.$new();
+      scope.month = month;
+      scope.weekdaysLookup = utils.weekdaysLookup;
+
+      var returnedWeeksArray = utils.calculateWeeks(scope);
+      expect(returnedWeeksArray.length).toBe(4);
+      expect(returnedWeeksArray[0].length).toBe(7);
+      expect(returnedWeeksArray[1].length).toBe(7);
+      expect(returnedWeeksArray[2].length).toBe(7);
+      expect(returnedWeeksArray[3].length).toBe(7);
+
+      var firstWeek = returnedWeeksArray[0];
+      expect(firstWeek[0].date).toBe(1);
+      expect(firstWeek[1].date).toBe(2);
+      expect(firstWeek[2].date).toBe(3);
+      expect(firstWeek[0].month).toBe('February');
+      expect(firstWeek[1].month).toBe('February');
+      expect(firstWeek[2].month).toBe('February');
+      expect(firstWeek[0].tithi).toBe(13);
+      expect(firstWeek[1].tithi).toBe(14);
+      expect(firstWeek[2].tithi).toBe(15);
+
+      var lastWeek = returnedWeeksArray[3];
+      expect(lastWeek[4].date).toBe(26);
+      expect(lastWeek[5].date).toBe(27);
+      expect(lastWeek[6].date).toBe(28);
+      expect(lastWeek[4].month).toBe('February');
+      expect(lastWeek[5].month).toBe('February');
+      expect(lastWeek[6].month).toBe('February');
+      expect(lastWeek[4].tithi).toBe(8);
+      expect(lastWeek[5].tithi).toBe(9);
+      expect(lastWeek[6].tithi).toBe(10);
+    });
+
+    it('should return the correct value for the month of May', function () {
+      var month = year.months[4]; // let us test with the month of May
+      scope = $rootScope.$new();
+      scope.month = month;
+      scope.weekdaysLookup = utils.weekdaysLookup;
+
+      var returnedWeeksArray = utils.calculateWeeks(scope);
+      expect(returnedWeeksArray.length).toBe(6);
+      expect(returnedWeeksArray[0].length).toBe(7);
+      expect(returnedWeeksArray[1].length).toBe(7);
+      expect(returnedWeeksArray[2].length).toBe(7);
+      expect(returnedWeeksArray[3].length).toBe(7);
+      expect(returnedWeeksArray[4].length).toBe(7);
+      expect(returnedWeeksArray[5].length).toBe(7);
+
+      var firstWeek = returnedWeeksArray[0];
+      expect(firstWeek[0].date).toBeUndefined();
+      expect(firstWeek[1].date).toBeUndefined();
+      expect(firstWeek[2].date).toBeUndefined();
+      expect(firstWeek[3].date).toBeUndefined();
+      expect(firstWeek[4].date).toBeUndefined();
+      expect(firstWeek[5].date).toBe(1);
+      expect(firstWeek[6].date).toBe(2);
+      expect(firstWeek[0].month).toBeUndefined();
+      expect(firstWeek[5].month).toBe('May');
+      expect(firstWeek[6].month).toBe('May');
+      expect(firstWeek[5].tithi).toBe(13);
+      expect(firstWeek[6].tithi).toBe(14);
+
+      var lastWeek = returnedWeeksArray[5];
+      expect(lastWeek[0].date).toBe(31);
+      expect(lastWeek[1].date).toBeUndefined();
+      expect(lastWeek[2].date).toBeUndefined();
+      expect(lastWeek[3].date).toBeUndefined();
+      expect(lastWeek[4].date).toBeUndefined();
+      expect(lastWeek[5].date).toBeUndefined();
+      expect(lastWeek[6].date).toBeUndefined();
+      expect(lastWeek[0].month).toBe('May');
+      expect(lastWeek[0].tithi).toBe(13);
+
+    });
+
+    it('should return the correct value for the month of May with mocked today', function () {
+      var month = year.months[4]; // let us test with the month of May
+      scope = $rootScope.$new();
+      scope.month = month;
+      scope.weekdaysLookup = utils.weekdaysLookup;
+
+      var baseTime = new Date(2015, 4, 22);
+      jasmine.clock().mockDate(baseTime); // set today to be 2015-05-22
+
+      var returnedWeeksArray = utils.calculateWeeks(scope);
+      var todayWeek = returnedWeeksArray[3];
+      expect(todayWeek[0].date).toBe(17);
+      expect(todayWeek[1].date).toBe(18);
+      expect(todayWeek[2].date).toBe(19);
+      expect(todayWeek[3].date).toBe(20);
+      expect(todayWeek[4].date).toBe(21);
+      expect(todayWeek[5].date).toBe(22);
+      expect(todayWeek[6].date).toBe(23);
+      expect(todayWeek[0].isToday).toBeFalsy();
+      expect(todayWeek[1].isToday).toBeFalsy();
+      expect(todayWeek[2].isToday).toBeFalsy();
+      expect(todayWeek[3].isToday).toBeFalsy();
+      expect(todayWeek[4].isToday).toBeFalsy();
+      expect(todayWeek[5].isToday).toBeTruthy();
+      expect(todayWeek[6].isToday).toBeFalsy();
+      expect(todayWeek[0].month).toBe('May');
+      expect(todayWeek[1].month).toBe('May');
+      expect(todayWeek[2].month).toBe('May');
+      expect(todayWeek[3].month).toBe('May');
+      expect(todayWeek[4].month).toBe('May');
+      expect(todayWeek[5].month).toBe('May');
+      expect(todayWeek[6].month).toBe('May');
+      /* jshint -W100 */
+      expect(todayWeek[0].mlMonth).toBe('മെയ്‌');
+      expect(todayWeek[1].mlMonth).toBe('മെയ്‌');
+      expect(todayWeek[2].mlMonth).toBe('മെയ്‌');
+      expect(todayWeek[3].mlMonth).toBe('മെയ്‌');
+      expect(todayWeek[4].mlMonth).toBe('മെയ്‌');
+      expect(todayWeek[5].mlMonth).toBe('മെയ്‌');
+      expect(todayWeek[6].mlMonth).toBe('മെയ്‌');
+      /* jshint +W100 */
+      expect(todayWeek[0].malayalamYear).toBe(1190);
+      expect(todayWeek[1].malayalamYear).toBe(1190);
+      expect(todayWeek[2].malayalamYear).toBe(1190);
+      expect(todayWeek[3].malayalamYear).toBe(1190);
+      expect(todayWeek[4].malayalamYear).toBe(1190);
+      expect(todayWeek[5].malayalamYear).toBe(1190);
+      expect(todayWeek[6].malayalamYear).toBe(1190);
+      expect(todayWeek[0].malayalamMonth).toBe('ഇടവം');
+      expect(todayWeek[1].malayalamMonth).toBe('ഇടവം');
+      expect(todayWeek[2].malayalamMonth).toBe('ഇടവം');
+      expect(todayWeek[3].malayalamMonth).toBe('ഇടവം');
+      expect(todayWeek[4].malayalamMonth).toBe('ഇടവം');
+      expect(todayWeek[5].malayalamMonth).toBe('ഇടവം');
+      expect(todayWeek[6].malayalamMonth).toBe('ഇടവം');
+      expect(todayWeek[0].malayalamDay).toBe(3);
+      expect(todayWeek[1].malayalamDay).toBe(4);
+      expect(todayWeek[2].malayalamDay).toBe(5);
+      expect(todayWeek[3].malayalamDay).toBe(6);
+      expect(todayWeek[4].malayalamDay).toBe(7);
+      expect(todayWeek[5].malayalamDay).toBe(8);
+      expect(todayWeek[6].malayalamDay).toBe(9);
+    });
+
+    it('should return the correct value for the month of May with selected date', function () {
+      var month = year.months[4]; // let us test with the month of May
+      scope = $rootScope.$new();
+      scope.month = month;
+      scope.weekdaysLookup = utils.weekdaysLookup;
+      scope.sel = new Date(2015, 4, 20); // set the selected date to be 2015-05-20
+
+      var returnedWeeksArray = utils.calculateWeeks(scope);
+      var selectedDayWeek = returnedWeeksArray[3];
+      expect(selectedDayWeek[0].date).toBe(17);
+      expect(selectedDayWeek[1].date).toBe(18);
+      expect(selectedDayWeek[2].date).toBe(19);
+      expect(selectedDayWeek[3].date).toBe(20);
+      expect(selectedDayWeek[4].date).toBe(21);
+      expect(selectedDayWeek[5].date).toBe(22);
+      expect(selectedDayWeek[6].date).toBe(23);
+      expect(selectedDayWeek[0].isToday).toBeFalsy();
+      expect(selectedDayWeek[1].isToday).toBeFalsy();
+      expect(selectedDayWeek[2].isToday).toBeFalsy();
+      expect(selectedDayWeek[3].isToday).toBeFalsy();
+      expect(selectedDayWeek[4].isToday).toBeFalsy();
+      expect(selectedDayWeek[5].isToday).toBeTruthy();
+      expect(selectedDayWeek[6].isToday).toBeFalsy();
+      expect(selectedDayWeek[0].isSelected).toBeFalsy();
+      expect(selectedDayWeek[1].isSelected).toBeFalsy();
+      expect(selectedDayWeek[2].isSelected).toBeFalsy();
+      expect(selectedDayWeek[3].isSelected).toBeTruthy();
+      expect(selectedDayWeek[4].isSelected).toBeFalsy();
+      expect(selectedDayWeek[5].isSelected).toBeFalsy();
+      expect(selectedDayWeek[6].isSelected).toBeFalsy();
+      expect(selectedDayWeek[0].month).toBe('May');
+      expect(selectedDayWeek[1].month).toBe('May');
+      expect(selectedDayWeek[2].month).toBe('May');
+      expect(selectedDayWeek[3].month).toBe('May');
+      expect(selectedDayWeek[4].month).toBe('May');
+      expect(selectedDayWeek[5].month).toBe('May');
+      expect(selectedDayWeek[6].month).toBe('May');
+      /* jshint -W100 */
+      expect(selectedDayWeek[0].mlMonth).toBe('മെയ്‌');
+      expect(selectedDayWeek[1].mlMonth).toBe('മെയ്‌');
+      expect(selectedDayWeek[2].mlMonth).toBe('മെയ്‌');
+      expect(selectedDayWeek[3].mlMonth).toBe('മെയ്‌');
+      expect(selectedDayWeek[4].mlMonth).toBe('മെയ്‌');
+      expect(selectedDayWeek[5].mlMonth).toBe('മെയ്‌');
+      expect(selectedDayWeek[6].mlMonth).toBe('മെയ്‌');
+      /* jshint +W100 */
+      expect(selectedDayWeek[0].malayalamYear).toBe(1190);
+      expect(selectedDayWeek[1].malayalamYear).toBe(1190);
+      expect(selectedDayWeek[2].malayalamYear).toBe(1190);
+      expect(selectedDayWeek[3].malayalamYear).toBe(1190);
+      expect(selectedDayWeek[4].malayalamYear).toBe(1190);
+      expect(selectedDayWeek[5].malayalamYear).toBe(1190);
+      expect(selectedDayWeek[6].malayalamYear).toBe(1190);
+      expect(selectedDayWeek[0].malayalamMonth).toBe('ഇടവം');
+      expect(selectedDayWeek[1].malayalamMonth).toBe('ഇടവം');
+      expect(selectedDayWeek[2].malayalamMonth).toBe('ഇടവം');
+      expect(selectedDayWeek[3].malayalamMonth).toBe('ഇടവം');
+      expect(selectedDayWeek[4].malayalamMonth).toBe('ഇടവം');
+      expect(selectedDayWeek[5].malayalamMonth).toBe('ഇടവം');
+      expect(selectedDayWeek[6].malayalamMonth).toBe('ഇടവം');
+      expect(selectedDayWeek[0].malayalamDay).toBe(3);
+      expect(selectedDayWeek[1].malayalamDay).toBe(4);
+      expect(selectedDayWeek[2].malayalamDay).toBe(5);
+      expect(selectedDayWeek[3].malayalamDay).toBe(6);
+      expect(selectedDayWeek[4].malayalamDay).toBe(7);
+      expect(selectedDayWeek[5].malayalamDay).toBe(8);
+      expect(selectedDayWeek[6].malayalamDay).toBe(9);
     });
 
   });
