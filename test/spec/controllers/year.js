@@ -122,9 +122,9 @@ describe('Controller: YearCtrl', function () {
       expect(calendar.backToTopVisibility).toBeFalsy();
     });
 
-    it('should remain false after the window scrolls less than 105 px', function () {
+    it('should remain false after the window scrolls less than 140 px', function () {
 
-      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(100));
+      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(135));
       state.expectTransitionTo('year', {year : currentYear});
 
       angular.element(window).triggerHandler('scroll');
@@ -133,9 +133,9 @@ describe('Controller: YearCtrl', function () {
 
     });
 
-    it('should remain false after the window scrolls up to 105 px', function () {
+    it('should remain false after the window scrolls up to 140 px', function () {
 
-      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(105));
+      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(140));
       state.expectTransitionTo('year', {year : currentYear});
 
       angular.element(window).triggerHandler('scroll');
@@ -144,9 +144,9 @@ describe('Controller: YearCtrl', function () {
 
     });
 
-    it('should change to true after the window scrolls more than 105 px', function () {
+    it('should change to true after the window scrolls more than 140 px', function () {
 
-      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(106));
+      spyOn($.fn, 'scrollTop').and.callFake(fakeScrollTopWithValue(141));
       state.expectTransitionTo('year', {year : currentYear});
 
       angular.element(window).triggerHandler('scroll');

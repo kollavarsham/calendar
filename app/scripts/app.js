@@ -48,7 +48,7 @@ angular
 // jQuery plugin for scrollup
 $(function () {
   $.scrollUp({
-    scrollDistance : 105,
+    scrollDistance : 140,  // change here would need to reflect in /scripts/controllers/year.js too ###
     scrollText     : '',
     scrollTitle    : 'Back to the top'
   });

@@ -6,7 +6,14 @@
         &lt; {{calendar.previousYear}}
       </button>
     </span>
-    <year-picker></year-picker>
+    <div>
+      <small>
+        <year-picker></year-picker>
+      </small>
+      <div class="hint">
+        Click on the year to change it.
+      </div>
+    </div>
     <span class="calendar-nav right">
       <button ng-click="next()" ng-disabled="calendar.nextYear > 2050">
         {{calendar.nextYear}} &gt;

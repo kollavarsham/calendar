@@ -40,6 +40,10 @@
   right : 10px;
 }
 
+.hint {
+  font-size : small;
+}
+
 .year-select {
   height : 63px;
 }

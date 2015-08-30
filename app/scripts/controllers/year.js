@@ -44,7 +44,7 @@ angular.module('calendarApp')
     };
 
     $window.onscroll = function () {
-      $scope.calendar.backToTopVisibility = angular.element(document).scrollTop() > 105;
+      $scope.calendar.backToTopVisibility = angular.element(document).scrollTop() > 140; // change here would need to reflect in /scripts/app.js too ###
       $scope.$digest();
     };
 

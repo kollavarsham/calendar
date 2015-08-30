@@ -6,10 +6,15 @@
         &lt; {{calendar.previousMonthName}}
       </button>
     </span>
-    <small>
-      <month-picker></month-picker>
-      <year-picker></year-picker>
-    </small>
+    <div>
+      <small>
+        <month-picker></month-picker>
+        <year-picker></year-picker>
+      </small>
+      <div class="hint">
+        Click on the month or year to change it.
+      </div>
+    </div>
     <span class="calendar-nav right">
       <button ng-click="next()" ng-disabled="calendar.nextYear > 2050">
         {{calendar.nextMonthName}} &gt;
