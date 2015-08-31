@@ -46,6 +46,9 @@
           <li><a href="https://github.com/kollavarsham" target="_blank">GitHub</a></li>
           <li><a href="mailto:info@kollavarsham.org">Contact Us</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-controller="LanguageCtrl"><language-switcher></language-switcher></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -90,6 +93,7 @@
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
+  <script src="scripts/directives/language-switcher.js"></script>
   <script src="scripts/directives/version.js"></script>
   <script src="scripts/directives/year-picker.js"></script>
   <script src="scripts/directives/month-picker.js"></script>
@@ -102,6 +106,7 @@
   <script src="scripts/services/version.js"></script>
   <script src="scripts/services/year.js"></script>
   <script src="scripts/services/month.js"></script>
+  <script src="scripts/controllers/language.js"></script>
   <script src="scripts/controllers/version.js"></script>
   <script src="scripts/controllers/year.js"></script>
   <script src="scripts/controllers/month.js"></script>
