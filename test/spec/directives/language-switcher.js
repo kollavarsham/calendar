@@ -18,7 +18,7 @@ describe('Directive: languageSwitcher', function () {
     $templateCache.put('views/language-switcher.html', template);
   }));
 
-  it('should be defiend', function () {
+  it('should be defined', function () {
     element = angular.element('<ul language-switcher></ul>');
     element = $compile(element)(scope);
     scope.$digest();
