@@ -63,6 +63,10 @@
   padding : 2px 3px;
 }
 
+.month-nav a {
+  cursor: pointer;
+}
+
 .month-nav-sep {
   margin : 0 10px;
   color  : #ccc
