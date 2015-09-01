@@ -14,7 +14,8 @@ describe('Controller: MonthCtrl', function () {
     state = stateMock;
 
     monthMockup = {
-      query : function () {}
+      query : function () {
+      }
     };
 
     utils = _utils_;
@@ -52,6 +53,7 @@ describe('Controller: MonthCtrl', function () {
 
     it('should be defined and valid', function () {
       expect(calendar.month).toBe(currentMonth);
+      expect(calendar.sel).toBeUndefined();
       expect(calendar.monthName).toBe('August');
       expect(calendar.nextMonthName).toBe('September');
       expect(calendar.previousMonthName).toBe('July');
@@ -114,6 +116,84 @@ describe('Controller: MonthCtrl', function () {
       var next = $scope.getNextMonthAndYear();
       expect(next.month).toBe(1);
       expect(next.year).toBe(2016);
+    });
+
+  });
+
+  describe('model variables when language is explicitly set to English', function () {
+
+    beforeEach(inject(function ($controller) {
+      stateParams = {
+        year  : currentYear,
+        month : currentMonth,
+        lang  : 'en'
+      };
+
+      MonthCtrl = $controller('MonthCtrl', {
+        $scope       : $scope,
+        $state       : state,
+        $stateParams : stateParams,
+        utils        : utils,
+        Month        : monthMockup
+      });
+
+      calendar = $scope.calendar;
+    }));
+
+    it('should be defined and valid', function () {
+      expect(calendar.lang).toBe('en');
+    });
+
+  });
+
+  describe('model variables when language is explicitly set to Malayalam', function () {
+
+    beforeEach(inject(function ($controller) {
+      stateParams = {
+        year  : currentYear,
+        month : currentMonth,
+        lang  : 'ml'
+      };
+
+      MonthCtrl = $controller('MonthCtrl', {
+        $scope       : $scope,
+        $state       : state,
+        $stateParams : stateParams,
+        utils        : utils,
+        Month        : monthMockup
+      });
+
+      calendar = $scope.calendar;
+    }));
+
+    it('should be defined and valid', function () {
+      expect(calendar.lang).toBe('ml');
+    });
+
+  });
+
+  describe('model variables when selected Date is set', function () {
+
+    beforeEach(inject(function ($controller) {
+      stateParams = {
+        year  : currentYear,
+        month : currentMonth,
+        sel  : 'Jan 25, 2015'
+      };
+
+      MonthCtrl = $controller('MonthCtrl', {
+        $scope       : $scope,
+        $state       : state,
+        $stateParams : stateParams,
+        utils        : utils,
+        Month        : monthMockup
+      });
+
+      calendar = $scope.calendar;
+    }));
+
+    it('should be defined and valid', function () {
+      expect(calendar.sel).toEqual(new Date(2015, 0, 25));
     });
 
   });

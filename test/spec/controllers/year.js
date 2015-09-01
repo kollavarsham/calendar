@@ -105,6 +105,93 @@ describe('Controller: YearCtrl', function () {
 
   });
 
+  describe('model variables when language is explicitly set to English', function () {
+
+    beforeEach(inject(function ($controller) {
+      stateParams = {
+        year  : currentYear,
+        lang  : 'en'
+      };
+
+      YearCtrl = $controller('YearCtrl', {
+        $scope        : $scope,
+        $state        : state,
+        $stateParams  : stateParams,
+        $filter       : filter,
+        $window       : window,
+        $timeout      : timeout,
+        utils         : utils,
+        Year          : yearMock
+      });
+
+      calendar = $scope.calendar;
+
+    }));
+
+    it('should be defined and valid', function () {
+      expect(calendar.lang).toBe('en');
+    });
+
+  });
+
+  describe('model variables when language is explicitly set to Malayalam', function () {
+
+    beforeEach(inject(function ($controller) {
+      stateParams = {
+        year  : currentYear,
+        lang  : 'ml'
+      };
+
+      YearCtrl = $controller('YearCtrl', {
+        $scope        : $scope,
+        $state        : state,
+        $stateParams  : stateParams,
+        $filter       : filter,
+        $window       : window,
+        $timeout      : timeout,
+        utils         : utils,
+        Year          : yearMock
+      });
+
+      calendar = $scope.calendar;
+
+    }));
+
+    it('should be defined and valid', function () {
+      expect(calendar.lang).toBe('ml');
+    });
+
+  });
+
+  describe('model variables when selected Date is set', function () {
+
+    beforeEach(inject(function ($controller) {
+      stateParams = {
+        year  : currentYear,
+        sel  : 'Jan 25, 2015'
+      };
+
+      YearCtrl = $controller('YearCtrl', {
+        $scope        : $scope,
+        $state        : state,
+        $stateParams  : stateParams,
+        $filter       : filter,
+        $window       : window,
+        $timeout      : timeout,
+        utils         : utils,
+        Year          : yearMock
+      });
+
+      calendar = $scope.calendar;
+
+    }));
+
+    it('should be defined and valid', function () {
+      expect(calendar.sel).toEqual(new Date(2015, 0, 25));
+    });
+
+  });
+
   describe('state', function () {
 
     it('should transition to the updated year', function () {
