@@ -26,7 +26,6 @@ describe('Controller: LanguageCtrl', function () {
   it('should have initialized the models correctly', function () {
     expect(scope.lang).toBe('ml');
     expect(scope.switchToLanguage).toBe('en');
-    expect(scope.switchToLanguageName).toBe('English');
   });
 
   describe('models when language is English', function () {
@@ -46,7 +45,6 @@ describe('Controller: LanguageCtrl', function () {
     it('should be initialized correctly', function () {
       expect(scope.lang).toBe('en');
       expect(scope.switchToLanguage).toBe('ml');
-      expect(scope.switchToLanguageName).toBe('മലയാളം');
     });
 
   });
@@ -68,7 +66,6 @@ describe('Controller: LanguageCtrl', function () {
     it('should be initialized correctly', function () {
       expect(scope.lang).toBe('ml');
       expect(scope.switchToLanguage).toBe('en');
-      expect(scope.switchToLanguageName).toBe('English');
     });
 
   });

@@ -9,8 +9,13 @@
 angular.module('calendarApp')
   .directive('languageSwitcher', function () {
     return {
-      template : '<a class="language-switcher" ng-click="switchLang()" title="Switch to {{switchToLanguageName}}">{{switchToLanguageName}}</a>',
-      restrict : 'E',
-      replace  : true
+      templateUrl : 'views/language-switcher.html',
+      restrict    : 'A',
+      link        : function postLink(scope, element) {
+        scope.$watch('lang', function (lang) {
+          element.find('li').removeClass('active');
+          element.find('li.' + lang).addClass('active');
+        });
+      }
     };
   });
