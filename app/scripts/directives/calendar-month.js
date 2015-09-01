@@ -30,30 +30,17 @@ angular.module('calendarApp')
 
         scope.weeks = utils.calculateWeeks(scope);
 
-        // set up auto-scrolling to selected date or today
         $timeout(function () {
+
           if (element.find('.selected').length) {
-            var selectedMonthNamePrefix = element.find('.month-name').text().substr(0, 3);
-            var selectedMonthLink = angular.element('.month-nav').find('a').filter(function () {
-              return $(this).text().match(new RegExp('^' + selectedMonthNamePrefix));
-            });
-            $timeout(function () {
-              selectedMonthLink.click();
-            }, 10);
-          } else if (element.find('.today').length) {
-            var currentMonthNamePrefix = element.find('.month-name').text().substr(0, 3);
-            var currentMonthLink = angular.element('.month-nav').find('a').filter(function () {
-              return $(this).text().match(new RegExp('^' + currentMonthNamePrefix));
-            });
-            $timeout(function () {
-              currentMonthLink.click();
-            }, 10);
+            scope.$parent.$emit('selectedMonthRendered', utils.getMonthNamePrefix(element));
           }
 
-          // attach the day detail on-focus popover
-          angular.element('.day-popover').popover({html : true});
-        }, 0);
+          if (element.find('.today').length) {
+            scope.$parent.$emit('currentMonthRendered', utils.getMonthNamePrefix(element));
+          }
 
+        });
       }
     };
   });

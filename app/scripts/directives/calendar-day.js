@@ -24,13 +24,11 @@ angular.module('calendarApp')
         day.fullDate = day.date + ' ' + day.month + ' ' + day.year;
 
         // add amavasi and purnima (newmoon and fullmoon) into the calendar
-        // TODO: Move the below array into utils (possibly the whole model adapter should be a new service)
-        var tithis = utils.tithisLookup;
         var NEW_MOON_UNICODE = '🌑';
         var FULL_MOON_UNICODE = '🌕';
         var paksa = day.paksa === 'Suklapaksa' ? FULL_MOON_UNICODE : NEW_MOON_UNICODE;
         day.moon = day.tithi === 15 ? paksa : undefined;
-        day.tithiDay = day.moon || tithis[day.tithi][scope.lang || 'ml'];
+        day.tithiDay = day.moon || utils.tithisLookup[day.tithi][scope.lang || 'ml'];
       }
     };
   });

@@ -27,7 +27,7 @@
 
   <div class="calendar-container">
 
-    <div ng-repeat="month in calendar.data.months" id="{{ 'month-' + month.name }}" class="calendar-month">
+    <div ng-repeat="month in calendar.data.months" id="{{ 'month-' + month.name }}" class="calendar-month" on-finish-render-ng-repeat>
 
       <div class="month-detail">
         <a ui-sref="month({ year: calendar.year, month: $index + 1, lang: calendar.lang, sel: calendar.sel })">

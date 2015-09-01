@@ -5,13 +5,14 @@ describe('Directive: calendarMonth', function () {
   // load the directive's module and views
   beforeEach(module('calendarApp', 'app/views/calendar-month.html', 'app/views/calendar-day.html'));
 
-  var element, scope, $compile, template, dayTemplate, year, utils;
+  var element, scope, $compile, template, dayTemplate, year, utils, $timeout;
 
-  beforeEach(inject(function ($rootScope, _$compile_, $templateCache, _utils_) {
+  beforeEach(inject(function ($rootScope, _$compile_, $templateCache, _utils_, _$timeout_) {
     jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
 
     scope = $rootScope.$new();
     $compile = _$compile_;
+    $timeout = _$timeout_;
 
     // Load the template from the test relative path and store it into the directive-relative path
     // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
@@ -568,6 +569,9 @@ describe('Directive: calendarMonth', function () {
       var baseTime = new Date(2015, 4, 22);
       jasmine.clock().mockDate(baseTime); // set today to be 2015-05-22
 
+      spyOn(utils, 'getMonthNamePrefix').and.callThrough();
+      spyOn(scope, '$emit').and.callThrough();
+
       scope.month = year.months[4]; // let us test with the month of May
 
       element = angular.element('<calendar-month month="month" lang="lang"></calendar-month>');
@@ -585,6 +589,12 @@ describe('Directive: calendarMonth', function () {
       expect(fourthRow.find('td:nth-child(6)').hasClass('today')).toBeTruthy();
     });
 
+    it('should emit the currentMonthRendered event on scope', function () {
+      $timeout.flush();
+      expect(scope.$emit).toHaveBeenCalledWith('currentMonthRendered', 'May');
+      expect(utils.getMonthNamePrefix).toHaveBeenCalledWith(element);
+    });
+
   });
 
   describe('calendarMonth for 2015 May with selected date', function () {
@@ -592,6 +602,9 @@ describe('Directive: calendarMonth', function () {
     beforeEach(function () {
       var baseTime = new Date(2016, 4, 22);
       jasmine.clock().mockDate(baseTime); // set today to be 2016-05-22
+
+      spyOn(utils, 'getMonthNamePrefix').and.callThrough();
+      spyOn(scope, '$emit').and.callThrough();
 
       scope.month = year.months[4]; // let us test with the month of May
       scope.sel = new Date(2015, 4, 22);
@@ -614,6 +627,12 @@ describe('Directive: calendarMonth', function () {
     it('should have the selected css class on 2015-05-22', function () {
       var fourthRow = element.find('tr:nth-of-type(5)');
       expect(fourthRow.find('td:nth-child(6)').hasClass('selected')).toBeTruthy();
+    });
+
+    it('should emit the selectedMonthRendered event on scope', function () {
+      $timeout.flush();
+      expect(scope.$emit).toHaveBeenCalledWith('selectedMonthRendered', 'May');
+      expect(utils.getMonthNamePrefix).toHaveBeenCalledWith(element);
     });
 
   });

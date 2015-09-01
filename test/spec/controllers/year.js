@@ -31,7 +31,8 @@ describe('Controller: YearCtrl', function () {
     };
 
     yearMock = {
-      query : function () { }
+      query : function () {
+      }
     };
 
     fakeScrollTopWithValue = function (scrollValue) {
@@ -45,14 +46,14 @@ describe('Controller: YearCtrl', function () {
     });
 
     YearCtrl = $controller('YearCtrl', {
-      $scope        : $scope,
-      $state        : state,
-      $stateParams  : stateParams,
-      $filter       : filter,
-      $window       : window,
-      $timeout      : timeout,
-      utils         : utils,
-      Year          : yearMock
+      $scope       : $scope,
+      $state       : state,
+      $stateParams : stateParams,
+      $filter      : filter,
+      $window      : window,
+      $timeout     : timeout,
+      utils        : utils,
+      Year         : yearMock
     });
 
     calendar = $scope.calendar;
@@ -109,19 +110,19 @@ describe('Controller: YearCtrl', function () {
 
     beforeEach(inject(function ($controller) {
       stateParams = {
-        year  : currentYear,
-        lang  : 'en'
+        year : currentYear,
+        lang : 'en'
       };
 
       YearCtrl = $controller('YearCtrl', {
-        $scope        : $scope,
-        $state        : state,
-        $stateParams  : stateParams,
-        $filter       : filter,
-        $window       : window,
-        $timeout      : timeout,
-        utils         : utils,
-        Year          : yearMock
+        $scope       : $scope,
+        $state       : state,
+        $stateParams : stateParams,
+        $filter      : filter,
+        $window      : window,
+        $timeout     : timeout,
+        utils        : utils,
+        Year         : yearMock
       });
 
       calendar = $scope.calendar;
@@ -138,19 +139,19 @@ describe('Controller: YearCtrl', function () {
 
     beforeEach(inject(function ($controller) {
       stateParams = {
-        year  : currentYear,
-        lang  : 'ml'
+        year : currentYear,
+        lang : 'ml'
       };
 
       YearCtrl = $controller('YearCtrl', {
-        $scope        : $scope,
-        $state        : state,
-        $stateParams  : stateParams,
-        $filter       : filter,
-        $window       : window,
-        $timeout      : timeout,
-        utils         : utils,
-        Year          : yearMock
+        $scope       : $scope,
+        $state       : state,
+        $stateParams : stateParams,
+        $filter      : filter,
+        $window      : window,
+        $timeout     : timeout,
+        utils        : utils,
+        Year         : yearMock
       });
 
       calendar = $scope.calendar;
@@ -167,19 +168,19 @@ describe('Controller: YearCtrl', function () {
 
     beforeEach(inject(function ($controller) {
       stateParams = {
-        year  : currentYear,
+        year : currentYear,
         sel  : 'Jan 25, 2015'
       };
 
       YearCtrl = $controller('YearCtrl', {
-        $scope        : $scope,
-        $state        : state,
-        $stateParams  : stateParams,
-        $filter       : filter,
-        $window       : window,
-        $timeout      : timeout,
-        utils         : utils,
-        Year          : yearMock
+        $scope       : $scope,
+        $state       : state,
+        $stateParams : stateParams,
+        $filter      : filter,
+        $window      : window,
+        $timeout     : timeout,
+        utils        : utils,
+        Year         : yearMock
       });
 
       calendar = $scope.calendar;
@@ -241,6 +242,79 @@ describe('Controller: YearCtrl', function () {
       expect(calendar.backToTopVisibility).toBeTruthy();
 
     });
+
+  });
+
+  describe('selectedMonthRendered event', function () {
+
+    it('should set selectedMonthNamePrefix to the passed in value', function () {
+      expect($scope.selectedMonthNamePrefix).toBeUndefined();
+      $rootScope.$broadcast('selectedMonthRendered', 'Arbitrary Value for selectedMonthRendered');
+      expect($scope.selectedMonthNamePrefix).toBe('Arbitrary Value for selectedMonthRendered');
+    });
+
+  });
+
+  describe('currentMonthRendered event', function () {
+
+    it('should set currentMonthNamePrefix to the passed in value', function () {
+      expect($scope.currentMonthNamePrefix).toBeUndefined();
+      $rootScope.$broadcast('currentMonthRendered', 'Arbitrary Value for currentMonthNamePrefix');
+      expect($scope.currentMonthNamePrefix).toBe('Arbitrary Value for currentMonthNamePrefix');
+    });
+
+  });
+
+  describe('ngRepeatFinished event', function () {
+
+    var elementClicked;
+
+    beforeEach(function () {
+      state.expectTransitionTo('year', {year : currentYear});
+      $scope.$digest();
+
+      elementClicked = 0;
+
+      spyOn(angular, 'element').and.callThrough();
+
+      spyOn($.fn, 'filter').and.callFake(function () {
+        return {
+          click : function () {
+            elementClicked++;
+          }
+        };
+      });
+
+    });
+
+    it('should set up the popovers', function () {
+      $rootScope.$broadcast('ngRepeatFinished');
+      expect(angular.element).toHaveBeenCalledWith('.day-popover');
+    });
+
+    it('should call angular element the right number of times', function () {
+      $rootScope.$broadcast('ngRepeatFinished');
+      expect(angular.element.calls.count()).toBe(2);
+    });
+
+    it('should call the filter function when neither of selected day or current day is present', function () {
+      $rootScope.$broadcast('ngRepeatFinished');
+      expect($.fn.filter).toHaveBeenCalled();
+    });
+
+    it('should call the filter function when selected day is present', function () {
+      $scope.selectedMonthNamePrefix = 'selectedMonthNameMOCK';
+      $rootScope.$broadcast('ngRepeatFinished');
+      expect($.fn.filter).toHaveBeenCalled();
+    });
+
+    it('should call click on the month element', function () {
+      expect(elementClicked).toBe(0);
+      $rootScope.$broadcast('ngRepeatFinished');
+      timeout.flush();
+      expect(elementClicked).toBe(1);
+    });
+
 
   });
 

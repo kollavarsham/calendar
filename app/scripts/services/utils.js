@@ -106,6 +106,10 @@ angular.module('calendarApp')
       };
     };
 
+    this.getMonthNamePrefix = function (calendarMonthElement) {
+      return calendarMonthElement.find('.month-name').text().substr(0, 3);
+    };
+
     this.calculateWeeks = function ($scope) {
       var month = $scope.month, weeks = [];
       for (var i = 0; i < month.days.length; i++) {
