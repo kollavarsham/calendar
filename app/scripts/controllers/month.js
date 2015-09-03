@@ -84,5 +84,10 @@ angular.module('calendarApp')
       $state.go('month', {year : next.year, month : next.month});
     };
 
+    $scope.$on('ngRepeatFinished', function () {
+      // attach the day detail on-focus popover
+      angular.element('.day-popover').popover({html : true});
+    });
+
     $scope.init();
   });
