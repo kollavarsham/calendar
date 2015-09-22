@@ -9,7 +9,7 @@
  */
 angular.module('calendarApp')
   .constant('serviceConfigConstant', {
-    baseUrl : 'http://calendar.kollavarsham.org/api/',
+    baseUrl : 'https://calendar.kollavarsham.org/api/',
     config  : {
       query : {
         method  : 'GET',
