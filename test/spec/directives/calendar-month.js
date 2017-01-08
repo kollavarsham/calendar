@@ -49,7 +49,7 @@ describe('Directive: calendarMonth', function () {
     it('should have the table header with weekdays in malayalam', function () {
       var tableHeader = element.find('.head');
       expect(tableHeader).toBeDefined();
-      expect(tableHeader.find('.malayalam-weekday').size()).toBe(7);
+      expect(tableHeader.find('.malayalam-weekday').length).toBe(7);
       expect(tableHeader.find('.malayalam-weekday').text()).toBe('ഞായർതിങ്കൾചൊവ്വബുധൻവ്യാഴംവെള്ളിശനി');
     });
 
@@ -179,7 +179,7 @@ describe('Directive: calendarMonth', function () {
     it('should have the table header with weekdays in malayalam', function () {
       var tableHeader = element.find('.head');
       expect(tableHeader).toBeDefined();
-      expect(tableHeader.find('.malayalam-weekday').size()).toBe(7);
+      expect(tableHeader.find('.malayalam-weekday').length).toBe(7);
       expect(tableHeader.find('.malayalam-weekday').text()).toBe('ഞായർതിങ്കൾചൊവ്വബുധൻവ്യാഴംവെള്ളിശനി');
     });
 
@@ -321,7 +321,7 @@ describe('Directive: calendarMonth', function () {
     it('should have the table header with weekdays in malayalam', function () {
       var tableHeader = element.find('.head');
       expect(tableHeader).toBeDefined();
-      expect(tableHeader.find('.malayalam-weekday').size()).toBe(7);
+      expect(tableHeader.find('.malayalam-weekday').length).toBe(7);
       expect(tableHeader.find('.malayalam-weekday').text()).toBe('ഞായർതിങ്കൾചൊവ്വബുധൻവ്യാഴംവെള്ളിശനി');
     });
 
@@ -453,7 +453,7 @@ describe('Directive: calendarMonth', function () {
     it('should have the table header with weekdays in malayalam', function () {
       var tableHeader = element.find('.head');
       expect(tableHeader).toBeDefined();
-      expect(tableHeader.find('.malayalam-weekday').size()).toBe(7);
+      expect(tableHeader.find('.malayalam-weekday').length).toBe(7);
       expect(tableHeader.find('.malayalam-weekday').text()).toBe('SundayMondayTuesdayWednesdayThursdayFridaySaturday');
     });
 

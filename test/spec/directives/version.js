@@ -33,7 +33,7 @@ describe('Directive: version', function () {
     // </small>
     expect(element[0].tagName).toBe('SMALL');
     var anchorTag = element.find('a');
-    expect(anchorTag.size()).toBe(1);
+    expect(anchorTag.length).toBe(1);
     expect(anchorTag.attr('title')).toBe('Built at: 2015-08-13 06:35:33:848 +0000');
     expect(anchorTag.attr('href')).toBe('https://github.com/kollavarsham/calendar/tree/0cb4a04');
     expect(anchorTag.html()).toBe('v0.0.1-1');

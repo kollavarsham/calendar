@@ -42,10 +42,10 @@ describe('Directive: languageSwitcher', function () {
     scope.$digest();
 
     expect(element[0].tagName).toBe('UL');
-    expect(element.find('li').size()).toBe(2);
-    expect(element.find('li > a').size()).toBe(2);
-    expect(element.find('li.en').size()).toBe(1);
-    expect(element.find('li.ml').size()).toBe(1);
+    expect(element.find('li').length).toBe(2);
+    expect(element.find('li > a').length).toBe(2);
+    expect(element.find('li.en').length).toBe(1);
+    expect(element.find('li.ml').length).toBe(1);
   });
 
   it('should render the directive correctly when language is English', function () {
