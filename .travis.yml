@@ -1,10 +1,10 @@
 sudo: false
 language: node_js
 node_js:
-  - 'iojs'
-  - '0.12'
-  - '0.10'
-  - '4.0'
+  - v7
+  - v6
+  - v5
+  - v4
 branches:
   only:
   - master
@@ -23,7 +23,7 @@ after_success:
   # Push code coverage details to code climate
   - 'codeclimate-test-reporter < ./coverage/report-lcov/lcov.info'
   # Deploy the website
-  - 'if [ "$TRAVIS_NODE_VERSION" = "4.0" ]; then grunt deploy; fi'
+  - 'if [ "$TRAVIS_NODE_VERSION" = "v7" ]; then grunt deploy; fi'
 env:
   global:
   # SSH key. Encoded. See https://gist.github.com/floydpink/4631240
