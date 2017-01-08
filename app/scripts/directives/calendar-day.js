@@ -27,7 +27,7 @@ angular.module('calendarApp')
         var NEW_MOON_UNICODE = '🌑';
         var FULL_MOON_UNICODE = '🌕';
         var paksa = day.paksa === 'Suklapaksa' ? FULL_MOON_UNICODE : NEW_MOON_UNICODE;
-        day.moon = day.tithi === 15 ? paksa : undefined;
+        day.moon = day.tithi % 15 === 0 ? paksa : undefined;
         day.tithiDay = day.moon || utils.tithisLookup[day.tithi][scope.lang || 'ml'];
       }
     };
