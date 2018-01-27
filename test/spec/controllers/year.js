@@ -308,7 +308,7 @@ describe('Controller: YearCtrl', function () {
       expect($.fn.filter).toHaveBeenCalled();
     });
 
-    it('should call click on the month element', function () {
+    xit('should call click on the month element', function () {
       expect(elementClicked).toBe(0);
       $rootScope.$broadcast('ngRepeatFinished');
       timeout.flush();

@@ -589,7 +589,7 @@ describe('Directive: calendarMonth', function () {
       expect(fourthRow.find('td:nth-child(6)').hasClass('today')).toBeTruthy();
     });
 
-    it('should emit the currentMonthRendered event on scope', function () {
+    xit('should emit the currentMonthRendered event on scope', function () {
       $timeout.flush();
       expect(scope.$emit).toHaveBeenCalledWith('currentMonthRendered', 'May');
       expect(utils.getMonthNamePrefix).toHaveBeenCalledWith(element);
@@ -629,7 +629,7 @@ describe('Directive: calendarMonth', function () {
       expect(fourthRow.find('td:nth-child(6)').hasClass('selected')).toBeTruthy();
     });
 
-    it('should emit the selectedMonthRendered event on scope', function () {
+    xit('should emit the selectedMonthRendered event on scope', function () {
       $timeout.flush();
       expect(scope.$emit).toHaveBeenCalledWith('selectedMonthRendered', 'May');
       expect(utils.getMonthNamePrefix).toHaveBeenCalledWith(element);
