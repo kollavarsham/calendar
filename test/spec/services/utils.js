@@ -99,7 +99,7 @@ describe('Service: utils', function () {
 
     it('should have valid english data', function () {
       var tithisLookup = utils.tithisLookup;
-      expect(Object.keys(tithisLookup).length).toBe(14);
+      expect(Object.keys(tithisLookup).length).toBe(16);
       expect(tithisLookup[1].en).toBe('Prathama');
       expect(tithisLookup[2].en).toBe('Dwithiya');
       expect(tithisLookup[3].en).toBe('Thrithiya');
@@ -119,7 +119,7 @@ describe('Service: utils', function () {
     it('should have valid malayalam data', function () {
       /* jshint -W100 */
       var tithisLookup = utils.tithisLookup;
-      expect(Object.keys(tithisLookup).length).toBe(14);
+      expect(Object.keys(tithisLookup).length).toBe(16);
       expect(tithisLookup[1].ml).toBe('പ്രഥമ');
       expect(tithisLookup[2].ml).toBe('ദ്വിതീയ');
       expect(tithisLookup[3].ml).toBe('തൃതിയ');
