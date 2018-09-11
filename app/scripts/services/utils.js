@@ -37,6 +37,7 @@ angular.module('calendarApp')
     };
 
     this.tithisLookup = {
+      0  : {en : '', ml : ''},
       1  : {en : 'Prathama', ml : 'പ്രഥമ'},
       2  : {en : 'Dwithiya', ml : 'ദ്വിതീയ'},
       3  : {en : 'Thrithiya', ml : 'തൃതിയ'},
@@ -50,7 +51,8 @@ angular.module('calendarApp')
       11 : {en : 'Ekadasi', ml : 'ഏകാദശി'},
       12 : {en : 'Dwadasi', ml : 'ദ്വാദശി'},
       13 : {en : 'Thrayodasi', ml : 'ത്രയോദശി'},
-      14 : {en : 'Chathurdasi', ml : 'ചതുർദശി'}
+      14 : {en : 'Chathurdasi', ml : 'ചതുർദശി'},
+      15 : {en : '', ml : ''}
     };
     /* jshint +W100 */
 

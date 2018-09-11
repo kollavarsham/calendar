@@ -17,7 +17,7 @@ angular.module('calendarApp')
       },
       link        : function (scope) {
         var day = scope.day;
-        if (!(day.date && day.tithi)) {
+        if (!day.date) {
           return;
         }
         // add a fullDate property to show the full date
