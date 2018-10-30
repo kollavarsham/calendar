@@ -26,8 +26,7 @@ angular.module('calendarApp')
         // add amavasi and purnima (newmoon and fullmoon) into the calendar
         var NEW_MOON_UNICODE = '🌑';
         var FULL_MOON_UNICODE = '🌕';
-        var paksa = day.tithi === 0 ? FULL_MOON_UNICODE : NEW_MOON_UNICODE;
-        day.moon = day.tithi % 15 === 0 ? paksa : undefined;
+        day.moon = day.tithi === 0 ? FULL_MOON_UNICODE : day.tithi === 15 ? NEW_MOON_UNICODE : undefined;
         day.tithiDay = day.moon || utils.tithisLookup[day.tithi][scope.lang || 'ml'];
       }
     };
