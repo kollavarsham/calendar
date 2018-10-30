@@ -1,6 +1,6 @@
 {
   "name": "calendar",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "devDependencies": {
     "grunt": "^1.0.3",
