@@ -3,7 +3,7 @@
     <li><span class="month-nav-label">Jump to:</span></li>
     <li ng-repeat="month in months">
       <span class="month-nav-sep" ng-show="$first"> | </span>
-      <a ng-click="scrollTo('month-{{month.name}}')" title="{{month.name}}">{{month.name | limitTo: 3}}</a>
+      <a ng-click="scrollTo(month.name)" title="{{month.name}}">{{month.name | limitTo: 3}}</a>
       <span class="month-nav-sep"> | </span>
     </li>
   </ul>

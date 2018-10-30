@@ -16,6 +16,7 @@ angular.module('calendarApp')
       },
       link        : function postLink(scope) {
         scope.scrollTo = function (loc) {
+          loc = 'month-' + loc;
           var old = $location.hash();
           $location.hash(loc);
           $anchorScroll();
