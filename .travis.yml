@@ -5,6 +5,8 @@ node_js:
 branches:
   only:
   - master
+install:
+  - 'npm ci'
 before_script:
   # Extract the deploy key from secure variables for deploying the website
   - 'echo -n $id_rsa_{00..60} >> ~/.ssh/id_rsa_base64'
@@ -16,6 +18,8 @@ before_script:
   # Install the dependencies
   - 'npm install -g bower@1.8.4 grunt-cli codeclimate-test-reporter istanbul'
   - 'bower install'
+script:
+  - 'npm test'
 after_success:
   # Push code coverage details to code climate
   - 'codeclimate-test-reporter < ./coverage/report-lcov/lcov.info'
