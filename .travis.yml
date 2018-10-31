@@ -1,12 +1,10 @@
 sudo: false
 language: node_js
 node_js:
-  - v11
+  - v9
 branches:
   only:
   - master
-before_install:
-  - 'npm install'
 before_script:
   # Extract the deploy key from secure variables for deploying the website
   - 'echo -n $id_rsa_{00..60} >> ~/.ssh/id_rsa_base64'
