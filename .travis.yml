@@ -1,6 +1,8 @@
 sudo: false
 language: node_js
 node_js:
+  - v11
+  - v10
   - v9
 branches:
   only:
@@ -16,14 +18,11 @@ before_script:
   # Install the dependencies
   - 'npm install -g bower@1.8.4 grunt-cli codeclimate-test-reporter istanbul'
   - 'bower install'
-script:
-  - 'echo "skipping tests"'
 after_success:
   # Push code coverage details to code climate
   - 'codeclimate-test-reporter < ./coverage/report-lcov/lcov.info'
   # Deploy the website
-  # OLD - - 'if [ "$TRAVIS_NODE_VERSION" = "v10" ]; then grunt deploy; fi'
-  - 'grunt deploy'
+  - 'if [ "$TRAVIS_NODE_VERSION" = "v11" ]; then grunt deploy; fi'
 env:
   global:
   # SSH key. Encoded. See https://gist.github.com/floydpink/4631240

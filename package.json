@@ -43,6 +43,6 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test; echo 'force completing tests'"
+    "test": "grunt test"
   }
 }
