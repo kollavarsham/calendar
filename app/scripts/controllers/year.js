@@ -14,16 +14,22 @@ angular.module('calendarApp')
       $scope.$watch('calendar.year', function (newYearValue) {
         $state.go('year', {year : newYearValue});
       });
-
+      
+      var year = $stateParams.year;
+      var sel = undefined;
       var selectedDate = Date.parse($stateParams.sel);
+      if (!isNaN(selectedDate)) {
+        sel = new Date(selectedDate);
+        year = sel.getFullYear();
+      }
 
       $scope.calendar = {
-        year         : $stateParams.year,
+        year         : year,
         lang         : $stateParams.lang,
-        sel          : !isNaN(selectedDate) ? new Date(selectedDate) : undefined,
+        sel          : sel,
         years        : utils.getYears(),
-        previousYear : $stateParams.year - 1,
-        nextYear     : $stateParams.year + 1
+        previousYear : year - 1,
+        nextYear     : year + 1
       };
 
       $scope.calendar.data = Year.query({
