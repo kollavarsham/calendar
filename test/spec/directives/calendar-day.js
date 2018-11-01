@@ -3,9 +3,9 @@
 describe('Directive: calendarDay', function () {
 
   // load the directive's module
-  beforeEach(module('calendarApp', 'app/views/calendar-day.html'));
+  beforeEach(module('calendarApp', 'app/views/calendar-day.html', 'app/views/year.html'));
 
-  var element, scope, $compile, template, year, month;
+  var element, scope, $compile, template, yearTemplate, year, month;
 
   beforeEach(inject(function ($rootScope, _$compile_, $templateCache) {
     jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
@@ -17,6 +17,8 @@ describe('Directive: calendarDay', function () {
     // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
     template = $templateCache.get('app/views/calendar-day.html');
     $templateCache.put('views/calendar-day.html', template);
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
 
     year = getJSONFixture('2015-ml.json'); // load the data for 2015 from the test/mock/2015.json fixture
     month = year.months[4]; // let us test with the month of May

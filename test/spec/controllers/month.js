@@ -3,15 +3,20 @@
 describe('Controller: MonthCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('calendarApp', 'stateMock'));
+  beforeEach(module('calendarApp', 'stateMock', 'app/views/year.html'));
 
-  var MonthCtrl, $scope, calendar, state, stateParams, monthMockup, utils, currentYear, currentMonth;
+  var MonthCtrl, $scope, calendar, state, stateParams, monthMockup, utils, currentYear, currentMonth, yearTemplate;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, _utils_, stateMock) {
+  beforeEach(inject(function ($controller, $rootScope, _utils_, stateMock, $templateCache) {
     $scope = $rootScope.$new();
 
     state = stateMock;
+
+    // Load the template from the test relative path and store it into the directive-relative path
+    // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
 
     monthMockup = {
       query : function () {

@@ -3,9 +3,9 @@
 describe('Directive: languageSwitcher', function () {
 
   // load the directive's module and views
-  beforeEach(module('calendarApp', 'app/views/language-switcher.html'));
+  beforeEach(module('calendarApp', 'app/views/language-switcher.html', 'app/views/year.html'));
 
-  var element, scope, $compile, template;
+  var element, scope, $compile, template, yearTemplate;
 
   beforeEach(inject(function ($rootScope, _$compile_, $templateCache) {
     scope = $rootScope.$new();
@@ -16,6 +16,8 @@ describe('Directive: languageSwitcher', function () {
     // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
     template = $templateCache.get('app/views/language-switcher.html');
     $templateCache.put('views/language-switcher.html', template);
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
   }));
 
   it('should be defined', function () {

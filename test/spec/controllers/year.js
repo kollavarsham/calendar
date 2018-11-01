@@ -3,16 +3,16 @@
 describe('Controller: YearCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('calendarApp', 'stateMock'));
+  beforeEach(module('calendarApp', 'stateMock', 'app/views/year.html'));
 
-  var YearCtrl, $q, $rootScope, $scope, calendar, state, stateParams, filter, window, timeout, utils, yearMock, fakeScrollTopWithValue;
+  var YearCtrl, $q, $rootScope, $scope, calendar, state, stateParams, filter, window, timeout, utils, yearMock, fakeScrollTopWithValue, yearTemplate;
 
   var currentYear = new Date().getFullYear();
 
   var calendars = {};
   calendars[currentYear] = {year : currentYear, months : []};
 
-  beforeEach(inject(function (_$q_, _$rootScope_, stateMock, _$filter_, _$window_, _$timeout_, _utils_) {
+  beforeEach(inject(function (_$q_, _$rootScope_, stateMock, _$filter_, _$window_, _$timeout_, _utils_, $templateCache) {
     $q = _$q_;
     $rootScope = _$rootScope_;
     state = stateMock;
@@ -20,6 +20,11 @@ describe('Controller: YearCtrl', function () {
     window = _$window_;
     timeout = _$timeout_;
     utils = _utils_;
+
+    // Load the template from the test relative path and store it into the directive-relative path
+    // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
   }));
 
   // Initialize the controller and a mock scope
@@ -308,7 +313,7 @@ describe('Controller: YearCtrl', function () {
       expect($.fn.filter).toHaveBeenCalled();
     });
 
-    xit('should call click on the month element', function () {
+    it('should call click on the month element', function () {
       expect(elementClicked).toBe(0);
       $rootScope.$broadcast('ngRepeatFinished');
       timeout.flush();

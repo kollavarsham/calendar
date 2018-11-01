@@ -3,9 +3,9 @@
 describe('Directive: calendarMonth', function () {
 
   // load the directive's module and views
-  beforeEach(module('calendarApp', 'app/views/calendar-month.html', 'app/views/calendar-day.html'));
+  beforeEach(module('calendarApp', 'app/views/calendar-month.html', 'app/views/calendar-day.html', 'app/views/year.html'));
 
-  var element, scope, $compile, template, dayTemplate, year, utils, $timeout;
+  var element, scope, $compile, template, dayTemplate, yearTemplate, year, utils, $timeout;
 
   beforeEach(inject(function ($rootScope, _$compile_, $templateCache, _utils_, _$timeout_) {
     jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
@@ -20,6 +20,8 @@ describe('Directive: calendarMonth', function () {
     $templateCache.put('views/calendar-month.html', template);
     dayTemplate = $templateCache.get('app/views/calendar-day.html');
     $templateCache.put('views/calendar-day.html', dayTemplate);
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
 
     utils = _utils_;
 
@@ -248,7 +250,7 @@ describe('Directive: calendarMonth', function () {
 
       it('should have its 6th cell with the correct naksatra', function () {
         var firstRow = element.find('tr:nth-of-type(2)');
-        expect(firstRow.find('div.naksatra')[5].innerHTML).toBe('&nbsp; അത്തം');
+        expect(firstRow.find('div.naksatra')[5].innerHTML).toBe('&nbsp; ഉത്രം');
       });
 
       it('should have its 7th cell with the date 2', function () {
@@ -263,7 +265,7 @@ describe('Directive: calendarMonth', function () {
 
       it('should have its 7th cell with the correct naksatra', function () {
         var firstRow = element.find('tr:nth-of-type(2)');
-        expect(firstRow.find('div.naksatra')[6].innerHTML).toBe('&nbsp; ചിത്ര');
+        expect(firstRow.find('div.naksatra')[6].innerHTML).toBe('&nbsp; അത്തം');
       });
 
     });
@@ -517,7 +519,7 @@ describe('Directive: calendarMonth', function () {
 
       it('should have its 6th cell with the correct naksatra', function () {
         var firstRow = element.find('tr:nth-of-type(2)');
-        expect(firstRow.find('div.naksatra')[5].innerHTML).toBe('&nbsp; Atham');
+        expect(firstRow.find('div.naksatra')[5].innerHTML).toBe('&nbsp; Uthram');
       });
 
       it('should have its 7th cell with the date 2', function () {
@@ -532,7 +534,7 @@ describe('Directive: calendarMonth', function () {
 
       it('should have its 7th cell with the correct naksatra', function () {
         var firstRow = element.find('tr:nth-of-type(2)');
-        expect(firstRow.find('div.naksatra')[6].innerHTML).toBe('&nbsp; Chithra');
+        expect(firstRow.find('div.naksatra')[6].innerHTML).toBe('&nbsp; Atham');
       });
 
     });
@@ -589,7 +591,7 @@ describe('Directive: calendarMonth', function () {
       expect(fourthRow.find('td:nth-child(6)').hasClass('today')).toBeTruthy();
     });
 
-    xit('should emit the currentMonthRendered event on scope', function () {
+    it('should emit the currentMonthRendered event on scope', function () {
       $timeout.flush();
       expect(scope.$emit).toHaveBeenCalledWith('currentMonthRendered', 'May');
       expect(utils.getMonthNamePrefix).toHaveBeenCalledWith(element);
@@ -629,7 +631,7 @@ describe('Directive: calendarMonth', function () {
       expect(fourthRow.find('td:nth-child(6)').hasClass('selected')).toBeTruthy();
     });
 
-    xit('should emit the selectedMonthRendered event on scope', function () {
+    it('should emit the selectedMonthRendered event on scope', function () {
       $timeout.flush();
       expect(scope.$emit).toHaveBeenCalledWith('selectedMonthRendered', 'May');
       expect(utils.getMonthNamePrefix).toHaveBeenCalledWith(element);

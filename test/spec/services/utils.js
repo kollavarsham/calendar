@@ -475,7 +475,7 @@ describe('Service: utils', function () {
       expect(firstWeek[2].month).toBe('February');
       expect(firstWeek[0].tithi).toBe(13);
       expect(firstWeek[1].tithi).toBe(14);
-      expect(firstWeek[2].tithi).toBe(15);
+      expect(firstWeek[2].tithi).toBe(0);
 
       var lastWeek = returnedWeeksArray[3];
       expect(lastWeek[4].date).toBe(26);
@@ -601,6 +601,9 @@ describe('Service: utils', function () {
       scope.month = month;
       scope.weekdaysLookup = utils.weekdaysLookup;
       scope.sel = new Date(2015, 4, 20); // set the selected date to be 2015-05-20
+
+      var baseTime = new Date(2015, 4, 22);
+      jasmine.clock().mockDate(baseTime); // set today to be 2015-05-22
 
       var returnedWeeksArray = utils.calculateWeeks(scope);
       var selectedDayWeek = returnedWeeksArray[3];

@@ -3,14 +3,19 @@
 describe('Directive: onFinishRenderNgRepeat', function () {
 
   // load the directive's module
-  beforeEach(module('calendarApp'));
+  beforeEach(module('calendarApp', 'app/views/year.html'));
 
-  var element, scope, $compile, $timeout, items;
+  var element, scope, $compile, $timeout, items, yearTemplate;
 
-  beforeEach(inject(function ($rootScope, _$timeout_, _$compile_) {
+  beforeEach(inject(function ($rootScope, _$timeout_, _$compile_, $templateCache) {
     scope = $rootScope.$new();
     $timeout = _$timeout_;
     $compile = _$compile_;
+
+    // Load the template from the test relative path and store it into the directive-relative path
+    // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
 
     spyOn(scope, '$emit').and.callThrough();
 
@@ -27,7 +32,7 @@ describe('Directive: onFinishRenderNgRepeat', function () {
     expect(element).toBeDefined();
   });
 
-  xit('should emit ngRepeatFinished on scope', function () {
+  it('should emit ngRepeatFinished on scope', function () {
     $timeout.flush();
     expect(scope.$emit).toHaveBeenCalledWith('ngRepeatFinished');
   });

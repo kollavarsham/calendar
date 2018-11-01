@@ -13,7 +13,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Dhanu     ",
           "malayalamDay"  : 17,
-          "naksatra"      : "Karthika",
+          "naksatra"      : "Bharani",
           "paksa"         : "Suklapaksa",
           "tithi"         : 11
         },
@@ -26,7 +26,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Dhanu     ",
           "malayalamDay"  : 18,
-          "naksatra"      : "Rohini",
+          "naksatra"      : "Karthika",
           "paksa"         : "Suklapaksa",
           "tithi"         : 12
         },
@@ -39,7 +39,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Dhanu     ",
           "malayalamDay"  : 19,
-          "naksatra"      : "Makiryam",
+          "naksatra"      : "Rohini",
           "paksa"         : "Suklapaksa",
           "tithi"         : 13
         },
@@ -52,7 +52,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Dhanu     ",
           "malayalamDay"  : 20,
-          "naksatra"      : "Thiruvathira",
+          "naksatra"      : "Makiryam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 14
         },
@@ -66,8 +66,8 @@
           "malayalamMonth": "Dhanu     ",
           "malayalamDay"  : 21,
           "naksatra"      : "Thiruvathira",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -182,7 +182,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 1,
-          "naksatra"      : "Chothi",
+          "naksatra"      : "Chithra",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 9
         },
@@ -195,7 +195,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 2,
-          "naksatra"      : "Vishakham",
+          "naksatra"      : "Chothi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 10
         },
@@ -208,7 +208,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 3,
-          "naksatra"      : "Anizham",
+          "naksatra"      : "Vishakham",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 11
         },
@@ -221,7 +221,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 4,
-          "naksatra"      : "Thrikketta",
+          "naksatra"      : "Anizham",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 12
         },
@@ -234,7 +234,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 5,
-          "naksatra"      : "Moolam",
+          "naksatra"      : "Thrikketta",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 13
         },
@@ -247,7 +247,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 6,
-          "naksatra"      : "Pooradam",
+          "naksatra"      : "Moolam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 14
         },
@@ -260,7 +260,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 7,
-          "naksatra"      : "Uthradam",
+          "naksatra"      : "Pooradam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 15
         },
@@ -273,7 +273,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 8,
-          "naksatra"      : "Thiruvonam",
+          "naksatra"      : "Uthradam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 1
         },
@@ -286,7 +286,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 9,
-          "naksatra"      : "Avittam",
+          "naksatra"      : "Thiruvonam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 2
         },
@@ -448,8 +448,8 @@
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 21,
           "naksatra"      : "Pooyam",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -499,7 +499,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 25,
-          "naksatra"      : "Uthram",
+          "naksatra"      : "Pooram",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 3
         },
@@ -512,7 +512,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 26,
-          "naksatra"      : "Atham",
+          "naksatra"      : "Uthram",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 4
         },
@@ -525,7 +525,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Makaram   ",
           "malayalamDay"  : 27,
-          "naksatra"      : "Chithra",
+          "naksatra"      : "Atham",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 5
         },
@@ -668,7 +668,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Kumbham   ",
           "malayalamDay"  : 8,
-          "naksatra"      : "Poororuttathi",
+          "naksatra"      : "Chathayam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 2
         },
@@ -681,7 +681,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Kumbham   ",
           "malayalamDay"  : 9,
-          "naksatra"      : "Uthrattathi",
+          "naksatra"      : "Poororuttathi",
           "paksa"         : "Suklapaksa",
           "tithi"         : 3
         },
@@ -694,7 +694,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Kumbham   ",
           "malayalamDay"  : 10,
-          "naksatra"      : "Revathi",
+          "naksatra"      : "Uthrattathi",
           "paksa"         : "Suklapaksa",
           "tithi"         : 4
         },
@@ -707,7 +707,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Kumbham   ",
           "malayalamDay"  : 11,
-          "naksatra"      : "Ashwathi",
+          "naksatra"      : "Revathi",
           "paksa"         : "Suklapaksa",
           "tithi"         : 5
         },
@@ -816,7 +816,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Kumbham   ",
           "malayalamDay"  : 19,
-          "naksatra"      : "Aayilyam",
+          "naksatra"      : "Pooyam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 13
         },
@@ -829,7 +829,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Kumbham   ",
           "malayalamDay"  : 20,
-          "naksatra"      : "Makam",
+          "naksatra"      : "Aayilyam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 14
         },
@@ -842,9 +842,9 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Kumbham   ",
           "malayalamDay"  : 21,
-          "naksatra"      : "Pooram",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "naksatra"      : "Makam",
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -1047,7 +1047,7 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 21,
           "weekdayName"   : "Saturday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 7,
           "naksatra"      : "Uthrattathi",
@@ -1060,7 +1060,7 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 22,
           "weekdayName"   : "Sunday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 8,
           "naksatra"      : "Revathi",
@@ -1073,7 +1073,7 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 23,
           "weekdayName"   : "Monday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 9,
           "naksatra"      : "Ashwathi",
@@ -1086,7 +1086,7 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 24,
           "weekdayName"   : "Tuesday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 10,
           "naksatra"      : "Bharani",
@@ -1099,10 +1099,10 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 25,
           "weekdayName"   : "Wednesday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 11,
-          "naksatra"      : "Rohini",
+          "naksatra"      : "Karthika",
           "paksa"         : "Suklapaksa",
           "tithi"         : 6
         },
@@ -1112,10 +1112,10 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 26,
           "weekdayName"   : "Thursday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 12,
-          "naksatra"      : "Makiryam",
+          "naksatra"      : "Rohini",
           "paksa"         : "Suklapaksa",
           "tithi"         : 7
         },
@@ -1125,10 +1125,10 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 27,
           "weekdayName"   : "Friday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 13,
-          "naksatra"      : "Thiruvathira",
+          "naksatra"      : "Makiryam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 8
         },
@@ -1138,10 +1138,10 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 28,
           "weekdayName"   : "Saturday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 14,
-          "naksatra"      : "Punartham",
+          "naksatra"      : "Thiruvathira",
           "paksa"         : "Suklapaksa",
           "tithi"         : 9
         },
@@ -1151,7 +1151,7 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 29,
           "weekdayName"   : "Sunday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 15,
           "naksatra"      : "Punartham",
@@ -1164,7 +1164,7 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 30,
           "weekdayName"   : "Monday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 16,
           "naksatra"      : "Pooyam",
@@ -1177,7 +1177,7 @@
           "mlMonth"       : "മാർച്ച്‌",
           "date"          : 31,
           "weekdayName"   : "Tuesday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 17,
           "naksatra"      : "Aayilyam",
@@ -1195,7 +1195,7 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 1,
           "weekdayName"   : "Wednesday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 18,
           "naksatra"      : "Makam",
@@ -1208,7 +1208,7 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 2,
           "weekdayName"   : "Thursday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 19,
           "naksatra"      : "Pooram",
@@ -1221,7 +1221,7 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 3,
           "weekdayName"   : "Friday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 20,
           "naksatra"      : "Uthram",
@@ -1234,12 +1234,12 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 4,
           "weekdayName"   : "Saturday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 21,
           "naksatra"      : "Atham",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -1247,7 +1247,7 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 5,
           "weekdayName"   : "Sunday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 22,
           "naksatra"      : "Chithra",
@@ -1260,7 +1260,7 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 6,
           "weekdayName"   : "Monday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 23,
           "naksatra"      : "Chothi",
@@ -1273,10 +1273,10 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 7,
           "weekdayName"   : "Tuesday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 24,
-          "naksatra"      : "Vishakham",
+          "naksatra"      : "Chothi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 3
         },
@@ -1286,10 +1286,10 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 8,
           "weekdayName"   : "Wednesday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 25,
-          "naksatra"      : "Anizham",
+          "naksatra"      : "Vishakham",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 4
         },
@@ -1299,10 +1299,10 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 9,
           "weekdayName"   : "Thursday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 26,
-          "naksatra"      : "Thrikketta",
+          "naksatra"      : "Anizham",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 5
         },
@@ -1312,10 +1312,10 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 10,
           "weekdayName"   : "Friday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 27,
-          "naksatra"      : "Moolam",
+          "naksatra"      : "Thrikketta",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 6
         },
@@ -1325,10 +1325,10 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 11,
           "weekdayName"   : "Saturday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 28,
-          "naksatra"      : "Pooradam",
+          "naksatra"      : "Moolam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 7
         },
@@ -1338,10 +1338,10 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 12,
           "weekdayName"   : "Sunday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 29,
-          "naksatra"      : "Uthradam",
+          "naksatra"      : "Pooradam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 8
         },
@@ -1351,10 +1351,10 @@
           "mlMonth"       : "ഏപ്രിൽ ",
           "date"          : 13,
           "weekdayName"   : "Monday",
-          "malayalamYear" : 1191,
+          "malayalamYear" : 1190,
           "malayalamMonth": "Meenam    ",
           "malayalamDay"  : 30,
-          "naksatra"      : "Thiruvonam",
+          "naksatra"      : "Uthradam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 9
         },
@@ -1367,7 +1367,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Medam     ",
           "malayalamDay"  : 1,
-          "naksatra"      : "Avittam",
+          "naksatra"      : "Thiruvonam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 10
         },
@@ -1593,7 +1593,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Medam     ",
           "malayalamDay"  : 18,
-          "naksatra"      : "Atham",
+          "naksatra"      : "Uthram",
           "paksa"         : "Suklapaksa",
           "tithi"         : 13
         },
@@ -1606,7 +1606,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Medam     ",
           "malayalamDay"  : 19,
-          "naksatra"      : "Chithra",
+          "naksatra"      : "Atham",
           "paksa"         : "Suklapaksa",
           "tithi"         : 14
         },
@@ -1620,8 +1620,8 @@
           "malayalamMonth": "Medam     ",
           "malayalamDay"  : 20,
           "naksatra"      : "Chithra",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -1633,8 +1633,8 @@
           "malayalamMonth": "Medam     ",
           "malayalamDay"  : 21,
           "naksatra"      : "Chothi",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -1762,7 +1762,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Medam     ",
           "malayalamDay"  : 31,
-          "naksatra"      : "Uthrattathi",
+          "naksatra"      : "Poororuttathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 11
         },
@@ -1775,7 +1775,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Idavam    ",
           "malayalamDay"  : 1,
-          "naksatra"      : "Revathi",
+          "naksatra"      : "Uthrattathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 12
         },
@@ -1788,7 +1788,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Idavam    ",
           "malayalamDay"  : 2,
-          "naksatra"      : "Ashwathi",
+          "naksatra"      : "Revathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 13
         },
@@ -1801,7 +1801,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Idavam    ",
           "malayalamDay"  : 3,
-          "naksatra"      : "Bharani",
+          "naksatra"      : "Ashwathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 14
         },
@@ -1905,7 +1905,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Idavam    ",
           "malayalamDay"  : 11,
-          "naksatra"      : "Makam",
+          "naksatra"      : "Aayilyam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 7
         },
@@ -1918,7 +1918,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Idavam    ",
           "malayalamDay"  : 12,
-          "naksatra"      : "Pooram",
+          "naksatra"      : "Makam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 8
         },
@@ -2015,8 +2015,8 @@
           "malayalamMonth": "Idavam    ",
           "malayalamDay"  : 19,
           "naksatra"      : "Anizham",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -2196,7 +2196,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 2,
-          "naksatra"      : "Makiryam",
+          "naksatra"      : "Rohini",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 15
         },
@@ -2209,7 +2209,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 3,
-          "naksatra"      : "Thiruvathira",
+          "naksatra"      : "Makiryam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 1
         },
@@ -2222,7 +2222,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 4,
-          "naksatra"      : "Punartham",
+          "naksatra"      : "Thiruvathira",
           "paksa"         : "Suklapaksa",
           "tithi"         : 2
         },
@@ -2365,7 +2365,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 15,
-          "naksatra"      : "Anizham",
+          "naksatra"      : "Vishakham",
           "paksa"         : "Suklapaksa",
           "tithi"         : 12
         },
@@ -2378,7 +2378,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 16,
-          "naksatra"      : "Thrikketta",
+          "naksatra"      : "Anizham",
           "paksa"         : "Suklapaksa",
           "tithi"         : 13
         }
@@ -2396,7 +2396,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 17,
-          "naksatra"      : "Moolam",
+          "naksatra"      : "Thrikketta",
           "paksa"         : "Suklapaksa",
           "tithi"         : 14
         },
@@ -2409,9 +2409,9 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 18,
-          "naksatra"      : "Pooradam",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "naksatra"      : "Moolam",
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -2422,7 +2422,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 19,
-          "naksatra"      : "Uthradam",
+          "naksatra"      : "Pooradam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 1
         },
@@ -2435,7 +2435,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 20,
-          "naksatra"      : "Thiruvonam",
+          "naksatra"      : "Uthradam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 3
         },
@@ -2448,7 +2448,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 21,
-          "naksatra"      : "Avittam",
+          "naksatra"      : "Thiruvonam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 4
         },
@@ -2461,7 +2461,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Mithunam  ",
           "malayalamDay"  : 22,
-          "naksatra"      : "Chathayam",
+          "naksatra"      : "Avittam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 5
         },
@@ -2682,7 +2682,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 7,
-          "naksatra"      : "Chithra",
+          "naksatra"      : "Atham",
           "paksa"         : "Suklapaksa",
           "tithi"         : 7
         },
@@ -2695,7 +2695,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 8,
-          "naksatra"      : "Chothi",
+          "naksatra"      : "Chithra",
           "paksa"         : "Suklapaksa",
           "tithi"         : 8
         },
@@ -2787,8 +2787,8 @@
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 15,
           "naksatra"      : "Uthradam",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         }
       ]
     },
@@ -2843,7 +2843,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 19,
-          "naksatra"      : "Uthrattathi",
+          "naksatra"      : "Poororuttathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 4
         },
@@ -2856,7 +2856,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 20,
-          "naksatra"      : "Revathi",
+          "naksatra"      : "Uthrattathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 6
         },
@@ -2869,7 +2869,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 21,
-          "naksatra"      : "Ashwathi",
+          "naksatra"      : "Revathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 7
         },
@@ -2882,7 +2882,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 22,
-          "naksatra"      : "Bharani",
+          "naksatra"      : "Ashwathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 8
         },
@@ -2999,7 +2999,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 31,
-          "naksatra"      : "Pooram",
+          "naksatra"      : "Makam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 2
         },
@@ -3012,7 +3012,7 @@
           "malayalamYear" : 1190,
           "malayalamMonth": "Karkitakam",
           "malayalamDay"  : 32,
-          "naksatra"      : "Uthram",
+          "naksatra"      : "Pooram",
           "paksa"         : "Suklapaksa",
           "tithi"         : 3
         },
@@ -3169,8 +3169,8 @@
           "malayalamMonth": "Chingam   ",
           "malayalamDay"  : 12,
           "naksatra"      : "Avittam",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -3264,7 +3264,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Chingam   ",
           "malayalamDay"  : 19,
-          "naksatra"      : "Rohini",
+          "naksatra"      : "Karthika",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 7
         },
@@ -3277,7 +3277,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Chingam   ",
           "malayalamDay"  : 20,
-          "naksatra"      : "Makiryam",
+          "naksatra"      : "Rohini",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 8
         },
@@ -3290,7 +3290,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Chingam   ",
           "malayalamDay"  : 21,
-          "naksatra"      : "Thiruvathira",
+          "naksatra"      : "Makiryam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 10
         },
@@ -3303,7 +3303,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Chingam   ",
           "malayalamDay"  : 22,
-          "naksatra"      : "Punartham",
+          "naksatra"      : "Thiruvathira",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 11
         },
@@ -3316,7 +3316,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Chingam   ",
           "malayalamDay"  : 23,
-          "naksatra"      : "Pooyam",
+          "naksatra"      : "Punartham",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 12
         },
@@ -3329,7 +3329,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Chingam   ",
           "malayalamDay"  : 24,
-          "naksatra"      : "Aayilyam",
+          "naksatra"      : "Pooyam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 13
         },
@@ -3459,7 +3459,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 3,
-          "naksatra"      : "Thrikketta",
+          "naksatra"      : "Anizham",
           "paksa"         : "Suklapaksa",
           "tithi"         : 7
         },
@@ -3472,7 +3472,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 4,
-          "naksatra"      : "Moolam",
+          "naksatra"      : "Thrikketta",
           "paksa"         : "Suklapaksa",
           "tithi"         : 8
         },
@@ -3485,7 +3485,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 5,
-          "naksatra"      : "Pooradam",
+          "naksatra"      : "Moolam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 9
         },
@@ -3498,7 +3498,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 6,
-          "naksatra"      : "Uthradam",
+          "naksatra"      : "Pooradam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 10
         },
@@ -3511,7 +3511,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 7,
-          "naksatra"      : "Thiruvonam",
+          "naksatra"      : "Uthradam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 11
         },
@@ -3524,7 +3524,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 8,
-          "naksatra"      : "Avittam",
+          "naksatra"      : "Thiruvonam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 12
         },
@@ -3537,7 +3537,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 9,
-          "naksatra"      : "Chathayam",
+          "naksatra"      : "Avittam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 13
         },
@@ -3564,8 +3564,8 @@
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 11,
           "naksatra"      : "Uthrattathi",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -3776,7 +3776,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 27,
-          "naksatra"      : "Chothi",
+          "naksatra"      : "Chithra",
           "paksa"         : "Suklapaksa",
           "tithi"         : 2
         },
@@ -3789,7 +3789,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 28,
-          "naksatra"      : "Vishakham",
+          "naksatra"      : "Chothi",
           "paksa"         : "Suklapaksa",
           "tithi"         : 3
         },
@@ -3802,7 +3802,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Kanni     ",
           "malayalamDay"  : 29,
-          "naksatra"      : "Anizham",
+          "naksatra"      : "Vishakham",
           "paksa"         : "Suklapaksa",
           "tithi"         : 3
         },
@@ -3919,7 +3919,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Thulam    ",
           "malayalamDay"  : 8,
-          "naksatra"      : "Uthrattathi",
+          "naksatra"      : "Poororuttathi",
           "paksa"         : "Suklapaksa",
           "tithi"         : 13
         },
@@ -3932,7 +3932,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Thulam    ",
           "malayalamDay"  : 9,
-          "naksatra"      : "Revathi",
+          "naksatra"      : "Uthrattathi",
           "paksa"         : "Suklapaksa",
           "tithi"         : 14
         },
@@ -3945,9 +3945,9 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Thulam    ",
           "malayalamDay"  : 10,
-          "naksatra"      : "Ashwathi",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "naksatra"      : "Revathi",
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -3958,7 +3958,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Thulam    ",
           "malayalamDay"  : 11,
-          "naksatra"      : "Bharani",
+          "naksatra"      : "Ashwathi",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 1
         },
@@ -4093,7 +4093,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Thulam    ",
           "malayalamDay"  : 21,
-          "naksatra"      : "Uthram",
+          "naksatra"      : "Pooram",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 11
         },
@@ -4106,7 +4106,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Thulam    ",
           "malayalamDay"  : 22,
-          "naksatra"      : "Atham",
+          "naksatra"      : "Uthram",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 12
         },
@@ -4119,7 +4119,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Thulam    ",
           "malayalamDay"  : 23,
-          "naksatra"      : "Chithra",
+          "naksatra"      : "Atham",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 13
         },
@@ -4328,8 +4328,8 @@
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 9,
           "naksatra"      : "Bharani",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,
@@ -4340,7 +4340,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 10,
-          "naksatra"      : "Rohini",
+          "naksatra"      : "Karthika",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 1
         },
@@ -4353,7 +4353,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 11,
-          "naksatra"      : "Makiryam",
+          "naksatra"      : "Rohini",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 2
         },
@@ -4366,7 +4366,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 12,
-          "naksatra"      : "Thiruvathira",
+          "naksatra"      : "Makiryam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 3
         },
@@ -4379,7 +4379,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 13,
-          "naksatra"      : "Punartham",
+          "naksatra"      : "Thiruvathira",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 4
         },
@@ -4392,7 +4392,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 14,
-          "naksatra"      : "Pooyam",
+          "naksatra"      : "Punartham",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 5
         }
@@ -4410,7 +4410,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 15,
-          "naksatra"      : "Aayilyam",
+          "naksatra"      : "Pooyam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 6
         },
@@ -4423,7 +4423,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 16,
-          "naksatra"      : "Makam",
+          "naksatra"      : "Aayilyam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 7
         },
@@ -4436,7 +4436,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 17,
-          "naksatra"      : "Pooram",
+          "naksatra"      : "Makam",
           "paksa"         : "Krsnapaksa",
           "tithi"         : 8
         },
@@ -4566,7 +4566,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 27,
-          "naksatra"      : "Pooradam",
+          "naksatra"      : "Moolam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 2
         },
@@ -4579,7 +4579,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 28,
-          "naksatra"      : "Uthradam",
+          "naksatra"      : "Pooradam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 3
         },
@@ -4592,7 +4592,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Vrischikam",
           "malayalamDay"  : 29,
-          "naksatra"      : "Thiruvonam",
+          "naksatra"      : "Uthradam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 4
         },
@@ -4605,7 +4605,7 @@
           "malayalamYear" : 1191,
           "malayalamMonth": "Dhanu     ",
           "malayalamDay"  : 1,
-          "naksatra"      : "Avittam",
+          "naksatra"      : "Thiruvonam",
           "paksa"         : "Suklapaksa",
           "tithi"         : 5
         },
@@ -4723,8 +4723,8 @@
           "malayalamMonth": "Dhanu     ",
           "malayalamDay"  : 10,
           "naksatra"      : "Makiryam",
-          "paksa"         : "Suklapaksa",
-          "tithi"         : 15
+          "paksa"         : "Krsnapaksa",
+          "tithi"         : 0
         },
         {
           "year"          : 2015,

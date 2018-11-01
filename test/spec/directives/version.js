@@ -3,12 +3,17 @@
 describe('Directive: version', function () {
 
   // load the directive's module
-  beforeEach(module('calendarApp'));
+  beforeEach(module('calendarApp', 'app/views/year.html'));
 
-  var element, scope;
+  var element, scope, yearTemplate;
 
-  beforeEach(inject(function ($rootScope, $compile) {
+  beforeEach(inject(function ($rootScope, $compile, $templateCache) {
     scope = $rootScope.$new();
+    // Load the template from the test relative path and store it into the directive-relative path
+    // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
+
     element = angular.element('<version></version>');
     element = $compile(element)(scope);
   }));

@@ -4,9 +4,9 @@
 xdescribe('Directive: monthNavbar', function () {
 
   // load the directive's module
-  beforeEach(module('calendarApp', 'app/views/month-navbar.html'));
+  beforeEach(module('calendarApp', 'app/views/month-navbar.html', 'app/views/year.html'));
 
-  var element, scope, $compile, template, $location, year, locArguments;
+  var element, scope, $compile, template, yearTemplate, $location, year, locArguments;
 
   beforeEach(module(function ($provide) {
     $provide.provider('$location', function () {
@@ -26,11 +26,13 @@ xdescribe('Directive: monthNavbar', function () {
     // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
     template = $templateCache.get('app/views/month-navbar.html');
     $templateCache.put('views/month-navbar.html', template);
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
 
     locArguments = [];
 
     $location = {
-      url: function(){},
+      url: {},
       hash : function (loc) {
         locArguments.push(loc);
       }

@@ -3,9 +3,9 @@
 describe('Directive: yearPicker', function () {
 
   // load the directive's module
-  beforeEach(module('calendarApp', 'app/views/year-picker.html'));
+  beforeEach(module('calendarApp', 'app/views/year-picker.html', 'app/views/year.html'));
 
-  var element, scope, $compile, template;
+  var element, scope, $compile, template, yearTemplate;
 
   beforeEach(inject(function ($rootScope, _$compile_, $templateCache) {
     scope = $rootScope.$new();
@@ -15,6 +15,8 @@ describe('Directive: yearPicker', function () {
     // http://www.portlandwebworks.com/blog/testing-angularjs-directives-handling-external-templates
     template = $templateCache.get('app/views/year-picker.html');
     $templateCache.put('views/year-picker.html', template);
+    yearTemplate = $templateCache.get('app/views/year.html');
+    $templateCache.put('views/year.html', yearTemplate);
   }));
 
   beforeEach(function () {
