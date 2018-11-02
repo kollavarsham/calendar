@@ -37,7 +37,7 @@
     "karma-phantomjs-launcher": "*",
     "karma-spec-reporter": "0.0.32",
     "serve-static": "^1.13.2",
-    "time-grunt": "^1.4.0"
+    "time-grunt": "^2.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
