@@ -30,7 +30,7 @@
     "jasmine-core": "^3.3.0",
     "jit-grunt": "^0.10.0",
     "jshint-stylish": "^2.2.1",
-    "karma": "^3.1.3",
+    "karma": "^3.1.4",
     "karma-coverage": "^1.1.2",
     "karma-jasmine": "*",
     "karma-ng-html2js-preprocessor": "^1.0.0",
