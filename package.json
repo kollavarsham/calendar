@@ -36,7 +36,7 @@
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "*",
     "karma-spec-reporter": "0.0.32",
-    "serve-static": "^1.14.0",
+    "serve-static": "^1.14.1",
     "time-grunt": "^2.0.0"
   },
   "engines": {
