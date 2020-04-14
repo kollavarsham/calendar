@@ -31,7 +31,7 @@
     "jit-grunt": "^0.10.0",
     "jshint-stylish": "^2.2.1",
     "karma": "^4.4.1",
-    "karma-coverage": "^2.0.1",
+    "karma-coverage": "^2.0.2",
     "karma-jasmine": "*",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "*",
