@@ -16,7 +16,7 @@ describe('Service: serviceConfigConstant', function () {
   });
 
   it('should have the valid baseUrl', function () {
-    expect(serviceConfigConstant.baseUrl).toBe('https://api.aws.kollavarsham.org/');
+    expect(serviceConfigConstant.baseUrl).toBe('https://calendar.kollavarsham.org/api/');
   });
 
   it('should have the config defined', function () {

@@ -9,5 +9,5 @@
  */
 angular.module('calendarApp')
   .factory('Year', function ($resource, serviceConfigConstant) {
-    return $resource(serviceConfigConstant.baseUrl + 'year/:year?lang=:lang', {}, serviceConfigConstant.config);
+    return $resource(serviceConfigConstant.baseUrl + 'years/:year?lang=:lang', {}, serviceConfigConstant.config);
   });
