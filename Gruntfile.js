@@ -433,7 +433,7 @@ module.exports = function (grunt) {
       },
       pages   : {
         options : {
-          remote : 'git@github.com:kollavarsham/calendar.git',
+          remote : process.env.DEPLOY_REPO,
           branch : 'gh-pages'
         }
       }
