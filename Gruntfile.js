@@ -437,6 +437,16 @@ module.exports = function (grunt) {
           branch : 'gh-pages'
         }
       }
+    },
+
+    // Push code coverage into coveralls
+    coveralls: {
+      options: {
+        force: false
+      },
+      calendar: {
+        src: 'coverage/report-lcov/lcov.info'
+      }
     }
   });
 
@@ -511,7 +521,7 @@ module.exports = function (grunt) {
     'saverevision'
   ]);
 
-  grunt.registerTask('deploy', ['build', 'buildcontrol:pages']);
+  grunt.registerTask('deploy', ['build', 'coveralls', 'buildcontrol:pages']);
 
   grunt.registerTask('default', [
     'newer:jshint',

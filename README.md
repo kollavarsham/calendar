@@ -1,6 +1,6 @@
 # kollavarsham-calendar
 
-[![Gemnasium](https://img.shields.io/gemnasium/kollavarsham/calendar.svg)](https://gemnasium.com/kollavarsham/calendar) [![David](https://img.shields.io/david/dev/kollavarsham/calendar.svg)](https://david-dm.org/kollavarsham/calendar#info=devDependencies) [![Travis](https://img.shields.io/travis/kollavarsham/calendar.svg)](https://travis-ci.org/kollavarsham/calendar) [![Code Climate](https://img.shields.io/codeclimate/github/kollavarsham/calendar.svg)](https://codeclimate.com/github/kollavarsham/calendar/code) [![Code Climate](https://img.shields.io/codeclimate/coverage/github/kollavarsham/calendar.svg)](https://codeclimate.com/github/kollavarsham/calendar/coverage)
+[![Travis](https://img.shields.io/travis/kollavarsham/calendar.svg)](https://travis-ci.org/kollavarsham/calendar) [![Coverage Status](https://coveralls.io/repos/github/kollavarsham/calendar/badge.svg?branch=master)](https://coveralls.io/github/kollavarsham/calendar?branch=master)
 
 The AngularJS single-page application that displays the [Malayalam Era](https://en.wikipedia.org/wiki/Kollam_era) calendar using the [calendar-api](https://github.com/kollavarsham/calendar-api) backend.
 

@@ -16,10 +16,8 @@ before_script:
   - 'git config --global user.email "info@kollavarsham.org"'
   - 'git config --global user.name "The Kollavarsham Team"'
   # Install the dependencies
-  - 'npm install -g bower@1.8.4 grunt-cli codeclimate-test-reporter istanbul'
+  - 'npm install -g bower@1.8.4 grunt-cli istanbul'
   - 'bower install'
 after_success:
-  # Push code coverage details to code climate
-  - 'codeclimate-test-reporter < ./coverage/report-lcov/lcov.info'
-  # Deploy the website
+  # Push code coverage & deploy the web app
   - 'if [ "$TRAVIS_NODE_VERSION" = "v10" ]; then grunt deploy; fi'
