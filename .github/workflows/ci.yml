@@ -32,13 +32,16 @@ jobs:
       - run: npm ci
       - run: bower install
       - run: npm test
+
       - run: grunt build
+        if: github.ref == 'refs/heads/master'
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
         if: github.ref == 'refs/heads/master'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage/report-lcov/lcov.info
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
