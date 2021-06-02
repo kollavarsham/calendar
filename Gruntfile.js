@@ -422,7 +422,7 @@ module.exports = function (grunt) {
         version  : grunt.config('pkg.version'),
         revision : rev.tag + '-' + rev.since + '-' + rev.object,
         date     : grunt.template.today('yyyy-mm-dd HH:MM:ss:l o'),
-        text     : rev.tag + '-' + rev.since,
+        text     : rev.tag + '-' + rev.since + '-' + rev.object,
         object   : rev.object
       }));
     });
