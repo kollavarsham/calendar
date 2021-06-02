@@ -1,0 +1,48 @@
+name: ci cd
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  ci_cd:
+    runs-on: ubuntu-18.04
+    name: Continuous Integration/Continuous Deployment
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Global Dependencies
+        run: npm install -g bower@1.8.4 grunt-cli istanbul npm
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+      - run: bower install
+      - run: npm test
+      - run: grunt build
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        if: github.ref == 'refs/heads/master'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

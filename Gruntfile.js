@@ -15,9 +15,7 @@ module.exports = function (grunt) {
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare : 'grunt-usemin',
-    ngtemplates   : 'grunt-angular-templates',
-    cdnify        : 'grunt-google-cdn',
-    buildcontrol  : 'grunt-build-control'
+    ngtemplates   : 'grunt-angular-templates'
   });
 
   // Use connect 3.0 static
@@ -348,13 +346,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Replace Google CDN references
-    cdnify : {
-      dist : {
-        html : ['<%= yeoman.dist %>/*.html']
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy : {
       dist   : {
@@ -421,32 +412,6 @@ module.exports = function (grunt) {
     'git-describe' : {
       'options'  : {},
       'calendar' : {}
-    },
-
-    // Push the built website into GH pages
-    buildcontrol : {
-      options : {
-        dir     : 'dist',
-        commit  : true,
-        push    : true,
-        message : 'Built %sourceName% angular web app from commit %sourceCommit% on branch master'
-      },
-      pages   : {
-        options : {
-          remote : process.env.DEPLOY_REPO,
-          branch : 'gh-pages'
-        }
-      }
-    },
-
-    // Push code coverage into coveralls
-    coveralls: {
-      options: {
-        force: false
-      },
-      calendar: {
-        src: 'coverage/report-lcov/lcov.info'
-      }
     }
   });
 
@@ -512,7 +477,6 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
     'cssmin',
     'uglify',
     'filerev',
@@ -520,8 +484,6 @@ module.exports = function (grunt) {
     'htmlmin',
     'saverevision'
   ]);
-
-  grunt.registerTask('deploy', ['build', 'coveralls', 'buildcontrol:pages']);
 
   grunt.registerTask('default', [
     'newer:jshint',
