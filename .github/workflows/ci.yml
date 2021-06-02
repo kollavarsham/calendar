@@ -12,6 +12,8 @@ jobs:
     name: Continuous Integration/Continuous Deployment
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # necessary for version generation done in 'grunt build'
 
       - name: Setup Node
         uses: actions/setup-node@v2
