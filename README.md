@@ -1,6 +1,6 @@
 # kollavarsham-calendar
 
-[![ci-cd](https://github.com/kollavarsham/calendar/actions/workflows/ci.yml/badge.svg)](https://github.com/kollavarsham/calendar/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/kollavarsham/calendar/badge.svg?branch=master)](https://coveralls.io/github/kollavarsham/calendar?branch=master)
+[![ci-cd](https://github.com/kollavarsham/calendar/actions/workflows/ci.yml/badge.svg)](https://github.com/kollavarsham/calendar/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/kollavarsham/calendar/badge.svg?branch=main)](https://coveralls.io/github/kollavarsham/calendar?branch=main)
 
 The AngularJS single-page application that displays the [Malayalam Era](https://en.wikipedia.org/wiki/Kollam_era) calendar using the [calendar-api](https://github.com/kollavarsham/calendar-api) backend.
 

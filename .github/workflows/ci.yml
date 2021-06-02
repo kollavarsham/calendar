@@ -3,7 +3,7 @@ name: ci cd
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 jobs:
@@ -36,18 +36,18 @@ jobs:
       - run: npm test
 
       - run: grunt build
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage/report-lcov/lcov.info
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
