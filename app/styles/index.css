@@ -3,6 +3,14 @@
   text-shadow : 0 2px 2px rgba(120, 120, 120, 0.3);
 }
 
+a {
+  color: #0b80e4;
+}
+
+a:hover, a:focus {
+  color: #ef740a;
+}
+
 .language-switcher {
   cursor : pointer;
 }
