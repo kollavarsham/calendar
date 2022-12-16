@@ -33,7 +33,7 @@
     "karma-jasmine": "*",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "*",
-    "karma-spec-reporter": "0.0.35",
+    "karma-spec-reporter": "0.0.36",
     "serve-static": "^1.15.0",
     "time-grunt": "^2.0.0"
   },
