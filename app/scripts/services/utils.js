@@ -165,4 +165,10 @@ angular.module('calendarApp')
       return weeks;
     };
 
+    this.createSelectedDayLink = function(date) {
+      const iso = date.toISOString();
+      const site = `${location.protocol}//${location.host}${location.pathname}`
+      return `${site}#!/${date.getFullYear()}?sel=${iso}`;
+    };
+
   });
