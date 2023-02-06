@@ -7,7 +7,7 @@
  * # calendarDay
  */
 angular.module('calendarApp')
-  .directive('calendarDay', function (utils) {
+  .directive('calendarDay', function (utils, $state) {
     return {
       restrict    : 'E',
       templateUrl : 'views/calendar-day.html',
@@ -15,7 +15,7 @@ angular.module('calendarApp')
         day : '=day',
         lang: '=lang'
       },
-      link        : function (scope) {
+      link        : function (scope, element) {
         var day = scope.day;
         if (!day.date) {
           return;
@@ -28,6 +28,12 @@ angular.module('calendarApp')
         var FULL_MOON_UNICODE = '🌕';
         day.moon = day.tithi === 0 ? FULL_MOON_UNICODE : day.tithi === 15 ? NEW_MOON_UNICODE : undefined;
         day.tithiDay = day.moon || utils.tithisLookup[day.tithi][scope.lang || 'ml'];
+
+        element.on('click', function () {
+          var date = new Date(day.fullDate);
+          date.setHours(12);
+          $state.go($state.current.name, {year : date.getFullYear(), month : date.getMonth() + 1, sel: date.toISOString()});
+        });
       }
     };
   });
