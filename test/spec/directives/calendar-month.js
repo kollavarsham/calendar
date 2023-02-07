@@ -258,6 +258,11 @@ describe('Directive: calendarMonth', function () {
         expect(firstRow.find('div.gregorian')[6].innerHTML).toBe('2');
       });
 
+      it('should have its last cell without the second-saturday css class', function () {
+        var firstRow = element.find('tr:nth-of-type(2)');
+        expect(firstRow.find('calendar-day:last').hasClass('second-saturday')).toBeFalsy();
+      });
+
       it('should have its 7th cell with the malayalam date 18', function () {
         var firstRow = element.find('tr:nth-of-type(2)');
         expect(firstRow.find('div.malayalam-day')[6].innerHTML).toBe('19');
@@ -266,6 +271,20 @@ describe('Directive: calendarMonth', function () {
       it('should have its 7th cell with the correct naksatra', function () {
         var firstRow = element.find('tr:nth-of-type(2)');
         expect(firstRow.find('div.naksatra')[6].innerHTML).toBe('&nbsp; അത്തം');
+      });
+
+    });
+
+    describe('second row', function () {
+
+      it('should have its 7th cell with the date 9', function () {
+        var secondRow = element.find('tr:nth-of-type(3)');
+        expect(secondRow.find('div.gregorian')[6].innerHTML).toBe('9');
+      });
+
+      it('should have its last cell with the second-saturday css class', function () {
+        var secondRow = element.find('tr:nth-of-type(3)');
+        expect(secondRow.find('calendar-day:last').hasClass('second-saturday')).toBeTruthy();
       });
 
     });
@@ -523,6 +542,11 @@ describe('Directive: calendarMonth', function () {
       });
 
       it('should have its 7th cell with the date 2', function () {
+        var firstRow = element.find('tr:nth-of-type(2)');
+        expect(firstRow.find('div.gregorian')[6].innerHTML).toBe('2');
+      });
+
+      it('should have its 7th cell without the second-saturday css class', function () {
         var firstRow = element.find('tr:nth-of-type(2)');
         expect(firstRow.find('div.gregorian')[6].innerHTML).toBe('2');
       });

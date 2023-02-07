@@ -23,7 +23,7 @@
   height     : 95px;
 }
 
-th.sunday, .sunday .gregorian {
+th.sunday, .sunday .gregorian, .second-saturday .gregorian {
   color : #f55 !important;
 }
 

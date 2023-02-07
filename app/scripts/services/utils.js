@@ -155,6 +155,9 @@ angular.module('calendarApp')
         // add the day into the right position within the week array
         weeks[weeks.length - 1].push(day);
 
+        // compute Second Saturday
+        day.secondSaturday = weeks[weeks.length - 1].length === 7 && weeks.length === 2
+
         // add the empty cells for when the last day of the month is not a Saturday
         if (i === month.days.length - 1) {
           for (var l = 0, len = 7 - weeks[weeks.length - 1].length; l < len; l++) {
