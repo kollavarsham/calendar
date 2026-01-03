@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Continuous Integration/Continuous Deployment
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # necessary for version generation done in 'grunt build'
 
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
@@ -24,7 +24,7 @@ jobs:
         run: npm install -g bower@1.8.4 grunt-cli istanbul npm
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
