@@ -35,7 +35,6 @@ module.exports = function (config) {
       'bower_components/scrollup/dist/jquery.scrollUp.min.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/jasmine/lib/jasmine-core/jasmine.js',
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       // endbower
       "app/scripts/**/*.js",
@@ -62,12 +61,12 @@ module.exports = function (config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers : [
-      "PhantomJS"
+      "ChromeHeadless"
     ],
 
     // Which plugins to enable
     plugins : [
-      "karma-phantomjs-launcher",
+      "karma-chrome-launcher",
       "karma-jasmine",
       "karma-spec-reporter",
       "karma-coverage",
